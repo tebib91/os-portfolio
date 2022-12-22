@@ -15,7 +15,7 @@ cache:
 test:
   # Uses official Cypress docker image for dependencies
   # https://docs.cypress.io/guides/continuous-integration/introduction#Official-Cypress-Docker-Images
-  image: cypress/browsers:node16.5.0-chrome94-ff93
+  image: cypress/browsers:node16.14.0-chrome99-ff97
   stage: test
   parallel: 2 # Uses 2 parallel instances
   script:
