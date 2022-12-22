@@ -1,10 +1,10 @@
-import { defineConfig } from 'cypress'
-module.exports = defineConfig({
-  projectId: "pc8hth",
-  // The rest of the Cypress config options go here...
-  e2e: {
-    baseUrl: 'http://localhost:4200',
-    supportFile: false
-  },
+import { defineConfig } from "cypress";
 
-})
+export default defineConfig({
+  projectId: "pc8hth",
+  e2e: {
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+    },
+  },
+});
