@@ -23,7 +23,7 @@ test:
     # Starts web server for E2E tests - replace with your own server invocation
     # https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
     - npm start &
-    - npx wait-on 'http-get://localhost:3000' # Waits for above
+    - npx wait-on 'http-get://localhost:4200' # Waits for above
     # Runs tests in parallel and records to Cypress Dashboard
     # https://docs.cypress.io/guides/dashboard/projects#Set-up-a-project-to-record
     # https://docs.cypress.io/guides/guides/parallelization
