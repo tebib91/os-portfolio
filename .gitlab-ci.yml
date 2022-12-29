@@ -17,14 +17,12 @@ test:
   # https://docs.cypress.io/guides/continuous-integration/introduction#Official-Cypress-Docker-Images
   image: cypress/browsers:node16.14.0-chrome99-ff97
   stage: test
-  parallel: 2 # Uses 2 parallel instances
   script:
     - npm ci --cache .npm --prefer-offline
     # Starts web server for E2E tests - replace with your own server invocation
     # https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
-    - npm start &
-    - npx wait-on 'http-get://localhost:4200' # Waits for above
+    - npm run start:ci & # Waits for above
     # Runs tests in parallel and records to Cypress Dashboard
     # https://docs.cypress.io/guides/dashboard/projects#Set-up-a-project-to-record
     # https://docs.cypress.io/guides/guides/parallelization
-    - npx cypress run --record --parallel --browser chrome
+    - npx cypress run --browser chrome
