@@ -48,7 +48,7 @@
   },
   "husky": {
     "hooks": {
-      "post-commit": "pretty-quick --staged && npm run cypress && npm run release"
+      "pre-commit": "pretty-quick --staged && npm run cypress && npm run release"
     }
   }
 }
