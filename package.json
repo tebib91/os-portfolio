@@ -1,6 +1,6 @@
 {
   "name": "os-front",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +9,8 @@
     "test": "ng test",
     "cypress": "npx cypress run --headless --browser chrome",
     "start:pwa": "ng build && http-server -p 8080 -c-1 dist/os-front",
-    "release": "standard-version"
+    "release": "standard-version",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
