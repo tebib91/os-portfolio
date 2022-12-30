@@ -1,0 +1,12 @@
+<app-context-menu [items]="items" (itemClick)="handleMenu($event)">
+  <app-background-image
+    [imageUrl]="urlImage"
+    size="cover"
+    position="center"
+    repeat="no-repeat"
+  >
+    <!-- content goes here -->
+    <app-header></app-header>
+    <app-footer></app-footer>
+  </app-background-image>
+</app-context-menu>
