@@ -1,4 +1,5 @@
 <app-context-menu [items]="items" (itemClick)="handleMenu($event)">
+  <!-- content goes here -->
   <app-background-image
     [imageUrl]="urlImage"
     size="cover"
@@ -7,6 +8,8 @@
   >
     <!-- content goes here -->
     <app-header></app-header>
-    <app-footer></app-footer>
+    <app-taskbar [icons]="iconsTaskbar$ | async"></app-taskbar>
+    <!-- content end here -->
   </app-background-image>
+  <!-- content end here -->
 </app-context-menu>

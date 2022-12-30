@@ -29,17 +29,21 @@ import { MenuContext } from 'src/app/core/models/menu';
     `
       .context-menu {
         position: relative;
+
       }
 
       .context-menu-items {
         position: absolute;
         min-width: 200px;
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: rgba(244, 245, 245, 0.95);
+        border: 0.5px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
         list-style: none;
         padding: 0;
         margin: 0;
         z-index: 999;
+        border-radius: 5px;
+
       }
 
       .context-menu-items li {

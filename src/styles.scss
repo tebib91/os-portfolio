@@ -1,1 +1,9 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
 /* You can add global styles to this file, and also import other style files */
+@import './app/themes/theme.scss';
+
+body{
+  font-family: 'SF Pro Display', sans-serif;
+
+}
