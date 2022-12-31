@@ -1,6 +1,6 @@
 {
   "name": "os-front",
-  "version": "0.0.41",
+  "version": "0.0.42",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -31,6 +31,7 @@
     "http-server": "^14.1.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "wait-on": "^7.0.1",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
