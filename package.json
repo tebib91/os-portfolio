@@ -45,7 +45,7 @@
     "@typescript-eslint/eslint-plugin": "5.44.0",
     "@typescript-eslint/parser": "5.44.0",
     "eslint": "^8.28.0",
-    "husky": "^8.0.2",
+    "husky": "^8.0.0",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
@@ -58,13 +58,7 @@
     "typescript": "~4.8.4"
   },
   "lint-staged": {
-    "*.{ts,json,md}": "ng lint",
+    "*.{ts,json,md}": "prettier --write",
     "*.{scss,css}": "stylelint"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && standard-version"
-
-    }
   }
 }
