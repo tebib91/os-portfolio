@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
-import {  Observable, of, Subject } from 'rxjs'
+import {  Observable, of } from 'rxjs'
 import { iconsDock } from 'src/app/core/data/data'
 import { Icons } from 'src/app/core/models/icons'
 import { MenuContext } from 'src/app/core/models/menu'
@@ -13,16 +13,15 @@ import { MenuContext } from 'src/app/core/models/menu'
 export class LayoutComponent {
   items : MenuContext[]= [{ label: 'change background' }, { label: 'Print' }]
   iconsTaskbar$ :Observable<Icons[]> =of(iconsDock)
-  urlImage: string = '/assets/backgrounds/background-1.webp'
+  urlImage = '/assets/backgrounds/background-1.webp'
   lastRandomNumber!: number
 
-  constructor() {
-  }
+
   handleMenu(item: MenuContext) {
     item.label === 'change background' ? this.changeBackground() : null
   }
   changeBackground() {
-    let index = this.getRandomNumber()
+    const index = this.getRandomNumber()
     console.log('change background', index)
     this.urlImage = `/assets/backgrounds/background-${index}.webp`
   }

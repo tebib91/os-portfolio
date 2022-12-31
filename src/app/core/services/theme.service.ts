@@ -1,5 +1,4 @@
 import { Inject, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
-import { OverlayContainer } from '@angular/cdk/overlay';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DOCUMENT } from '@angular/common';
 

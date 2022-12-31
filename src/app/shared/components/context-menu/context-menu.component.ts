@@ -78,8 +78,8 @@ export class ContextMenuComponent {
     this.menuLeft = event.clientX;
     this.menuTop = event.clientY;
 
-    const clickListener = (event: any) => {
-      if (!this.el.contains(event.target)) {
+    const clickListener = (event: Event) => {
+      if (!this.el.contains(event.target as HTMLInputElement)) {
         this.isOpen = false;
         document.removeEventListener('click', clickListener);
       }
