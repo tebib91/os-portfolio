@@ -86,7 +86,6 @@ export class ContextMenuComponent {
   }
 
   onItemClick(item: MenuContext) {
-    console.log({ item });
     this.itemClick.emit(item);
   }
 }

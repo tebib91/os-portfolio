@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  GA_TRACKING_ID: 'G-HQ721RPGYS',
 };
 
 /*

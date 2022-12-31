@@ -1,5 +1,6 @@
 stages:
   - test
+  - release
 # For recording and parallelization to work you must set your CYPRESS_RECORD_KEY
 # in GitLab repo → Settings → CI/CD → Variables
 variables:
@@ -26,3 +27,11 @@ test:
     # https://docs.cypress.io/guides/dashboard/projects#Set-up-a-project-to-record
     # https://docs.cypress.io/guides/guides/parallelization
     - npx cypress run --browser chrome
+publish:
+  image: node:16
+  stage: release
+  script:
+    - npm ci --cache .npm --prefer-offline
+    - npx semantic-release
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master"

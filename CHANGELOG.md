@@ -2,6 +2,45 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.68](https://gitlab.com/tebib91/os-front/compare/v0.0.67...v0.0.68) (2022-12-31)
+
+### [0.0.67](https://gitlab.com/tebib91/os-front/compare/v0.0.66...v0.0.67) (2022-12-31)
+
+### [0.0.66](https://gitlab.com/tebib91/os-front/compare/v0.0.65...v0.0.66) (2022-12-31)
+
+### [0.0.65](https://gitlab.com/tebib91/os-front/compare/v0.0.64...v0.0.65) (2022-12-31)
+
+### [0.0.64](https://gitlab.com/tebib91/os-front/compare/v0.0.63...v0.0.64) (2022-12-31)
+
+### [0.0.63](https://gitlab.com/tebib91/os-front/compare/v0.0.62...v0.0.63) (2022-12-31)
+
+### [0.0.62](https://gitlab.com/tebib91/os-front/compare/v0.0.61...v0.0.62) (2022-12-31)
+
+### [0.0.61](https://gitlab.com/tebib91/os-front/compare/v0.0.60...v0.0.61) (2022-12-31)
+
+### [0.0.60](https://gitlab.com/tebib91/os-front/compare/v0.0.59...v0.0.60) (2022-12-31)
+
+### [0.0.59](https://gitlab.com/tebib91/os-front/compare/v0.0.58...v0.0.59) (2022-12-31)
+
+### [0.0.58](https://gitlab.com/tebib91/os-front/compare/v0.0.57...v0.0.58) (2022-12-31)
+
+### [0.0.57](https://gitlab.com/tebib91/os-front/compare/v0.0.56...v0.0.57) (2022-12-31)
+
+### [0.0.56](https://gitlab.com/tebib91/os-front/compare/v0.0.55...v0.0.56) (2022-12-31)
+
+### [0.0.55](https://gitlab.com/tebib91/os-front/compare/v0.0.52...v0.0.55) (2022-12-31)
+
+### [0.0.54](https://gitlab.com/tebib91/os-front/compare/v0.0.52...v0.0.54) (2022-12-31)
+
+### [0.0.53](https://gitlab.com/tebib91/os-front/compare/v0.0.52...v0.0.53) (2022-12-31)
+
+### [0.0.52](https://gitlab.com/tebib91/os-front/compare/v0.0.45...v0.0.52) (2022-12-31)
+
+### 🚚 Chores
+
+- **release:** 0.0.46 ([b2695fa](https://gitlab.com/tebib91/os-front/commit/b2695fa3b921ed9b0f30708bdfb38a3048a994d8))
+- **release:** 0.0.52-alpha.0 ([9225f84](https://gitlab.com/tebib91/os-front/commit/9225f84d8b6f0c566edb473bb63732414d13b2f9))
+
 ### [0.0.52-alpha.0](https://gitlab.com/tebib91/os-front/compare/v0.0.45...v0.0.52-alpha.0) (2022-12-31)
 
 ### 🚚 Chores
