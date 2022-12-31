@@ -6,18 +6,15 @@ import { ThemeService } from 'src/app/core/services/theme.service';
   selector: 'app-taskbar',
   templateUrl: './taskbar.component.html',
   styleUrls: ['./taskbar.component.scss'],
-
 })
 export class TaskbarComponent {
-  @Input() icons!: Icons[];
+  @Input() icons!: Icons[] | null;
   scale = 'normal';
 
-  constructor( public themeService: ThemeService) { }
-
+  constructor(public themeService: ThemeService) {}
 
   onClick() {
     this.scale = 'clicked';
     // handle item click event
   }
-
 }
