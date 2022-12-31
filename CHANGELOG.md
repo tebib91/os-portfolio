@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.52-alpha.0](https://gitlab.com/tebib91/os-front/compare/v0.0.45...v0.0.52-alpha.0) (2022-12-31)
+
+### 🚚 Chores
+
+- **release:** 0.0.46 ([b2695fa](https://gitlab.com/tebib91/os-front/commit/b2695fa3b921ed9b0f30708bdfb38a3048a994d8))
+
+### [0.0.51](https://gitlab.com/tebib91/os-front/compare/v0.0.46...v0.0.51) (2022-12-31)
+
+### [0.0.50](https://gitlab.com/tebib91/os-front/compare/v0.0.46...v0.0.50) (2022-12-31)
+
+### [0.0.49](https://gitlab.com/tebib91/os-front/compare/v0.0.46...v0.0.49) (2022-12-31)
+
+### [0.0.48](https://gitlab.com/tebib91/os-front/compare/v0.0.46...v0.0.48) (2022-12-31)
+
 ### [0.0.46](https://gitlab.com/tebib91/os-front/compare/v0.0.45...v0.0.46) (2022-12-31)
 
 ### [0.0.45](https://gitlab.com/tebib91/os-front/compare/v0.0.43...v0.0.45) (2022-12-31)
