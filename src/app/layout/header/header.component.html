@@ -1,16 +1,14 @@
 <nav class="menu-bar">
   <div class="menu-bar-left">
     <ul>
-      <li class="menu-bar-item" *ngFor="let item of items;">
-        <span>{{item.label}}</span>
+      <li class="menu-bar-item" *ngFor="let item of items">
+        <span>{{ item.label }}</span>
       </li>
-
     </ul>
   </div>
   <div class="menu-bar-right">
-
     <ul>
-      <li class="menu-bar-item">  {{ currentTime | date : "shortTime" }}</li>
+      <li class="menu-bar-item">{{ currentTime | date : "shortTime" }}</li>
     </ul>
   </div>
 </nav>

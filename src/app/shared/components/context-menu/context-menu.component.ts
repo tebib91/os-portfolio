@@ -29,7 +29,6 @@ import { MenuContext } from 'src/app/core/models/menu';
     `
       .context-menu {
         position: relative;
-
       }
 
       .context-menu-items {
@@ -43,7 +42,6 @@ import { MenuContext } from 'src/app/core/models/menu';
         margin: 0;
         z-index: 999;
         border-radius: 5px;
-
       }
 
       .context-menu-items li {

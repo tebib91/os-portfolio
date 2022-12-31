@@ -1,8 +1,7 @@
 import { Icons } from 'src/app/core/models/icons';
 import { MenuBar } from '../models/menu';
 
-
-export const iconsDock:Icons[] =[
+export const iconsDock: Icons[] = [
   { icon: 'finder.png', label: 'Finder' },
   { icon: 'notes.png', label: 'Notes' },
   { icon: 'maps.png', label: 'Maps' },
@@ -11,11 +10,9 @@ export const iconsDock:Icons[] =[
   { icon: 'music.png', label: 'Music' },
   { icon: 'preferences.png', label: 'System Preferences' },
   { icon: 'bin.png', label: 'Bin' },
+];
 
-]
-
-
-export const menusBar: MenuBar[] =[
+export const menusBar: MenuBar[] = [
   {
     icon: 'assets/dock/bin.png',
     label: 'Finder',
@@ -51,4 +48,4 @@ export const menusBar: MenuBar[] =[
     label: 'Help',
     submenu: ['Subitem 1', 'Subitem 2', 'Subitem 3'],
   },
-]
+];

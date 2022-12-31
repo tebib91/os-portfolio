@@ -8,9 +8,8 @@ describe('ContextMenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ContextMenuComponent ]
-    })
-    .compileComponents();
+      declarations: [ContextMenuComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ContextMenuComponent);
     component = fixture.componentInstance;

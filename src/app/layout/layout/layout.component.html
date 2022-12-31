@@ -8,7 +8,10 @@
   >
     <!-- content goes here -->
     <app-header></app-header>
-    <app-taskbar [icons]="iconsTaskbar$ | async"></app-taskbar>
+    <app-taskbar
+      [icons]="iconsTaskbar$ | async"
+      (program)="openDialog($event)"
+    ></app-taskbar>
     <!-- content end here -->
   </app-background-image>
   <!-- content end here -->

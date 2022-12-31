@@ -8,9 +8,8 @@ describe('BackgroundImageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BackgroundImageComponent ]
-    })
-    .compileComponents();
+      declarations: [BackgroundImageComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BackgroundImageComponent);
     component = fixture.componentInstance;
