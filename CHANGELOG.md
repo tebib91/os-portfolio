@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.45](https://gitlab.com/tebib91/os-front/compare/v0.0.43...v0.0.45) (2022-12-31)
+
+### 🚚 Chores
+
+- **release:** 0.0.44 ([f97d75d](https://gitlab.com/tebib91/os-front/commit/f97d75df4682dcfe71868e92e1ad3135b43bc723))
+
 ### [0.0.44](https://gitlab.com/tebib91/os-front/compare/v0.0.43...v0.0.44) (2022-12-31)
 
 ### [0.0.43](https://gitlab.com/tebib91/os-front/compare/v0.0.1...v0.0.43) (2022-12-31)
