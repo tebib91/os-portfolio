@@ -25,23 +25,23 @@ export class LayoutComponent {
     item.label === 'change background' ? this.changeBackground() : null;
   }
 
-  openDialog(item: string): void {
-    console.log({ item });
+  openDialog(item: Icons): void {
     const dialogRef = this.dialog.open(WindowComponent, {
       data: {
-        title: 'Draggable Dialog',
-        message: 'This dialog can be dragged!',
+        title: item.label,
+        icon: item.icon,
+        program: item.component,
       },
+      hasBackdrop: false,
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed', item);
+      console.info('The dialog was closed', { item, result });
     });
   }
 
   changeBackground() {
     const index = this.getRandomNumber();
-    console.log('change background', index);
     this.urlImage = `/assets/backgrounds/background-${index}.webp`;
   }
 

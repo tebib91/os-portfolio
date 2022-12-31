@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { ScriptInjectorService } from './core/services/script-injector.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'os-front';
+
+  constructor(private script: ScriptInjectorService) {
+    const trackingId = environment.GA_TRACKING_ID;
+    environment.production ? this.script.inject(trackingId) : null;
+  }
 }

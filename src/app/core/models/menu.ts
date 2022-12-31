@@ -7,3 +7,9 @@ export interface MenuBar {
   label: string;
   submenu: string[];
 }
+
+export interface Program {
+  icon: string;
+  title: string;
+  program: string;
+}

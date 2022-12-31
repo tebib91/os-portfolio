@@ -3,7 +3,8 @@
     <img
       class="taskbar-icon"
       src="/assets/dock/{{ item.icon }}"
-      (click)="onClick(item.label)"
+      (click)="onClick(item)"
+      [alt]="item.label"
     />
     <!-- <span class="taskbar-label">{{ item.label }}</span> -->
   </div>
