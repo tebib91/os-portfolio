@@ -1,6 +1,6 @@
 {
   "name": "os-front",
-  "version": "0.0.48",
+  "version": "0.0.52-alpha.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,7 +10,7 @@
     "test": "ng test",
     "cypress": "npx cypress run --headless --browser chrome",
     "start:pwa": "ng build && http-server -p 8080 -c-1 dist/os-front",
-    "release": "standard-version -a",
+    "release": "standard-version",
     "prepare": "husky install",
     "lint": "ng lint"
   },
