@@ -1,0 +1,18 @@
+<app-context-menu [items]="items" (itemClick)="handleMenu($event)">
+  <!-- content goes here -->
+  <app-background-image
+    [imageUrl]="urlImage"
+    size="cover"
+    position="center"
+    repeat="no-repeat"
+  >
+    <!-- content goes here -->
+    <app-header></app-header>
+    <app-taskbar
+      [icons]="iconsTaskbar$ | async"
+      (program)="openDialog($event)"
+    ></app-taskbar>
+    <!-- content end here -->
+  </app-background-image>
+  <!-- content end here -->
+</app-context-menu>

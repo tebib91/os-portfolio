@@ -1,0 +1,18 @@
+<div class="taskbar">
+  <div class="taskbar-item" *ngFor="let item of icons; let i = index">
+    <img
+      class="taskbar-icon"
+      src="/assets/dock/{{ item.icon }}"
+      (click)="onClick(item.label)"
+    />
+    <!-- <span class="taskbar-label">{{ item.label }}</span> -->
+  </div>
+  <div class="taskbar-item">
+    <input
+      #ico
+      class="toggle ico"
+      type="checkbox"
+      (click)="themeService.toggleDarkMode()"
+    />
+  </div>
+</div>

@@ -1,0 +1,42 @@
+/* menu-bar.component.scss */
+.menu-bar {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  background-color: var(--label-color);
+  color: #fff;
+  justify-content: space-between;
+  .menu-bar-left {
+    & ul {
+      display: flex;
+      align-items: center;
+      .menu-bar-item {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 10px;
+        font-size: 18px;
+        color: #fff;
+
+        &:hover {
+          background-color: #444;
+        }
+      }
+    }
+  }
+
+  .menu-bar-right {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    .menu-bar-item {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 10px;
+      font-size: 18px;
+      color: #fff;
+    }
+  }
+}

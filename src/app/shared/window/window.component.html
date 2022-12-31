@@ -1,0 +1,17 @@
+<div
+  cdkDrag
+  cdkDragRootElement=".cdk-overlay-pane"
+  cdkDragHandle
+  class="window"
+>
+  <div class="window-header">
+    <div class="window-controls">
+      <div class="close-button" (click)="onCloseClick()"></div>
+      <div class="minimize-button" (click)="onMinimizeClick()"></div>
+      <div class="maximize-button" (click)="onMaximizeClick()"></div>
+    </div>
+  </div>
+  <div class="window-body">
+    <p>{{ data.message }}</p>
+  </div>
+</div>

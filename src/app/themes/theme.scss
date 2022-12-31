@@ -1,0 +1,21 @@
+@import "./dark/variables";
+@import "./light/variables";
+@import "./mixins.scss";
+
+.dark-mode {
+  --background-color: #{$background-dark};
+  --border-color: #{$border-color-dark};
+  --label-color: #{$label-color-dark};
+}
+
+:root {
+  --background-color: #{$background};
+  --border-color: #{$border-color};
+  --label-color: #{$label-color};
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
