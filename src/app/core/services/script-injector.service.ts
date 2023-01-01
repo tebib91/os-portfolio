@@ -1,12 +1,11 @@
-import { Injectable } from '@angular/core';
-
-declare var window: { dataLayer: never[] };
+import { Injectable, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ScriptInjectorService {
-  constructor() {}
+  constructor(@Inject(DOCUMENT) private document: Document) {}
 
   inject(trackingId: string) {
     console.log({ trackingId });
