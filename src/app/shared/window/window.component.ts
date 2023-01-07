@@ -32,7 +32,7 @@ export class WindowComponent {
     injector: Injector
   ) {
     this.outlet = this.components.find(
-      (el) => el.name === data.title.toLocaleLowerCase()
+      (el) => el.name === data?.title?.toLocaleLowerCase()
     )?.component;
   }
 

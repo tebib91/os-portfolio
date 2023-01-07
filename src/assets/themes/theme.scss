@@ -1,0 +1,28 @@
+@import "variables";
+@import "mixins";
+
+@import "typography";
+
+.light-theme {
+  $primary-color: $primary-color;
+  $secondary-color: $secondary-color;
+}
+
+.dark-theme {
+  $primary-color: $dark-primary-color;
+  $secondary-color: $dark-secondary-color;
+}
+
+body {
+  color: $dark-primary-color;
+
+  font-size: $font-size-base;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

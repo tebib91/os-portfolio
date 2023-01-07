@@ -1,37 +1,74 @@
+image: node:16.14.2-bullseye
+
 stages:
+  - dependencies
+  - build
   - test
   - release
-# For recording and parallelization to work you must set your CYPRESS_RECORD_KEY
-# in GitLab repo → Settings → CI/CD → Variables
-variables:
-  CYPRESS_RECORD_KEY: $CYPRESS_RECORD_KEY
-# Caches dependencies using npm lock file as key
-# https://docs.cypress.io/guides/continuous-integration/introduction#Caching
-cache:
-  key:
-    files:
-      - package-lock.json
-  paths:
-    - .npm/ # Moves npm cache inside project per GitLab restrictions
-test:
-  # Uses official Cypress docker image for dependencies
-  # https://docs.cypress.io/guides/continuous-integration/introduction#Official-Cypress-Docker-Images
-  image: cypress/browsers:node16.14.0-chrome99-ff97
-  stage: test
+  - deploy
+
+install_dependencies:
+  stage: dependencies
   script:
-    - npm ci --cache .npm --prefer-offline
-    # Starts web server for E2E tests - replace with your own server invocation
-    # https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
-    - npm run start:ci & # Waits for above
-    # Runs tests in parallel and records to Cypress Dashboard
-    # https://docs.cypress.io/guides/dashboard/projects#Set-up-a-project-to-record
-    # https://docs.cypress.io/guides/guides/parallelization
-    - npx cypress run --browser chrome
-publish:
-  image: node:16
+    - npm install
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+
+build:
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+  only:
+    changes:
+      - "src/"
+      - "package.json"
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+    policy: pull
+
+test:
+  stage: test
+  before_script:
+    - apt-get update
+    - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    - apt install -y ./google-chrome*.deb;
+    - export CHROME_BIN=/usr/bin/google-chrome
+  script:
+    - npm run test -- --no-watch --browsers=ChromeHeadlessCI
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+    policy: pull
+
+release:
   stage: release
   script:
-    - npm ci --cache .npm --prefer-offline
     - npx semantic-release
-  rules:
-    - if: $CI_COMMIT_BRANCH == "master"
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+    policy: pull
+
+deploy:
+  stage: deploy
+  script:
+    - firebase deploy --project portfolio-6725b --token $FIREBASE_TOKEN
+  only:
+    - master

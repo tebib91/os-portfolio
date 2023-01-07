@@ -28,7 +28,10 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
-            "styles": ["src/styles.scss"],
+            "styles": ["src/styles.scss", "src/assets/themes/theme.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/assets/themes"]
+            },
             "scripts": [],
             "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json"
@@ -97,7 +100,10 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
-            "styles": ["src/styles.scss"],
+            "styles": ["src/styles.scss", "src/assets/themes/theme.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/assets/themes"]
+            },
             "scripts": []
           }
         },
@@ -105,6 +111,16 @@
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "os-front:build:production",
+            "firebaseProject": "portfolio-6725b",
+            "firebaseHostingSite": "portfolio-6725b"
           }
         }
       }
