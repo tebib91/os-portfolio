@@ -12,6 +12,6 @@ export class AppComponent {
 
   constructor(private script: ScriptInjectorService) {
     const trackingId = environment.GA_TRACKING_ID;
-    environment.production ? this.script.inject(trackingId) : null;
+    this.script.inject(trackingId);
   }
 }

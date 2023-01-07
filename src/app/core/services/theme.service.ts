@@ -23,13 +23,16 @@ export class ThemeService {
   toggleDarkMode() {
     this.isDarkMode = !this.isDarkMode;
     if (this.isDarkMode) {
-      this.renderer.addClass(this.document.body, 'dark-mode');
+      this.renderer.addClass(this.document.body, 'dark-theme');
+      this.renderer.removeClass(this.document.body, 'light-theme');
       this.snackBar.open('Dark mode enabled', '', {
         duration: 1000,
         verticalPosition: 'top',
       });
     } else {
-      this.renderer.removeClass(this.document.body, 'dark-mode');
+      this.renderer.removeClass(this.document.body, 'dark-theme');
+      this.renderer.addClass(this.document.body, 'light-theme');
+
       this.snackBar.open('Light mode enabled', '', {
         duration: 1000,
         verticalPosition: 'top',

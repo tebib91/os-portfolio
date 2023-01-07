@@ -1,1 +1,23 @@
-<p>calculator works!</p>
+<div class="calculator">
+  <div class="display">{{ displayValue }}</div>
+  <div class="buttons">
+    <button (click)="clear()">C</button>
+    <!-- <button (click)="memoryClear()">MC</button>
+  <button (click)="memoryRecall()">MR</button>
+  <button (click)="memoryAdd()">M+</button>
+  <button (click)="memorySubtract()">M-</button> -->
+    <button (click)="divide()">/</button>
+    <button (click)="multiply()">*</button>
+    <button (click)="subtract()">-</button>
+    <button (click)="add()">+</button>
+    <button (click)="squareRoot()">x²</button>
+    <!-- <button (click)="sin()">sin</button>
+    <button (click)="cos()">cos</button>
+    <button (click)="tan()">tan</button> -->
+    <button *ngFor="let num of numbers" (click)="enterNumber(num)">
+      {{ num }}
+    </button>
+    <button (click)="enterDecimal()">.</button>
+    <button (click)="equals()">=</button>
+  </div>
+</div>

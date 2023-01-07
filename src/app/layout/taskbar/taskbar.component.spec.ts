@@ -1,3 +1,4 @@
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TaskbarComponent } from './taskbar.component';
@@ -9,6 +10,7 @@ describe('TaskbarComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [TaskbarComponent],
+      imports: [MatSnackBarModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TaskbarComponent);
