@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FinderComponent } from './finder.component';
@@ -9,6 +10,7 @@ describe('FinderComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [FinderComponent],
+      imports: [HttpClientModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(FinderComponent);

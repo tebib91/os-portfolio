@@ -1,0 +1,41 @@
+button {
+  padding: 6px 8px;
+  border: none;
+  border-radius: 7px;
+  gap: 10px;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  /* identical to box height, or 123% */
+
+  text-align: center;
+  letter-spacing: -0.08px;
+  &:focus {
+    @include opacity(1);
+    outline: 0 !important;
+  }
+  &.primary {
+    background-color: #007aff;
+    color: white;
+    &:hover {
+      background-color: #057cfc;
+    }
+  }
+  &.secondary {
+    background-color: lightgray;
+    color: black;
+    &:hover {
+      background-color: gray;
+    }
+  }
+  &.disabled {
+    background-color: #f4f5f5;
+    color: white;
+    cursor: not-allowed;
+    &:hover {
+      background-color: gray;
+    }
+  }
+}

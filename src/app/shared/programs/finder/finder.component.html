@@ -1,1 +1,59 @@
-<p>finder works!</p>
+<div class="wrapper">
+  <div class="main-container" *ngIf="data$ | async as data; else loading">
+    <section class="content-section">
+      <!---Section banner-->
+      <div class="content-banner">
+        <img [src]="data.presentation.avatarUrl" alt="" />
+        <div class="content-text">
+          <h1>{{ data.presentation.name }}</h1>
+          <p>{{ data.presentation.description }}</p>
+          <button class="primary">Contacter Moi</button>
+        </div>
+        <img
+          class="content-img"
+          src="assets/owner/technos.webp"
+          alt="technos"
+        />
+      </div>
+    </section>
+
+    <section class="content-section">
+      <!---Section skills-->
+      <div class="content-skills">
+        <ul>
+          <li *ngFor="let item of data.technologies" class="skill">
+            <img [src]="item?.icon" [alt]="item?.name" />
+            <p>{{ item.name }}</p>
+            <button class="primary">Open</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <!---Section jobs-->
+      <div class="content-experiences">
+        <ul class="experiences">
+          <li *ngFor="let item of data.experiences" class="content-experience">
+            <div class="title">
+              <img
+                [src]="item.projects[0].icon"
+                [alt]="item.projects[0].name"
+                srcset=""
+              />
+              <span>{{ item.projects[0].name }}</span>
+            </div>
+            <div class="content">
+              <h3>{{ item.projects[0].postTitle }}</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+                nihil vitae ad rem ipsum laudantium
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+  <ng-template #loading></ng-template>
+</div>

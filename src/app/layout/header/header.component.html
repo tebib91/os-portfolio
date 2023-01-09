@@ -27,10 +27,15 @@
           alt="icon system"
         />
       </li>
-      <li class="menu-bar-item">
+      <li class="menu-bar-item" (click)="controlVisible = !controlVisible">
         <img src="assets/icons-system/icons-system.svg" alt="icon system" />
       </li>
       <li class="menu-bar-item">{{ currentTime | date : "shortTime" }}</li>
     </ul>
   </div>
 </nav>
+
+<!-----Widget---->
+<div class="control_center">
+  <app-control-center [visible]="controlVisible"></app-control-center>
+</div>

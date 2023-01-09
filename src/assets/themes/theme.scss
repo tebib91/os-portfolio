@@ -3,6 +3,11 @@
 
 @import "typography";
 
+//elements
+
+@import "components/input";
+@import "components/buttons";
+
 .light-theme {
   $primary-color: $primary-color;
   $secondary-color: $secondary-color;
