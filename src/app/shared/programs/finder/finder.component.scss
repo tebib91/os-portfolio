@@ -1,0 +1,126 @@
+.wrapper {
+  box-sizing: border-box;
+  width: 800px;
+  height: 500px;
+  /* Light/Alternate/Content/Background */
+  border: 0.5px solid #f4f5f5;
+
+  filter: drop-shadow(0px 20px 25px rgba(0, 0, 0, 0.25));
+  border-radius: 10px;
+  padding: 1rem;
+  & .main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.content-banner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png"),
+    linear-gradient(
+      to right top,
+      #cf4af3,
+      #e73bd7,
+      #f631bc,
+      #fd31a2,
+      #ff3a8b,
+      #ff4b78,
+      #ff5e68,
+      #ff705c,
+      #ff8c51,
+      #ffaa49,
+      #ffc848,
+      #ffe652
+    );
+  gap: 16px;
+  border-radius: 7px;
+  padding: 1rem 0;
+  & img {
+    width: 56px;
+    height: auto;
+  }
+  & .content-text {
+    color: white;
+    text-align: justify;
+  }
+  & .content-img {
+    width: 186px;
+    object-fit: cover;
+    object-position: center;
+    @media screen and (max-width: 570px) {
+      width: 110px;
+    }
+  }
+}
+
+.content-skills {
+  padding: 1rem 0;
+  > ul {
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 25rem;
+  }
+  & .skill {
+    display: flex;
+    align-items: center;
+    & img {
+      width: 28px;
+      border-radius: 6px;
+      margin-right: 16px;
+      flex-shrink: 0;
+    }
+
+    & button {
+      margin-left: auto;
+    }
+    &:hover {
+      background-color: rgb(255 255 255 / 31%);
+      &:first-child {
+        border-radius: 13px 13px 0 0;
+      }
+      &:last-child {
+        border-radius: 0 0 13px 13px;
+      }
+    }
+  }
+}
+
+.content-experiences {
+  > ul {
+    gap: 32px;
+    display: grid;
+    flex-direction: row;
+    grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+
+    gap: 1rem;
+    width: 100%;
+    > li {
+      background: rgba(255, 255, 255, 0.1);
+      /* Shadows/Small */
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
+      border-radius: 12px;
+      height: 164px;
+      padding: 10px;
+      border: 1px solid rgba(16 18 27 / 40%);
+      &:hover {
+        background-color: rgb(255 255 255 / 31%);
+      }
+      & .title {
+        gap: 6px;
+        display: flex;
+        align-items: center;
+        img {
+          width: 18px;
+          height: 18px;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}

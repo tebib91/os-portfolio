@@ -1,0 +1,69 @@
+<div class="wrapper" *ngIf="visible">
+  <div class="controls">
+    <div class="left">
+      <div class="item">
+        <button>
+          <img src="assets/icons-system/wifi.svg" alt="" />
+        </button>
+        <span>Wi-Fi</span>
+        <span>Me</span>
+      </div>
+      <div class="item">
+        <button>
+          <img src="assets/icons-system/radio-waves.svg" alt="" />
+        </button>
+        <span>Bluetooth</span>
+        <span>Off</span>
+      </div>
+      <div class="item">
+        <button>
+          <img src="assets/icons-system/airdrop.svg" alt="" />
+        </button>
+        <span>AirDrop</span>
+        <span>Off</span>
+      </div>
+    </div>
+    <div class="right"></div>
+  </div>
+
+  <div class="range">
+    <div class="title">
+      <label for="brightness">Display</label>
+      <img src="assets/icons-system/chevron-right.svg" alt="chevron right" />
+    </div>
+    <input
+      type="range"
+      name="brightness"
+      id="brightness"
+      min="0"
+      max="100"
+      step="1"
+      value="100"
+      (input)="brightnessChange($event)"
+    />
+  </div>
+  <div class="music">
+    <img class="icon_dock" src="assets/dock/music.png" alt="music icon" />
+    <p>The best songs of 2022</p>
+    <div class="icons">
+      <img src="assets/icons-system/play.svg" alt="play" />
+      <img src="assets/icons-system/forward.svg" alt="chevron right" />
+    </div>
+  </div>
+  <div class="range">
+    <div class="title">
+      <label for="sound">Sound</label>
+      <img src="assets/icons-system/chevron-right.svg" alt="chevron right" />
+    </div>
+    <input
+      type="range"
+      name="sound"
+      id="sound"
+      min="0"
+      max="100"
+      step="1"
+      value="100"
+      (input)="soundChange($event)"
+    />
+  </div>
+</div>

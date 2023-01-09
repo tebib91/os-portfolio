@@ -5,6 +5,7 @@ import { iconsDock } from 'src/app/core/data/data';
 import { Icons } from 'src/app/core/models/icons';
 import { MenuContext } from 'src/app/core/models/menu';
 import { WindowComponent } from 'src/app/shared/window/window.component';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-layout',
@@ -14,6 +15,7 @@ import { WindowComponent } from 'src/app/shared/window/window.component';
 })
 export class LayoutComponent {
   items: MenuContext[] = [{ label: 'change background' }, { label: 'Print' }];
+  currentApplicationVersion = environment.appVersion;
 
   iconsTaskbar$: Observable<Icons[]> = of(iconsDock);
 
@@ -46,7 +48,7 @@ export class LayoutComponent {
   }
 
   getRandomNumber() {
-    let randomNumber = Math.floor(Math.random() * 4) + 1;
+    let randomNumber = Math.floor(Math.random() * 6) + 1;
     while (randomNumber === this.lastRandomNumber) {
       randomNumber = Math.floor(Math.random() * 4) + 1;
     }

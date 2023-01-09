@@ -9,7 +9,7 @@ import { menusBar } from 'src/app/core/data/data';
 export class HeaderComponent {
   items = menusBar;
   batteryLevel!: number;
-
+  controlVisible: boolean = false;
   currentTime = Date.now();
 
   constructor() {

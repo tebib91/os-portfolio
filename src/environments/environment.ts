@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   GA_TRACKING_ID: 'G-HQ721RPGYS',
+  appVersion: require('../../package.json').version + '-dev',
 };
 
 /*
