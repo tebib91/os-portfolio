@@ -13,7 +13,8 @@
     "start:pwa": "ng build && http-server -p 8080 -c-1 dist/os-front",
     "release": "standard-version",
     "prepare": "husky install",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "deploy": "firebase deploy --non-interactive --token $FIREBASE_DEPLOY"
   },
   "private": true,
   "dependencies": {

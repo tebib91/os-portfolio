@@ -9,8 +9,10 @@
     <!-- <span class="taskbar-label">{{ item.label }}</span> -->
   </div>
   <div class="taskbar-item">
+    <label for="theme" [hidden]="true"></label>
     <input
       #ico
+      name="theme"
       class="toggle ico"
       type="checkbox"
       (click)="themeService.toggleDarkMode()"
