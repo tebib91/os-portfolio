@@ -48,3 +48,4 @@ For more detail and examples, you can check the following documentation and webs
 [The website of Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 This should give you all the information you need to format your commits correctly and use semantic-release effectively.
+here is an example "docs(README): Add more details to the API doc"
