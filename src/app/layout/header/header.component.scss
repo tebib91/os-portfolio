@@ -2,56 +2,72 @@
 @import "typography";
 @import "variables";
 
-.menu-bar {
-  display: flex;
-  align-items: center;
-  height: 24px;
-  justify-content: space-between;
+header {
+  width: 100%;
   background-color: $light-quaternary;
-  .menu-bar-left {
-    & ul {
+
+  & nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 24px;
+    margin: 0 12px;
+
+    .menu-bar-left {
       display: flex;
       align-items: center;
-      gap: 16px;
-      & .menu-bar-item {
+      justify-content: space-between;
+
+      .menu-icon {
+        margin-right: 12px;
+        img {
+          width: 18px; /* adjust as needed */
+          height: 18px; /* adjust as needed */
+        }
+      }
+      ul {
         display: flex;
         align-items: center;
-        height: 100%;
-        width: 100%;
-        @include headline-regular();
-        padding: 4px;
-        &:hover {
-          background-color: rgba(255, 255, 255, 0.26);
-          border-radius: 5px;
-          cursor: pointer;
+        gap: 16px;
+        & .menu-bar-item {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+          @include headline-regular();
+          padding: 4px;
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.26);
+            border-radius: 5px;
+            cursor: pointer;
+          }
         }
       }
     }
-  }
 
-  .menu-bar-right {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    & ul {
+    .menu-bar-right {
       display: flex;
       align-items: center;
-      gap: 12px;
-      > .menu-bar-item {
+      margin-left: auto;
+      & ul {
         display: flex;
         align-items: center;
+        gap: 12px;
+        > .menu-bar-item {
+          display: flex;
+          align-items: center;
 
-        @include headline-regular();
-        &:hover {
-          background-color: rgba(255, 255, 255, 0.26);
-          border-radius: 5px;
-          cursor: pointer;
+          @include headline-regular();
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.26);
+            border-radius: 5px;
+            cursor: pointer;
+          }
         }
       }
     }
   }
 }
-
 .battery-icon {
   border-radius: 4px;
   position: relative;

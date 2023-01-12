@@ -25,3 +25,27 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## semantic-release
+
+Here is the list of commit types that conform to the conventional commits specification and can be used with semantic-release:
+
+`feat`: A new feature
+`fix`: A bug fix
+`docs`: Documentation changes
+`style`: Changes that do not affect the meaning of the code (white-space, formatting, missing `semi-colons, etc)
+`refactor`: A code change that neither fixes a bug nor adds a feature
+`perf`: A code change that improves performance
+`test`: Adding missing tests or correcting existing tests
+`build`: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+`ci`: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+`chore`: Other changes that don't modify src or test files
+These commit types are widely used and are the default types used by semantic-release if you're using the default commit-analyzer plugin.
+
+For more detail and examples, you can check the following documentation and websites:
+
+[The official documentation of semantic-release](https://semantic-release.gitbook.io/)
+[The website of Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+
+This should give you all the information you need to format your commits correctly and use semantic-release effectively.
+here is an example "docs(README): Add more details to the API doc"

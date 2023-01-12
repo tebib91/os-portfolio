@@ -1,12 +1,17 @@
 {
-  "branches": ["main"],
+  "branches": ["*"],
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
     "@semantic-release/npm",
-    ["@semantic-release/gitlab",  {
-      "gitlabUrl": "https://gitlab.com"
-    }],
-    "@semantic-release/git"
-  ]
+    "@semantic-release/git",
+    [
+      "@semantic-release/gitlab",
+      {
+        "gitlabUrl": "https://gitlab.com"
+      }
+    ]
+  ],
+  "preset": "angular"
 }

@@ -1,3 +1,25 @@
+# [1.0.0](https://gitlab.com/tebib91/os-front/compare/v0.0.45...v1.0.0) (2023-01-12)
+
+
+### Bug Fixes
+
+* **dependency:** Update package X to version Y ([81ad3d8](https://gitlab.com/tebib91/os-front/commit/81ad3d8a0553593dc93491d01a790f9ce4284f61))
+
+
+* chore!: drop support v1 ([5e83755](https://gitlab.com/tebib91/os-front/commit/5e8375581f3a172dd9c4101b8d93a4f08eca30ad))
+
+
+### Features
+
+*  login and boot ([b739818](https://gitlab.com/tebib91/os-front/commit/b7398184db37abf54f84a714a7a54f4a57801700))
+* **full:** full with window ([b8080a3](https://gitlab.com/tebib91/os-front/commit/b8080a32a977c56c4e513c5f0c75178d70699f64))
+* **pencil:** add 'lint' option ([4396336](https://gitlab.com/tebib91/os-front/commit/43963367d54fb62d4d057deb67c8baee3a6a9d89))
+
+
+### BREAKING CHANGES
+
+* use this version for tag
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.

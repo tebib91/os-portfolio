@@ -8,6 +8,9 @@ import { FinderComponent } from './programs/finder/finder.component';
 import { CalculatorComponent } from './programs/calculator/calculator.component';
 import { MapsComponent } from './programs/maps/maps.component';
 import { ControlCenterComponent } from './widgets/control-center/control-center.component';
+import { BootComponent } from '../pages/boot/boot.component';
+import { LoginComponent } from '../pages/login/login.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -18,12 +21,16 @@ import { ControlCenterComponent } from './widgets/control-center/control-center.
     CalculatorComponent,
     MapsComponent,
     ControlCenterComponent,
+    LoginComponent,
+    BootComponent,
   ],
-  imports: [CommonModule, DragDropModule],
+  imports: [CommonModule, DragDropModule, MatProgressBarModule],
   exports: [
     BackgroundImageComponent,
     ContextMenuComponent,
     ControlCenterComponent,
+    LoginComponent,
+    BootComponent,
   ],
 })
 export class SharedModule {}

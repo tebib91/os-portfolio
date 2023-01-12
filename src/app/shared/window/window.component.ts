@@ -12,6 +12,8 @@ import { CdkDragHandle } from '@angular/cdk/drag-drop';
 import { Program } from 'src/app/core/models/menu';
 import { CalculatorComponent } from '../programs/calculator/calculator.component';
 
+import { Overlay, OverlayRef } from '@angular/cdk/overlay';
+
 @Component({
   selector: 'app-window',
   templateUrl: './window.component.html',
@@ -26,10 +28,16 @@ export class WindowComponent {
     { name: 'calculator', component: CalculatorComponent },
   ];
 
+  maximized = false;
+  initialWidth?: string;
+  initialHeight?: string;
+  private _overlayRef!: OverlayRef;
+
   constructor(
     public dialogRef: MatDialogRef<WindowComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Program,
-    injector: Injector
+    injector: Injector,
+    private _overlay: Overlay
   ) {
     this.outlet = this.components.find(
       (el) => el.name === data?.title?.toLocaleLowerCase()
@@ -42,6 +50,24 @@ export class WindowComponent {
 
   onMaximizeClick(): void {
     // Maximize the window
+    console.log('here');
+    this.maximized = !this.maximized;
+    this.maximized ? this.fullscreen() : this.exitFullscreen();
+  }
+
+  fullscreen() {
+    this.dialogRef.addPanelClass('full-width');
+  }
+  exitFullscreen() {
+    this.dialogRef.removePanelClass('full-width');
+    this._overlayRef = this._overlay.create({
+      positionStrategy: this._overlay
+        .position()
+        .global()
+        .centerHorizontally()
+        .centerVertically(),
+      hasBackdrop: true,
+    });
   }
 
   onCloseClick(): void {
