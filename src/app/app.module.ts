@@ -9,6 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CoreModule } from './core/core.module';
+import { LoginComponent } from './pages/login/login.component';
+import { BootComponent } from './pages/boot/boot.component';
 
 @NgModule({
   declarations: [AppComponent],

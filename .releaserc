@@ -1,12 +1,32 @@
 {
-  "branches": ["main"],
+  "branches": [
+    "*",
+    {
+      "name": "beta",
+      "channel": "beta",
+      "prerelease": true
+    }
+  ],
   "plugins": [
-    "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "eslint"
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "eslint"
+      }
+    ],
     "@semantic-release/npm",
-    ["@semantic-release/gitlab",  {
-      "gitlabUrl": "https://gitlab.com"
-    }],
+    [
+      "@semantic-release/gitlab",
+      {
+        "gitlabUrl": "https://gitlab.com"
+      }
+    ],
     "@semantic-release/git"
   ]
 }
