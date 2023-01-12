@@ -21,12 +21,13 @@
       }
     ],
     "@semantic-release/npm",
+    "@semantic-release/git",
     [
       "@semantic-release/gitlab",
       {
         "gitlabUrl": "https://gitlab.com"
       }
-    ],
-    "@semantic-release/git"
-  ]
+    ]
+  ],
+  "preset": "angular"
 }

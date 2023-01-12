@@ -1,39 +1,41 @@
-<nav class="menu-bar">
-  <div class="menu-bar-left">
-    <ul>
-      <li class="menu-bar-item">
-        <img src="assets/icons/apple-white.png" alt="Apple logo" />
-      </li>
-      <li class="menu-bar-item" *ngFor="let item of items">
-        <span>{{ item.label }}</span>
-      </li>
-    </ul>
-  </div>
-  <div class="menu-bar-right">
-    <ul>
-      <li class="menu-bar-item">
-        <div class="battery-icon">
-          <div class="battery-container">
-            <div
-              class="battery-level"
-              [ngStyle]="{ height: batteryLevel + '%' }"
-            ></div>
+<header>
+  <nav class="menu-bar">
+    <div class="menu-bar-left">
+      <div class="menu-icon">
+        <img src="assets/icons-system/apple.svg" alt="Apple logo" />
+      </div>
+      <ul>
+        <li class="menu-bar-item" *ngFor="let item of items">
+          <span>{{ item.label }}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="menu-bar-right">
+      <ul>
+        <li class="menu-bar-item">
+          <div class="battery-icon">
+            <div class="battery-container">
+              <div
+                class="battery-level"
+                [ngStyle]="{ height: batteryLevel + '%' }"
+              ></div>
+            </div>
           </div>
-        </div>
-      </li>
-      <li class="menu-bar-item">
-        <img
-          src="assets/icons-system/icons-system-user.svg"
-          alt="icon system"
-        />
-      </li>
-      <li class="menu-bar-item" (click)="controlVisible = !controlVisible">
-        <img src="assets/icons-system/icons-system.svg" alt="icon system" />
-      </li>
-      <li class="menu-bar-item">{{ currentTime | date : "shortTime" }}</li>
-    </ul>
-  </div>
-</nav>
+        </li>
+        <li class="menu-bar-item">
+          <img
+            src="assets/icons-system/icons-system-user.svg"
+            alt="icon system"
+          />
+        </li>
+        <li class="menu-bar-item" (click)="controlVisible = !controlVisible">
+          <img src="assets/icons-system/icons-system.svg" alt="icon system" />
+        </li>
+        <li class="menu-bar-item">{{ currentTime | date : "shortTime" }}</li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
 <!-----Widget---->
 <div class="control_center">
