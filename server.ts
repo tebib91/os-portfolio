@@ -6,6 +6,9 @@ import * as express from 'express';
 import { existsSync } from 'fs';
 import { join } from 'path';
 
+(global as any).WebSocket = require('ws');
+(global as any).XMLHttpRequest = require('xhr2');
+
 const domino = require('domino');
 const fs = require('fs');
 const path = require('path');

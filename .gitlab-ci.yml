@@ -21,7 +21,7 @@ install_dependencies:
 build:
   stage: build
   script:
-    - npm run build
+    - npm run build:ssr
   artifacts:
     paths:
       - dist/

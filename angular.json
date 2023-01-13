@@ -119,7 +119,6 @@
             "prerender": false,
             "ssr": true,
             "browserTarget": "os-front:build:production",
-            "serverTarget": "os-front:server:production",
             "firebaseProject": "portfolio-6725b",
             "firebaseHostingSite": "portfolio-6725b"
           }

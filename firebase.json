@@ -1,7 +1,7 @@
 {
   "hosting": {
     "target": "os-front",
-    "public": "dist/os-front",
+    "public": "dist/os-front/browser",
     "ignore": ["**/.*"],
     "headers": [
       {
@@ -26,7 +26,7 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "/index.html"
+        "destination": "ssr"
       }
     ]
   }
