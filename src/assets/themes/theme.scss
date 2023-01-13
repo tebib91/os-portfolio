@@ -3,6 +3,8 @@
 
 @import "typography";
 
+@import "responsive";
+
 //elements
 
 @import "components/input";
@@ -12,12 +14,16 @@
   --alternate-content-background: rgba(244, 245, 245, 0.75);
   --alternate-content-background-border: #f4f5f5;
   --quaternary: rgba(0, 0, 0, 0.1);
+  --text-color: #000000;
+  --window-background: #fff;
 }
 
 .dark-theme {
   --alternate-content-background: rgba(255, 255, 255, 0.1);
   --alternate-content-background-border: rgba(255, 255, 255, 0.26);
   --quaternary: rgba(255, 255, 255, 0.1);
+  --text-color: #fff;
+  --window-background: rgba(50, 50, 50, 0.95);
 }
 body {
   color: $white;

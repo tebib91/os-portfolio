@@ -2,9 +2,7 @@
   box-sizing: border-box;
   width: 800px;
   height: 500px;
-  /* Light/Alternate/Content/Background */
-  border: 0.5px solid #f4f5f5;
-
+  color: var(--text-color);
   filter: drop-shadow(0px 20px 25px rgba(0, 0, 0, 0.25));
   border-radius: 10px;
   padding: 1rem;
@@ -59,16 +57,19 @@
 
 .content-skills {
   padding: 1rem 0;
+  height: 25rem;
+
   > ul {
     gap: 16px;
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
-    height: 25rem;
+    align-items: inherit;
   }
   & .skill {
     display: flex;
     align-items: center;
+    margin: 0 12px;
     & img {
       width: 28px;
       border-radius: 6px;
