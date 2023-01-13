@@ -1,3 +1,10 @@
+## [1.0.1](https://gitlab.com/tebib91/os-front/compare/v1.0.0...v1.0.1) (2023-01-13)
+
+
+### Bug Fixes
+
+* **taskbar:** fix  color switch ([85294cb](https://gitlab.com/tebib91/os-front/commit/85294cb6176d4ea36d63437858ab188c8dd11602))
+
 # [1.0.0](https://gitlab.com/tebib91/os-front/compare/v0.0.45...v1.0.0) (2023-01-12)
 
 
