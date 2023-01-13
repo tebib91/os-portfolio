@@ -1,3 +1,10 @@
+## [1.2.1](https://gitlab.com/tebib91/os-front/compare/v1.2.0...v1.2.1) (2023-01-13)
+
+
+### Bug Fixes
+
+* **firebase:** fix firebase deploy ([dc102ac](https://gitlab.com/tebib91/os-front/commit/dc102ac7f9495737136a4d95b8f30e35d3be493c))
+
 # [1.2.0](https://gitlab.com/tebib91/os-front/compare/v1.1.0...v1.2.0) (2023-01-13)
 
 
