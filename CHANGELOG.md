@@ -1,3 +1,16 @@
+# [1.1.0](https://gitlab.com/tebib91/os-front/compare/v1.0.2...v1.1.0) (2023-01-13)
+
+
+### Bug Fixes
+
+* **finder:** fix design ([8086d9f](https://gitlab.com/tebib91/os-front/commit/8086d9fb560165c08f5cb89c922150860f45fb46))
+* **package:** fix package npm ([c0c560c](https://gitlab.com/tebib91/os-front/commit/c0c560c688853122e6ebf5cbc62b890469199699))
+
+
+### Features
+
+* **init:** add angular universal ([15dd07b](https://gitlab.com/tebib91/os-front/commit/15dd07b3ff8d32aebc37a9458ea5e7b945cc2a9b))
+
 ## [1.0.2](https://gitlab.com/tebib91/os-front/compare/v1.0.1...v1.0.2) (2023-01-13)
 
 
