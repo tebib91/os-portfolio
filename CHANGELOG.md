@@ -1,3 +1,10 @@
+## [1.0.2](https://gitlab.com/tebib91/os-front/compare/v1.0.1...v1.0.2) (2023-01-13)
+
+
+### Bug Fixes
+
+* **window:** fix window design ([82de326](https://gitlab.com/tebib91/os-front/commit/82de326a033790a1b56486d38b30b41d3bd65950))
+
 ## [1.0.1](https://gitlab.com/tebib91/os-front/compare/v1.0.0...v1.0.1) (2023-01-13)
 
 
