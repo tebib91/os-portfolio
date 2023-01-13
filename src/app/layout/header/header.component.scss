@@ -4,7 +4,7 @@
 
 header {
   width: 100%;
-  background-color: $light-quaternary;
+  background-color: var(--quaternary);
 
   & nav {
     display: flex;
