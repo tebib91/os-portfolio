@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, HostListener, Inject } from '@angular/core';
+import { Component, HostListener, Inject, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -21,12 +21,11 @@ export class BootComponent {
 
   constructor(
     private router: Router,
-    @Inject(DOCUMENT) private document: any
+    @Inject(DOCUMENT) private document: any,
+    private renderer2: Renderer2
   ) {}
 
-  ngOnInit() {
-    this.elem = document.documentElement;
-  }
+  ngOnInit() {}
 
   chkScreenMode() {
     if (document.fullscreenElement) {

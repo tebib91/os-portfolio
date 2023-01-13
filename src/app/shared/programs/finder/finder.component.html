@@ -19,14 +19,20 @@
 
     <section class="content-section">
       <!---Section skills-->
+
       <div class="content-skills">
-        <ul>
+        <div class="info">
+          <h3>Mail</h3>
+          <p>GET to inboxzeor in no time</p>
+          <span>Explore the features</span>
+        </div>
+        <!-- <ul>
           <li *ngFor="let item of data.technologies" class="skill">
             <img [src]="item?.icon" [alt]="item?.name" />
             <p>{{ item.name }}</p>
             <button class="primary">Open</button>
           </li>
-        </ul>
+        </ul> -->
       </div>
     </section>
 
@@ -35,21 +41,16 @@
       <div class="content-experiences">
         <ul class="experiences">
           <li *ngFor="let item of data.experiences" class="content-experience">
-            <div class="title">
-              <img
-                [src]="item.projects[0].icon"
-                [alt]="item.projects[0].name"
-                srcset=""
-              />
-              <span>{{ item.projects[0].name }}</span>
+            <img
+              [src]="item.projects[0].icon"
+              [alt]="item.projects[0].name"
+              srcset=""
+            />
+            <div class="text">
+              <p>{{ item.projects[0].name }}</p>
+              <span>{{ item.projects[0].postTitle }}</span>
             </div>
-            <div class="content">
-              <h3>{{ item.projects[0].postTitle }}</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
-                nihil vitae ad rem ipsum laudantium
-              </p>
-            </div>
+            <button>OPEN</button>
           </li>
         </ul>
       </div>

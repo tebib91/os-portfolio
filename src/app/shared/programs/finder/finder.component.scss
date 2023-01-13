@@ -1,3 +1,5 @@
+@import "variables";
+
 .wrapper {
   box-sizing: border-box;
   width: 800px;
@@ -56,78 +58,65 @@
 }
 
 .content-skills {
-  margin: 1rem 0;
-  height: 25rem;
-  overflow-y: scroll;
-
-  > ul {
-    gap: 16px;
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
-    align-items: inherit;
-    border: 1px solid var(--finder-bg-color);
-    background-color: var(--finder-bg);
-    border-radius: 14px;
-  }
-  & .skill {
-    display: flex;
-    align-items: center;
-    // margin: 0 12px;
-    padding: 10px 18px;
-    white-space: nowrap;
-    transition: 0.3s;
-    & img {
-      width: 28px;
-      border-radius: 6px;
-      margin-right: 16px;
-      flex-shrink: 0;
+  background: #5856d6;
+  height: 160px;
+  display: flex;
+  & .info {
+    width: 136px;
+    padding: 12px;
+    background: rgba(244, 245, 245, 0.85);
+    backdrop-filter: blur(48px);
+    h3 {
+      font: $caption-1-bold;
+      color: rgba(0, 0, 0, 0.5);
     }
-
-    & button {
-      margin-left: auto;
+    p {
+      font: $headline-regular;
     }
-    &:hover {
-      background-color: var(--finder-bg-color);
-      &:first-child {
-        border-radius: 13px 13px 0 0;
-      }
-      &:last-child {
-        border-radius: 0 0 13px 13px;
-      }
+    span {
+      font: $footnote-regular;
+      color: rgba(0, 0, 0, 0.5);
     }
   }
 }
 
 .content-experiences {
-  > ul {
-    gap: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+  h2 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+  }
+  > .experiences {
+    gap: 12px;
     display: grid;
     flex-direction: row;
     grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
 
     gap: 1rem;
     width: 100%;
-    > li {
-      background: rgba(255, 255, 255, 0.1);
-      /* Shadows/Small */
-      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
-      border-radius: 12px;
-      height: 164px;
-      padding: 10px;
-      border: 1px solid rgba(16 18 27 / 40%);
-      &:hover {
-        background-color: rgb(255 255 255 / 31%);
+    > .content-experience {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 0px;
+      gap: 21px;
+      height: 44px;
+      img {
+        width: 36px;
+        height: 36px;
+        border-radius: 5px;
       }
       & .title {
-        gap: 6px;
+        gap: 12px;
         display: flex;
         align-items: center;
-        img {
-          width: 18px;
-          height: 18px;
-          border-radius: 5px;
-        }
+        flex-direction: row;
       }
     }
   }

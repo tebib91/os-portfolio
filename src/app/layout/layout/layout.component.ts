@@ -21,7 +21,13 @@ export class LayoutComponent {
 
   urlImage = '/assets/backgrounds/background-1.webp';
   lastRandomNumber!: number;
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) {
+    this.openDialog({
+      icon: 'finder.png',
+      label: 'Finder',
+      component: 'FinderComponent',
+    });
+  }
 
   handleMenu(item: MenuContext) {
     item.label === 'change background' ? this.changeBackground() : null;

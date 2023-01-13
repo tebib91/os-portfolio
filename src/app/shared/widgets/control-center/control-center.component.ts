@@ -1,4 +1,10 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'app-control-center',
@@ -9,11 +15,12 @@ export class ControlCenterComponent {
   @Input() visible!: boolean;
 
   @ViewChild('wrapper', { static: false }) wrapper!: ElementRef;
+  private unlistener!: () => void;
 
-  constructor() {}
+  constructor(private renderer2: Renderer2) {}
 
   ngOnInit(): void {
-    document.addEventListener('click', (event) => {
+    this.unlistener = this.renderer2.listen('document', 'click', (event) => {
       console.log('click', this.visible);
       if (this.visible && !this.wrapper?.nativeElement.contains(event.target)) {
         // this.visible = false;
@@ -31,5 +38,9 @@ export class ControlCenterComponent {
   soundChange(e: any) {
     console.log('e', e.target.value);
     let soundValue = e.target.value || 100;
+  }
+
+  ngOnDestroy() {
+    this.unlistener();
   }
 }
