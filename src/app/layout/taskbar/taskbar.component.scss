@@ -3,7 +3,7 @@
   bottom: 0;
   display: flex;
   align-items: center;
-  background-color: var(--background-color);
+  background-color: var(--alternate-content-background);
   border: 0.5px solid var(--border-color);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   padding: 6px 8px 2px;
@@ -12,7 +12,6 @@
   border-radius: 16px;
   .taskbar-item {
     width: 48px;
-    // height: 56px;
     margin: 0 10px;
     transition: transform 0.2s ease-out;
     > img {
@@ -24,13 +23,6 @@
     }
     &:nth-last-child(2) {
       border-left: 1px solid rgba(0, 0, 0, 0.1);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .taskbar-item {
-      width: 36px;
-      height: 40px;
     }
   }
 }
