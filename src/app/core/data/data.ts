@@ -157,7 +157,7 @@ export const me: CvFinder = {
           name: 'SNCF Connect & Tech',
           title: 'Application centralization du systeme SNCF de transport ',
           postTitle: 'Consultant Fullstack JS',
-          icon: 'https://media-exp1.licdn.com/dms/image/C560BAQGlyjj9SvzDYw/company-logo_200_200/0/1641996985761?e=1673481600&v=beta&t=nNO9Kz_In7weoZACn92q02qt3_AM2Cb7Ti1MbCQCbP0',
+          icon: 'assets/owner/sncf.svg',
           description:
             'la transformation numérique du groupe SNCF pour adresser le client dans l’ensemble de son parcours de mobilité et ses interactions avec SNCFla',
           link: '',

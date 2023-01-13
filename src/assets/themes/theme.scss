@@ -16,6 +16,9 @@
   --quaternary: rgba(0, 0, 0, 0.1);
   --text-color: #000000;
   --window-background: #fff;
+  --grid-border: #e6e6e6;
+  --finder-bg-color: rgba(16 18 27 / 40%);
+  --finder-bg: rgb(146 151 179 / 13%);
 }
 
 .dark-theme {
@@ -24,6 +27,8 @@
   --quaternary: rgba(255, 255, 255, 0.1);
   --text-color: #fff;
   --window-background: rgba(50, 50, 50, 0.95);
+  --grid-border: #1a1a1a;
+  --finder-bg-color: rgb(255 255 255 / 31%);
 }
 body {
   color: $white;
@@ -31,7 +36,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
-
+// OVERIGHT
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  background-color: unset !important;
+}
 ul {
   list-style: none;
   margin: 0;
@@ -51,3 +59,37 @@ ul {
     }
   }
 }
+
+// :root {
+//   --theme-bg-color: rgba(16 18 27 / 40%);
+//   --content-bg: rgb(146 151 179 / 13%);
+//   --border-color: rgba(113 119 144 / 25%);
+//   --theme-color: #f9fafb;
+//   --inactive-color: rgb(113 119 144 / 78%);
+//   --body-font: "Poppins", sans-serif;
+//   --hover-menu-bg: rgba(12 15 25 / 30%);
+//   --content-title-color: #999ba5;
+//   --button-inactive: rgb(249 250 251 / 55%);
+//   --dropdown-bg: #21242d;
+//   --dropdown-hover: rgb(42 46 60);
+//   --popup-bg: rgb(22 25 37);
+//   --search-bg: #14162b;
+//   --overlay-bg: rgba(36, 39, 59, 0.3);
+//   --scrollbar-bg: rgb(1 2 3 / 40%);
+// }
+
+// .light-mode {
+//   --theme-bg-color: rgb(255 255 255 / 31%);
+//   --theme-color: #3c3a3a;
+//   --inactive-color: #333333;
+//   --button-inactive: #3c3a3a;
+//   --search-bg: rgb(255 255 255 / 31%);
+//   --dropdown-bg: #f7f7f7;
+//   --overlay-bg: rgb(255 255 255 / 30%);
+//   --dropdown-hover: rgb(236 236 236);
+//   --border-color: rgb(255 255 255 / 35%);
+//   --popup-bg: rgb(255 255 255);
+//   --hover-menu-bg: rgba(255 255 255 / 35%);
+//   --scrollbar-bg: rgb(255 253 253 / 57%);
+//   --content-title-color: --theme-color;
+// }
