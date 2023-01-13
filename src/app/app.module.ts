@@ -15,7 +15,7 @@ import { BootComponent } from './pages/boot/boot.component';
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     OverlayModule,
