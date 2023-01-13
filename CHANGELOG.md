@@ -1,3 +1,10 @@
+# [1.2.0](https://gitlab.com/tebib91/os-front/compare/v1.1.0...v1.2.0) (2023-01-13)
+
+
+### Features
+
+* **ssr:** add first version of ssr ([ceb2407](https://gitlab.com/tebib91/os-front/commit/ceb2407d851c375502b3e4e96fbe8f5ca693170b))
+
 # [1.1.0](https://gitlab.com/tebib91/os-front/compare/v1.0.2...v1.1.0) (2023-01-13)
 
 
