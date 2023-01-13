@@ -11,13 +11,6 @@ export class BootComponent {
   progressBarValue = 0;
   elem: any;
   isFullScreen = false;
-  @HostListener('document:fullscreenchange', ['$event'])
-  @HostListener('document:webkitfullscreenchange', ['$event'])
-  @HostListener('document:mozfullscreenchange', ['$event'])
-  @HostListener('document:MSFullscreenChange', ['$event'])
-  fullscreenmodes() {
-    this.chkScreenMode();
-  }
 
   constructor(
     private router: Router,
@@ -25,36 +18,29 @@ export class BootComponent {
     private renderer2: Renderer2
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.elem = document.documentElement;
+  }
 
   chkScreenMode() {
-    if (document.fullscreenElement) {
-      //fullscreen
-      this.isFullScreen = true;
-      this.navigateToHome();
-    } else {
-      //not in full screen
-      this.isFullScreen = false;
-    }
+    this.toggleFullScreen();
+    this.isFullScreen = true;
+    this.navigateToHome();
   }
-  openFullscreen() {
-    if (this.elem.requestFullscreen) {
-      this.elem.requestFullscreen();
-    } else if (this.elem.mozRequestFullScreen) {
-      /* Firefox */
-      this.elem.mozRequestFullScreen();
-    } else if (this.elem.webkitRequestFullscreen) {
-      /* Chrome, Safari and Opera */
-      this.elem.webkitRequestFullscreen();
-    } else if (this.elem.msRequestFullscreen) {
-      /* IE/Edge */
+
+  toggleFullScreen() {
+    let methodToBeInvoked =
+      this.elem.requestFullscreen ||
+      this.elem.webkitRequestFullscreen() ||
+      this.elem.mozRequestFullScreen() ||
       this.elem.msRequestFullscreen();
-    }
+    if (methodToBeInvoked) methodToBeInvoked.call(this.elem);
   }
+
   navigateToHome() {
     let interval = setInterval(() => {
       this.progressBarValue =
-        this.progressBarValue + Math.floor(Math.random() * 10);
+        this.progressBarValue + Math.floor(Math.random() * 5);
       if (this.progressBarValue >= 100) {
         console.log(this.progressBarValue);
         this.progressBarValue = 100;

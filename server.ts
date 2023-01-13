@@ -6,6 +6,22 @@ import * as express from 'express';
 import { existsSync } from 'fs';
 import { join } from 'path';
 
+const domino = require('domino');
+const fs = require('fs');
+const path = require('path');
+const distFolder = join(process.cwd(), 'dist/os-front/browser');
+const template = fs
+  .readFileSync(path.join(distFolder, 'index.html'))
+  .toString();
+const win = domino.createWindow(template.toString());
+global['window'] = win;
+global['document'] = win.document;
+global['self'] = win;
+global['IDBIndex'] = win.IDBIndex;
+global['document'] = win.document;
+global['navigator'] = win.navigator;
+global['getComputedStyle'] = win.getComputedStyle;
+
 import { AppServerModule } from './src/main.server';
 
 // The Express app is exported so that it can be used by serverless Functions.

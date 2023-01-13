@@ -19,6 +19,7 @@
   --grid-border: #e6e6e6;
   --finder-bg-color: rgba(16 18 27 / 40%);
   --finder-bg: rgb(146 151 179 / 13%);
+  --mac-grey: rgb(119, 119, 119);
 }
 
 .dark-theme {
@@ -40,6 +41,7 @@ body {
 .mat-mdc-dialog-container .mdc-dialog__surface {
   background-color: unset !important;
 }
+
 ul {
   list-style: none;
   margin: 0;

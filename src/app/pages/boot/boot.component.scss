@@ -19,6 +19,7 @@
       margin: 1rem;
     }
     > .full {
+      background-color: transparent;
       position: relative;
       z-index: 0;
       height: auto;
@@ -71,14 +72,12 @@
         animation: rotate 2s linear infinite;
       }
     }
-    ::ng-deep .mat-progress-bar {
-      border-radius: 25px;
+    mat-progress-bar {
+      text-align: initial;
     }
-    ::ng-deep .mat-progress-bar-fill::after {
-      background-color: #fff;
-    }
-    ::ng-deep .mat-progress-bar-buffer {
-      background-color: rgb(119, 119, 119);
+    ::ng-deep .mdc-linear-progress__bar-inner {
+      border-radius: 6px !important;
+      border-color: var(--white) !important;
     }
   }
 }
