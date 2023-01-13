@@ -8,19 +8,16 @@
 @import "components/input";
 @import "components/buttons";
 
-.light-theme {
-  $primary-color: $primary-color;
-  $secondary-color: $secondary-color;
+:root {
+  --alternate-content-background: rgba(244, 245, 245, 0.75);
+  --alternate-content-background-border: #f4f5f5;
 }
 
 .dark-theme {
-  $primary-color: $dark-primary-color;
-  $secondary-color: $dark-secondary-color;
+  --alternate-content-background: rgba(255, 255, 255, 0.1);
+  --alternate-content-background-border: rgba(255, 255, 255, 0.26);
 }
-
 body {
-  color: $dark-primary-color;
-
   font-size: $font-size-base;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
