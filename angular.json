@@ -113,16 +113,6 @@
             "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         },
-        "deploy": {
-          "builder": "@angular/fire:deploy",
-          "options": {
-            "prerender": false,
-            "ssr": true,
-            "browserTarget": "os-front:build:production",
-            "firebaseProject": "portfolio-6725b",
-            "firebaseHostingSite": "portfolio-6725b"
-          }
-        },
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
