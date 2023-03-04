@@ -1,41 +1,82 @@
+// Button styles
 button {
-  padding: 6px 8px;
-  border: none;
-  border-radius: 7px;
-  gap: 10px;
-  cursor: pointer;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 16px;
-  /* identical to box height, or 123% */
+  // Default size
+  padding: $button-padding;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
 
-  text-align: center;
-  letter-spacing: -0.08px;
+  // Colors and borders
+  background-color: $button-background-color;
+  color: $button-color;
+  border-radius: $button-border-radius;
+  border: $button-border;
+
+  // Transitions
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $button-hover-background-color;
+    color: $button-hover-color;
+  }
+
   &:focus {
-    @include opacity(1);
-    outline: 0 !important;
+    outline: none;
+    box-shadow: $button-focus-box-shadow;
   }
+
+  &:active {
+    background-color: darken($button-background-color, 10%);
+  }
+
+  // Small size
+  &.small {
+    padding: $button-small-padding;
+    font-size: $button-small-font-size;
+  }
+
+  // Large size
+  &.large {
+    padding: $button-large-padding;
+    font-size: $button-large-font-size;
+  }
+
+  // Primary style
   &.primary {
-    background-color: #007aff;
-    color: white;
+    background-color: $button-background-color;
+    color: $button-color;
+
     &:hover {
-      background-color: #057cfc;
+      background-color: $button-hover-background-color;
+      color: $button-hover-color;
+    }
+
+    &:active {
+      background-color: darken($button-background-color, 10%);
     }
   }
-  &.secondary {
-    background-color: lightgray;
-    color: black;
+
+  // Round style
+  &.round {
+    width: 28px;
+    height: 28px;
+    background-color: $button-background-color;
+    border-radius: 16px;
+
     &:hover {
-      background-color: gray;
+      background-color: $button-hover-background-color;
+    }
+
+    &:active {
+      background-color: darken($button-background-color, 10%);
     }
   }
-  &.disabled {
-    background-color: #f4f5f5;
-    color: white;
-    cursor: not-allowed;
-    &:hover {
-      background-color: gray;
+  &.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      fill: currentColor;
     }
   }
 }

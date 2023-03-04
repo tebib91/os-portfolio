@@ -5,7 +5,7 @@ $light-label: #000000;
 $light-link: #0068da;
 $light-placeholder-text: #000000;
 $light-quaternary: #000000;
-$light-secondary: #000000;
+$light-secondary: rgba(0, 0, 0, 0.5);
 $light-separator: #000000;
 $light-text: #000000;
 $light-alternate-selected-control-text: #ffffff;
@@ -115,4 +115,22 @@ $footnote-bold: 600 0.625rem/0.8125rem SF Pro Display;
 $caption-1-regular: 400 0.625rem/0.8125rem SF Pro Display;
 $caption-1-bold: 500 0.625rem/0.8125rem SF Pro Display;
 $caption-2-regular: 400 0.625rem/0.8125rem SF Pro Display;
-$caption-2-bold: 500 0.625rem/0.8125rem SF Pro Display;
+$caption-2-bold: 500 0.825rem/0.8125rem SF Pro Display;
+
+//button
+$button-padding: 6px 8px;
+$button-background-color: #007aff;
+$button-color: #fff;
+$button-border-radius: 7px;
+$button-border: none;
+$button-font-size: 13px;
+$button-font-weight: 400;
+$button-hover-color: #fff;
+$button-hover-background-color: #0069d9;
+$button-focus-box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+// Button sizes
+$button-small-padding: 5px 10px;
+$button-small-font-size: 12px;
+
+$button-large-padding: 12px 20px;
+$button-large-font-size: 16px;

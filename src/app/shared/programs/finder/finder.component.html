@@ -17,42 +17,35 @@
       </div>
     </section>
 
+    <!---Section skills-->
     <section class="content-section">
-      <!---Section skills-->
+      <h3>Technologies</h3>
 
       <div class="content-skills">
-        <div class="info">
-          <h3>Mail</h3>
-          <p>GET to inboxzeor in no time</p>
-          <span>Explore the features</span>
+        <div class="skill" *ngFor="let item of data.technologies">
+          <img [src]="item.icon" [alt]="item.name" />
+          <p>{{ item.name }}</p>
+          <button class="primary" (click)="navigateUrl(item.link)">Open</button>
         </div>
-        <!-- <ul>
-          <li *ngFor="let item of data.technologies" class="skill">
-            <img [src]="item?.icon" [alt]="item?.name" />
-            <p>{{ item.name }}</p>
-            <button class="primary">Open</button>
-          </li>
-        </ul> -->
       </div>
     </section>
 
     <section class="content-section">
       <!---Section jobs-->
-      <div class="content-experiences">
-        <ul class="experiences">
-          <li *ngFor="let item of data.experiences" class="content-experience">
-            <img
-              [src]="item.projects[0].icon"
-              [alt]="item.projects[0].name"
-              srcset=""
-            />
+      <h3>Poste Occupés</h3>
+      <div class="app-cards">
+        <div class="app-card" *ngFor="let item of data.experiences">
+          <div class="back">
+            <img [src]="item.projects[0].backgroundImg" alt="" />
+          </div>
+          <div class="content">
             <div class="text">
               <p>{{ item.projects[0].name }}</p>
               <span>{{ item.projects[0].postTitle }}</span>
             </div>
-            <button>OPEN</button>
-          </li>
-        </ul>
+            <button class="primary small">Ouvrir</button>
+          </div>
+        </div>
       </div>
     </section>
   </div>

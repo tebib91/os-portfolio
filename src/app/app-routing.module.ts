@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./layout/layout.module').then((m) => m.LayoutModule),
   },
-  { path: '', redirectTo: '/boot', pathMatch: 'full' },
+  { path: '**', redirectTo: '/boot', pathMatch: 'full' },
 ];
 
 @NgModule({

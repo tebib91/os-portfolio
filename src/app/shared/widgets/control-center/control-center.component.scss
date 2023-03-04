@@ -1,7 +1,7 @@
+@import "variables";
 .wrapper {
   position: absolute;
   width: 304px;
-  height: 380px;
   background: rgba(255, 255, 255, 0.75);
   /* Light/Alternate/Content/Background */
   top: 28px;
@@ -17,6 +17,7 @@
   align-items: flex-start;
   padding: 10px;
   gap: 10px;
+  color: $light-text;
 }
 
 .range {
@@ -69,47 +70,76 @@
 
 .controls {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 10px 6px;
   gap: 10px;
-  background: rgba(255, 255, 255, 0.75);
-  /* Light/Alternate/Content/Background */
-
-  border: 0.5px solid #f4f5f5;
+  grid-area: 1 / 1 / 5 / 3;
+  width: 136px;
+  background: #ffffff;
   /* Shadows/Small */
 
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
   border-radius: 10px;
-
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  & .left {
+  & .item {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 0px;
-    gap: 2px;
-    & .item {
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+    color: black;
+    .text {
       display: flex;
-      button {
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
-        border: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
+      font: $caption-2-bold;
+
+      & :last-child {
+        color: var(--light-secondary);
+        font: $caption-2-regular;
       }
     }
   }
+}
 
-  & .right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 0px;
-    gap: 2px;
+.controls-wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  text-align: center;
+}
+.disturb {
+  padding: 18px 10px;
+  gap: 10px;
+  grid-area: 3 / 3 / 5 / 5;
+  width: 136px;
+  background: #ffffff;
+  grid-area: 1 / 3 / 3 / 5;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font: $caption-2-bold;
+
+  img {
+    width: 28px;
+    height: 28px;
   }
+}
+
+.keyboard {
+  grid-area: 3 / 4 / 5 / 5;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 6px 4px;
+  gap: 2px;
+}
+.mirror {
+  grid-area: 3 / 3 / 5 / 4;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 6px 4px;
+  gap: 2px;
 }

@@ -161,6 +161,8 @@ export const me: CvFinder = {
           description:
             'la transformation numérique du groupe SNCF pour adresser le client dans l’ensemble de son parcours de mobilité et ses interactions avec SNCFla',
           link: '',
+          backgroundImg:
+            'https://cdn.lesnumeriques.com/news/17/175503/a98ca522-sncf-connect.jpeg',
           technos: [
             {
               name: 'Amazon AWS',
@@ -190,6 +192,9 @@ export const me: CvFinder = {
           postTitle: 'Consultant Fullstack Angular 13/ NodeJS',
           icon: 'https://static.s-sfr.fr/media/hs-logo.svg',
           link: 'https://rmcbfmplay.com',
+          backgroundImg:
+            'https://alloforfait.fr/wp-content/uploads/2021/06/rmc-bfm-play-300x200.jpg.webp',
+
           description:
             "Dans le cadre de sa politique de mettre en place une plateforme d'IPTV Streaming Apps, SFR a mis en place pour ses clients plusieurs applications de streaming\ntelsque : RMC, BFM PLAY SFR TV + Projet de Migration du CMS BEAST des\n  contenus TV de SFR et des sites web www.rmcsport.tv, www.bfmrmcplay.com\n  www.tv.sfr.fr.\n  Le projet repose essentiellement sur les rubriques suivantes :\n  *Rubrique des chaines en LIVE\n  *Rubrique des chaines en LIVE REPLAY\n  *Rubrique VOD (films, séries,...)\n*Rubrique GUIDE",
           technos: [
@@ -231,6 +236,9 @@ export const me: CvFinder = {
           postTitle: 'Consultant Fullstack Angular 10/ NodeJS',
           icon: 'https://c.woopic.com/logo-orange.png',
           link: 'https://www.orange.fr/portail',
+          backgroundImg:
+            'https://i0.wp.com/www.mobileworldlive.com/wp-content/uploads/2019/10/3-1.jpg?fit=500%2C333&ssl=1',
+
           description:
             'Conception et développement d’un site web destiné aux clients Orange\n      regroupe les différents services en ligne tel que la gestion des contrats, Suivi de\n      consommation, consultation et paiement des factures, réclamations, assistance,\n      etc.',
           technos: [
@@ -273,6 +281,7 @@ export const me: CvFinder = {
           postTitle: 'Consultant Fullstack Angular 8/ NodeJS',
           icon: 'assets/owner/kpeiz.webp',
           link: 'https://kpeiz.digital',
+          backgroundImg: 'assets/owner/kpeiz.png',
           description:
             'Développement d’une application dédiée pour le marketing digital qui permet\n      d’analyser et d’afficher les indicateurs de performance KPIs des Brand Insights\n      (Pages Facebook/Instagram) et des Market Insights (Secteurs d’activités)\n      suivant trois volets :\n      Audience : Nombre total des followers, Variation des fans...\n      Comportement des followers : Réaction, Interaction ...\n      Media : nombre des Interactions / heure, Nombre de postes / jour',
           technos: [
@@ -314,6 +323,9 @@ export const me: CvFinder = {
           postTitle: 'Développeur Front-end Angular',
           icon: 'assets/owner/vynd-logo.webp',
           link: 'https://vynd.com',
+          backgroundImg:
+            'https://scontent.fcdg2-1.fna.fbcdn.net/v/t1.6435-9/190022057_1627723174085266_6217815876299948795_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=bOJttNLHvcAAX8lnyEY&_nc_oc=AQms47MF2Gn4toseAZmCznemcDUl1-SJrjiVdvJQCF2F9XQ2qQWQVvR60nN7iS-qeWw&_nc_ht=scontent.fcdg2-1.fna&oh=00_AfAzsBT_ffitp1cn_q9hGdKl7-2DANDtSioQPRnvCHRUnQ&oe=641EE1F4',
+
           description:
             'Développement d’une application web qui permet d’analyser et gérer les\n   réservations, les évènements aussi que le paiement en ligne.',
           technos: [
@@ -377,6 +389,8 @@ export const me: CvFinder = {
           postTitle: 'Développeur Web PHP',
           icon: 'https://auna.com.tn/wp-content/uploads/2020/06/logo-auna.png',
           link: 'https://auna.com.tn',
+          backgroundImg:
+            'https://auna.com.tn/wp-content/uploads/2018/08/col-bg-1.jpg',
           description:
             "Développement d’une application web qui permet de gerer l'affectation des classes aussi que la gestion des abscences.",
           technos: [

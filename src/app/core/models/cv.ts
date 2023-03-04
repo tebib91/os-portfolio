@@ -24,6 +24,7 @@ export interface Project {
   description: string;
   technos: Techno[];
   link: string;
+  backgroundImg?: string;
 }
 
 export interface Experience {

@@ -1,29 +1,58 @@
 <div class="wrapper" *ngIf="visible">
-  <div class="controls">
-    <div class="left">
+  <div class="controls-wrapper">
+    <div class="controls">
       <div class="item">
-        <button>
-          <img src="assets/icons-system/wifi.svg" alt="" />
+        <button class="primary round icon">
+          <img src="assets/icons-system/wifi.svg" alt="wifi.svg" />
         </button>
-        <span>Wi-Fi</span>
-        <span>Me</span>
+        <div class="text">
+          <span>Wi-Fi</span>
+          <span>Me</span>
+        </div>
       </div>
       <div class="item">
-        <button>
-          <img src="assets/icons-system/radio-waves.svg" alt="" />
+        <button class="primary round icon">
+          <img
+            src="assets/icons-system/radio-waves.svg"
+            alt="radio-waves.svg"
+          />
         </button>
-        <span>Bluetooth</span>
-        <span>Off</span>
+        <div class="text">
+          <span>Bluetooth</span>
+          <span>Off</span>
+        </div>
       </div>
       <div class="item">
-        <button>
-          <img src="assets/icons-system/airdrop.svg" alt="" />
+        <button class="primary round icon">
+          <img src="assets/icons-system/airdrop.svg" alt="airdrop.svg" />
         </button>
-        <span>AirDrop</span>
-        <span>Off</span>
+        <div class="text">
+          <span>AirDrop</span>
+          <span>Off</span>
+        </div>
       </div>
     </div>
-    <div class="right"></div>
+    <div class="disturb">
+      <img src="assets/icons-system/disturb.svg" alt="disturb.svg" />
+      <div class="text">
+        <span>Do Not <br />Disturb</span>
+      </div>
+    </div>
+    <div class="keyboard">
+      <img
+        src="assets/icons-system/Keyboard-brightness.svg"
+        alt="keyboard svg"
+      />
+      <div class="text">
+        <span>Keyboard Brightness</span>
+      </div>
+    </div>
+    <div class="mirror">
+      <img src="assets/icons-system/mirror.svg" alt="mirror svg" />
+      <div class="text">
+        <span>Screen Mirror</span>
+      </div>
+    </div>
   </div>
 
   <div class="range">
