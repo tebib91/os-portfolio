@@ -1,3 +1,10 @@
+# [1.3.0](https://gitlab.com/tebib91/os-front/compare/v1.2.1...v1.3.0) (2023-03-04)
+
+
+### Features
+
+* **beta:** add first beta version for testing ([097295f](https://gitlab.com/tebib91/os-front/commit/097295f5368bd0704f170e9bd3e51434757c4e3d))
+
 ## [1.2.1](https://gitlab.com/tebib91/os-front/compare/v1.2.0...v1.2.1) (2023-01-13)
 
 
