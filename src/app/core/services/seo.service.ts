@@ -3,7 +3,6 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { MetaData, MetaDataMapping } from '../models/seo';
-import { RouterEvent } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',

@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, HostListener, Inject, Renderer2 } from '@angular/core';
+import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,19 +7,28 @@ import { Router } from '@angular/router';
   templateUrl: './boot.component.html',
   styleUrls: ['./boot.component.scss'],
 })
-export class BootComponent {
+export class BootComponent implements OnInit {
   progressBarValue = 0;
-  elem: any;
+
   isFullScreen = false;
+  elem!: HTMLElement & {
+    mozRequestFullScreen(): Promise<void>;
+    webkitRequestFullscreen(): Promise<void>;
+    msRequestFullscreen(): Promise<void>;
+  };
 
   constructor(
     private router: Router,
-    @Inject(DOCUMENT) private document: any,
+    @Inject(DOCUMENT) private document: Document,
     private renderer2: Renderer2
   ) {}
 
   ngOnInit() {
-    this.elem = document.documentElement;
+    this.elem = document.documentElement as HTMLElement & {
+      mozRequestFullScreen(): Promise<void>;
+      webkitRequestFullscreen(): Promise<void>;
+      msRequestFullscreen(): Promise<void>;
+    };
   }
 
   chkScreenMode() {

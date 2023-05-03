@@ -13,7 +13,8 @@ import { Overlay, OverlayRef } from '@angular/cdk/overlay';
   styleUrls: ['./window.component.scss'],
 })
 export class WindowComponent {
-  outlet: typeof FinderComponent | typeof MapsComponent | undefined;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  outlet: any | undefined;
   dragPosition = { x: 0, y: 0 };
   public components = [
     { name: 'finder', component: FinderComponent },

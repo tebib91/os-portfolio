@@ -5,7 +5,7 @@ import { iconsDock } from '@core/data/data';
 import { Icons } from '@core/models/icons';
 import { MenuContext } from '@core/models/menu';
 import { WindowComponent } from '@shared/window/window.component';
-import { environment } from '@env/environment';
+import { version } from 'src/version';
 
 @Component({
   selector: 'app-layout',
@@ -15,7 +15,7 @@ import { environment } from '@env/environment';
 })
 export class LayoutComponent {
   items: MenuContext[] = [{ label: 'change background' }, { label: 'Print' }];
-  currentApplicationVersion = environment.appVersion;
+  currentApplicationVersion = version;
 
   iconsTaskbar$: Observable<Icons[]> = of(iconsDock);
 
