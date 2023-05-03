@@ -2,6 +2,8 @@ import {
   Component,
   ElementRef,
   Input,
+  OnDestroy,
+  OnInit,
   Renderer2,
   ViewChild,
 } from '@angular/core';
@@ -11,7 +13,7 @@ import {
   templateUrl: './control-center.component.html',
   styleUrls: ['./control-center.component.scss'],
 })
-export class ControlCenterComponent {
+export class ControlCenterComponent implements OnInit, OnDestroy {
   @Input() visible!: boolean;
 
   @ViewChild('wrapper', { static: false }) wrapper!: ElementRef;
@@ -28,16 +30,15 @@ export class ControlCenterComponent {
     });
   }
 
-  brightnessChange(e: any) {
-    console.log('e', e.target.value);
-    let brightnessValue = e.target.value || 100;
+  brightnessChange(event: Event) {
+    const brightnessValue = (event.target as HTMLInputElement).value || 100;
     const bodyElement = document.body;
     bodyElement.style.filter = `brightness(${brightnessValue + '%'})`;
   }
 
-  soundChange(e: any) {
-    console.log('e', e.target.value);
-    let soundValue = e.target.value || 100;
+  soundChange(event: Event) {
+    const soundValue = (event.target as HTMLInputElement).value || 100;
+    console.log({ soundValue });
   }
 
   ngOnDestroy() {

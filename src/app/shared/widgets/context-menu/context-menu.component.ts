@@ -6,7 +6,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { MenuContext } from 'src/app/core/models/menu';
+import { MenuContext } from '@core/models/menu';
 
 @Component({
   selector: 'app-context-menu',

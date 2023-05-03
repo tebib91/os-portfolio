@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable, of } from 'rxjs';
-import { iconsDock } from 'src/app/core/data/data';
-import { Icons } from 'src/app/core/models/icons';
-import { MenuContext } from 'src/app/core/models/menu';
-import { WindowComponent } from 'src/app/shared/window/window.component';
-import { environment } from 'src/environments/environment';
+import { iconsDock } from '@core/data/data';
+import { Icons } from '@core/models/icons';
+import { MenuContext } from '@core/models/menu';
+import { WindowComponent } from '@shared/window/window.component';
+import { version } from 'src/version';
 
 @Component({
   selector: 'app-layout',
@@ -15,7 +15,7 @@ import { environment } from 'src/environments/environment';
 })
 export class LayoutComponent {
   items: MenuContext[] = [{ label: 'change background' }, { label: 'Print' }];
-  currentApplicationVersion = environment.appVersion;
+  currentApplicationVersion = version;
 
   iconsTaskbar$: Observable<Icons[]> = of(iconsDock);
 

@@ -16,6 +16,7 @@ export class RedirectService {
 
   /** The Window object from Document defaultView */
   get window(): Window {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.document.defaultView!;
   }
 

@@ -1,6 +1,6 @@
-import { Icons } from 'src/app/core/models/icons';
-import { CvFinder } from '../models/cv';
-import { MenuBar } from '../models/menu';
+import { Icons } from '@core/models/icons';
+import { CvFinder } from '@core/models/cv';
+import { MenuBar } from '@core/models/menu';
 
 export const iconsDock: Icons[] = [
   { icon: 'finder.png', label: 'Finder', component: 'FinderComponent' },
@@ -323,8 +323,7 @@ export const me: CvFinder = {
           postTitle: 'Développeur Front-end Angular',
           icon: 'assets/owner/vynd-logo.webp',
           link: 'https://vynd.com',
-          backgroundImg:
-            'https://scontent.fcdg2-1.fna.fbcdn.net/v/t1.6435-9/190022057_1627723174085266_6217815876299948795_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=bOJttNLHvcAAX8lnyEY&_nc_oc=AQms47MF2Gn4toseAZmCznemcDUl1-SJrjiVdvJQCF2F9XQ2qQWQVvR60nN7iS-qeWw&_nc_ht=scontent.fcdg2-1.fna&oh=00_AfAzsBT_ffitp1cn_q9hGdKl7-2DANDtSioQPRnvCHRUnQ&oe=641EE1F4',
+          backgroundImg: 'assets/owner/vyndbackground.jpg',
 
           description:
             'Développement d’une application web qui permet d’analyser et gérer les\n   réservations, les évènements aussi que le paiement en ligne.',

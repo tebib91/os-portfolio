@@ -1,15 +1,15 @@
-import { CvFinder } from './../../../core/models/cv';
-import { Component } from '@angular/core';
-import { ApiService } from 'src/app/core/services/api.service';
+import { CvFinder } from '@core/models/cv';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '@core/services/api.service';
 import { Observable } from 'rxjs';
-import { RedirectService } from 'src/app/core/services/redirect.service';
+import { RedirectService } from '@core/services/redirect.service';
 
 @Component({
   selector: 'app-finder',
   templateUrl: './finder.component.html',
   styleUrls: ['./finder.component.scss'],
 })
-export class FinderComponent {
+export class FinderComponent implements OnInit {
   data$: Observable<CvFinder> | undefined;
 
   constructor(private api: ApiService, private redirect: RedirectService) {}
@@ -20,7 +20,6 @@ export class FinderComponent {
   }
 
   navigateUrl(url: string) {
-    console.log({ url });
     url ? this.redirect.navigate(url) : null;
   }
 }

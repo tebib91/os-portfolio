@@ -1,15 +1,8 @@
-import { MapsComponent } from './../programs/maps/maps.component';
-import { FinderComponent } from './../programs/finder/finder.component';
-import {
-  Component,
-  Inject,
-  Injectable,
-  Injector,
-  ReflectiveInjector,
-} from '@angular/core';
+import { MapsComponent } from '@shared/programs/maps/maps.component';
+import { FinderComponent } from '@shared/programs/finder/finder.component';
+import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { CdkDragHandle } from '@angular/cdk/drag-drop';
-import { Program } from 'src/app/core/models/menu';
+import { Program } from '@core/models/menu';
 import { CalculatorComponent } from '../programs/calculator/calculator.component';
 
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
@@ -20,8 +13,9 @@ import { Overlay, OverlayRef } from '@angular/cdk/overlay';
   styleUrls: ['./window.component.scss'],
 })
 export class WindowComponent {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  outlet: any | undefined;
   dragPosition = { x: 0, y: 0 };
-  public outlet: any;
   public components = [
     { name: 'finder', component: FinderComponent },
     { name: 'maps', component: MapsComponent },
@@ -36,7 +30,6 @@ export class WindowComponent {
   constructor(
     public dialogRef: MatDialogRef<WindowComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Program,
-    injector: Injector,
     private _overlay: Overlay
   ) {
     this.outlet = this.components.find(
@@ -50,7 +43,6 @@ export class WindowComponent {
 
   onMaximizeClick(): void {
     // Maximize the window
-    console.log('here');
     this.maximized = !this.maximized;
     this.maximized ? this.fullscreen() : this.exitFullscreen();
   }

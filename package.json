@@ -1,6 +1,6 @@
 {
   "name": "os-front",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -12,7 +12,7 @@
     "start:pwa": "ng build && http-server -p 8080 -c-1 dist/os-front",
     "release": "standard-version",
     "prepare": "husky install",
-    "lint": "ng lint",
+    "lint": "npx eslint . --fix",
     "dev:ssr": "ng run os-front:serve-ssr",
     "serve:ssr": "node dist/os-front/server/main.js",
     "build:ssr": "ng build && ng run os-front:server",

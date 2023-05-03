@@ -8,8 +8,8 @@ import { FinderComponent } from './programs/finder/finder.component';
 import { CalculatorComponent } from './programs/calculator/calculator.component';
 import { MapsComponent } from './programs/maps/maps.component';
 import { ControlCenterComponent } from './widgets/control-center/control-center.component';
-import { BootComponent } from '../pages/boot/boot.component';
-import { LoginComponent } from '../pages/login/login.component';
+import { BootComponent } from '@features/boot/boot.component';
+import { LoginComponent } from '@features/login/login.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({

@@ -1,3 +1,16 @@
+# [1.5.0](https://gitlab.com/tebib91/os-front/compare/v1.4.0...v1.5.0) (2023-05-03)
+
+
+### Bug Fixes
+
+* **lint:** fix all lint problems ([83ce425](https://gitlab.com/tebib91/os-front/commit/83ce425a07429f8e3a2673a5fe663ad6cbd75448))
+
+
+### Features
+
+* **annotation:** add annotation system ([5697907](https://gitlab.com/tebib91/os-front/commit/5697907ce76f0e56af642287df828b9c209aac9d))
+* **lint:** add eslint ([301d68a](https://gitlab.com/tebib91/os-front/commit/301d68ab583607ac405a2077909851d98860d052))
+
 # [1.4.0](https://gitlab.com/tebib91/os-front/compare/v1.3.0...v1.4.0) (2023-03-04)
 
 

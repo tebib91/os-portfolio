@@ -8,7 +8,6 @@ export class ScriptInjectorService {
   constructor(@Inject(DOCUMENT) private document: Document) {}
 
   inject(trackingId: string) {
-    console.log({ trackingId });
     const script = this.document.createElement('script');
     script.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -16,6 +15,5 @@ export class ScriptInjectorService {
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','${trackingId}');`;
     this.document.head.appendChild(script);
-
   }
 }

@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 import 'zone.js/node';
 
 import { APP_BASE_HREF } from '@angular/common';
@@ -12,11 +15,13 @@ import { join } from 'path';
 const domino = require('domino');
 const fs = require('fs');
 const path = require('path');
+
 const distFolder = join(process.cwd(), 'dist/os-front/browser');
 const template = fs
   .readFileSync(path.join(distFolder, 'index.html'))
   .toString();
 const win = domino.createWindow(template.toString());
+
 global['window'] = win;
 global['document'] = win.document;
 global['self'] = win;

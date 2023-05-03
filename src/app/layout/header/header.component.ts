@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { menusBar } from 'src/app/core/data/data';
+import { menusBar } from '@core/data/data';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +9,7 @@ import { menusBar } from 'src/app/core/data/data';
 export class HeaderComponent {
   items = menusBar;
   batteryLevel!: number;
-  controlVisible: boolean = false;
+  controlVisible = false;
   currentTime = Date.now();
 
   constructor() {
@@ -17,10 +17,11 @@ export class HeaderComponent {
   }
 
   async getBatteryLevel() {
-    if ((navigator as any).getBattery) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    if ((navigator as any).getBattery()) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const battery = await (navigator as any).getBattery();
       this.batteryLevel = battery.level * 100;
-      console.log(this.batteryLevel);
     }
   }
 }
