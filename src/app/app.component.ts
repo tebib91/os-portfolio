@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment';
-import { ScriptInjectorService } from './core/services/script-injector.service';
-import { SeoService } from './core/services/seo.service';
+import { environment } from '@env/environment';
+import { ScriptInjectorService } from '@core/services/script-injector.service';
+import { SeoService } from '@core/services/seo.service';
 
 @Component({
   selector: 'app-root',

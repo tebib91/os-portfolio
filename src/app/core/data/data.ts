@@ -1,6 +1,6 @@
-import { Icons } from 'src/app/core/models/icons';
-import { CvFinder } from '../models/cv';
-import { MenuBar } from '../models/menu';
+import { Icons } from '@core/models/icons';
+import { CvFinder } from '@core/models/cv';
+import { MenuBar } from '@core/models/menu';
 
 export const iconsDock: Icons[] = [
   { icon: 'finder.png', label: 'Finder', component: 'FinderComponent' },

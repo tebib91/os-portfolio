@@ -1,8 +1,8 @@
-import { CvFinder } from './../../../core/models/cv';
+import { CvFinder } from '@core/models/cv';
 import { Component } from '@angular/core';
-import { ApiService } from 'src/app/core/services/api.service';
+import { ApiService } from '@core/services/api.service';
 import { Observable } from 'rxjs';
-import { RedirectService } from 'src/app/core/services/redirect.service';
+import { RedirectService } from '@core/services/redirect.service';
 
 @Component({
   selector: 'app-finder',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { menusBar } from 'src/app/core/data/data';
+import { menusBar } from '@core/data/data';
 
 @Component({
   selector: 'app-header',

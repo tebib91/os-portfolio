@@ -1,5 +1,5 @@
-import { MapsComponent } from './../programs/maps/maps.component';
-import { FinderComponent } from './../programs/finder/finder.component';
+import { MapsComponent } from '@shared/programs/maps/maps.component';
+import { FinderComponent } from '@shared/programs/finder/finder.component';
 import {
   Component,
   Inject,
@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { CdkDragHandle } from '@angular/cdk/drag-drop';
-import { Program } from 'src/app/core/models/menu';
+import { Program } from '@core/models/menu';
 import { CalculatorComponent } from '../programs/calculator/calculator.component';
 
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';

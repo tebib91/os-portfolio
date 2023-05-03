@@ -1,6 +1,6 @@
-import { Icons } from 'src/app/core/models/icons';
+import { Icons } from '@core/models/icons';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ThemeService } from 'src/app/core/services/theme.service';
+import { ThemeService } from '@core/services/theme.service';
 
 @Component({
   selector: 'app-taskbar',
