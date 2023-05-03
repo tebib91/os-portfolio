@@ -14,8 +14,6 @@ export class CalculatorComponent {
   memory = 0;
   numbers = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0];
 
-  ngOnInit() {}
-
   clear() {
     this.displayValue = '0';
     this.operator = '';

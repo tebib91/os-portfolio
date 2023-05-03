@@ -18,7 +18,6 @@ export class AppComponent {
     private seo: SeoService
   ) {
     const trackingId = environment.GA_TRACKING_ID;
-    console.log({ environment: environment.production });
     this.script.inject(trackingId);
     this.seo.updateMetaData(this.router.url);
   }

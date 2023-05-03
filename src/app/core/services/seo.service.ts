@@ -3,6 +3,7 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { MetaData, MetaDataMapping } from '../models/seo';
+import { RouterEvent } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -14,9 +15,12 @@ export class SeoService {
     private router: Router
   ) {
     this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe((event: any) => {
-        console.log(event.urlAfterRedirects);
+      .pipe(
+        filter(
+          (event): event is NavigationEnd => event instanceof NavigationEnd
+        )
+      )
+      .subscribe((event: NavigationEnd) => {
         this.updateMetaData(event.urlAfterRedirects);
       });
   }
@@ -24,7 +28,6 @@ export class SeoService {
   updateMetaData(url: string) {
     // Get the meta data for the current URL
     const metaData = this.getMetaData(url);
-    console.log({ metaData });
     this.title.setTitle(metaData.title);
     this.meta.updateTag(
       { name: 'description', content: metaData.description },

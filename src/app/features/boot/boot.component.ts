@@ -29,7 +29,7 @@ export class BootComponent {
   }
 
   toggleFullScreen() {
-    let methodToBeInvoked =
+    const methodToBeInvoked =
       this.elem.requestFullscreen ||
       this.elem.webkitRequestFullscreen() ||
       this.elem.mozRequestFullScreen() ||
@@ -38,7 +38,7 @@ export class BootComponent {
   }
 
   navigateToHome() {
-    let interval = setInterval(() => {
+    const interval = setInterval(() => {
       this.progressBarValue =
         this.progressBarValue + Math.floor(Math.random() * 5);
       if (this.progressBarValue >= 100) {
