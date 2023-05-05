@@ -9,7 +9,7 @@ import { Experience } from '@app/core/models/cv';
 })
 export class NotesComponent {
   constructor(
-    public dialogRef: MatDialogRef<any>,
+    public dialogRef: MatDialogRef<NotesComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Experience
   ) {}
 }

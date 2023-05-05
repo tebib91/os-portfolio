@@ -2,6 +2,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FinderComponent } from './finder.component';
+import {
+  MAT_DIALOG_DATA,
+  MatDialogModule,
+  MatDialogRef,
+} from '@angular/material/dialog';
 
 describe('FinderComponent', () => {
   let component: FinderComponent;
@@ -10,7 +15,14 @@ describe('FinderComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [FinderComponent],
-      imports: [HttpClientModule],
+      imports: [HttpClientModule, MatDialogModule],
+      providers: [
+        {
+          provide: MatDialogRef,
+          useValue: {},
+        },
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(FinderComponent);
