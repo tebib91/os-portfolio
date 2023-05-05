@@ -43,7 +43,9 @@
               <p>{{ item.projects[0].name }}</p>
               <span>{{ item.projects[0].postTitle }}</span>
             </div>
-            <button class="primary small">Ouvrir</button>
+            <button class="primary small" (click)="openNotes(item)">
+              Ouvrir
+            </button>
           </div>
         </div>
       </div>

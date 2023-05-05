@@ -14,7 +14,7 @@ import { version } from 'src/version';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LayoutComponent {
-  items: MenuContext[] = [{ label: 'change background' }, { label: 'Print' }];
+  items: MenuContext[] = [{ label: 'Change background' }, { label: 'Print' }];
   currentApplicationVersion = version;
 
   iconsTaskbar$: Observable<Icons[]> = of(iconsDock);
@@ -30,7 +30,9 @@ export class LayoutComponent {
   }
 
   handleMenu(item: MenuContext) {
-    item.label === 'change background' ? this.changeBackground() : null;
+    item.label.toLowerCase() === 'change background'
+      ? this.changeBackground()
+      : null;
   }
 
   openDialog(item: Icons): void {

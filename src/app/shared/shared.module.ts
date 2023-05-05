@@ -11,6 +11,7 @@ import { ControlCenterComponent } from './widgets/control-center/control-center.
 import { BootComponent } from '@features/boot/boot.component';
 import { LoginComponent } from '@features/login/login.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { NotesComponent } from './widgets/notes/notes.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     ControlCenterComponent,
     LoginComponent,
     BootComponent,
+    NotesComponent,
   ],
   imports: [CommonModule, DragDropModule, MatProgressBarModule],
   exports: [
