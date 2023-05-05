@@ -1,3 +1,10 @@
+# [1.7.0](https://gitlab.com/tebib91/os-front/compare/v1.6.0...v1.7.0) (2023-05-05)
+
+
+### Features
+
+* **s3:** add s3 deploy stage ([e86d030](https://gitlab.com/tebib91/os-front/commit/e86d03021d4581b967444415573f58257692a887))
+
 # [1.6.0](https://gitlab.com/tebib91/os-front/compare/v1.5.0...v1.6.0) (2023-05-05)
 
 
