@@ -1,3 +1,15 @@
+# [1.6.0](https://gitlab.com/tebib91/os-front/compare/v1.5.0...v1.6.0) (2023-05-05)
+
+
+### Bug Fixes
+
+* **pipe:** fix pipeline test ([bd5c32a](https://gitlab.com/tebib91/os-front/commit/bd5c32afcf274e769e12c021e13138427e262e53))
+
+
+### Features
+
+* **notes:** add notes ([b7a58a1](https://gitlab.com/tebib91/os-front/commit/b7a58a15fbf021ef2560eb8838d024e02e95d051))
+
 # [1.5.0](https://gitlab.com/tebib91/os-front/compare/v1.4.0...v1.5.0) (2023-05-03)
 
 
