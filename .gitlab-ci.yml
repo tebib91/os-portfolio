@@ -78,5 +78,5 @@ deploy:
     - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
     - aws configure set region $AWS_REGION
     - aws s3 sync dist s3://$S3_BUCKET_NAME
-  #    - eb deploy my-environment-name
+    - eb deploy Osfrontahmed-env
   only: ["main"]
