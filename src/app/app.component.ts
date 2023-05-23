@@ -1,9 +1,9 @@
-import { ThemeService } from '@core/services/theme.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '@env/environment';
 import { ScriptInjectorService } from '@core/services/script-injector.service';
 import { SeoService } from '@core/services/seo.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -17,13 +17,15 @@ export class AppComponent {
     private script: ScriptInjectorService,
     private router: Router,
     private seo: SeoService,
-    private themeService: ThemeService
+    private translate: TranslateService
   ) {
     const trackingId = environment.GA_TRACKING_ID;
     this.script.inject(trackingId);
     this.seo.updateMetaData(this.router.url);
-    this.themeService.detectDarkMode()
-      ? this.themeService.toggleDarkMode()
-      : null;
+    translate.setDefaultLang('fr');
+  }
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
   }
 }

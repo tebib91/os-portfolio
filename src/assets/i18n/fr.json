@@ -1,0 +1,14 @@
+{
+  "OPEN": "Ouvrir",
+
+  "MENU": {
+    "FINDER": "Finder (French)",
+    "FILE": "Fichier",
+    "EDIT": "Modifier",
+    "VIEW": "Voir",
+    "GO": "Aller",
+    "WINDOW": "Fenêtre",
+    "HELP": "Aide",
+    "SUBITEM": "Sous-élément"
+  }
+}
