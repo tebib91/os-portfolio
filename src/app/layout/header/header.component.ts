@@ -1,3 +1,4 @@
+import { PlatformService } from '@core/services/platform.service';
 import { Component } from '@angular/core';
 import { menusBar } from '@core/data/data';
 
@@ -12,8 +13,8 @@ export class HeaderComponent {
   controlVisible = false;
   currentTime = Date.now();
 
-  constructor() {
-    this.getBatteryLevel();
+  constructor(private platformService: PlatformService) {
+    this.platformService.isBrowser ?? this.getBatteryLevel();
   }
 
   async getBatteryLevel() {

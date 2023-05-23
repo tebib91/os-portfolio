@@ -5,11 +5,13 @@ stages:
   - build
   - test
   - release
+  - artifacts
   - deploy
 
 variables:
   S3_BUCKET_NAME: osfrontahmed
   AWS_REGION: eu-west-3
+  ENV_NAME: Osfrontahmed-env
 
 install_dependencies:
   stage: dependencies
@@ -66,17 +68,29 @@ release:
       - node_modules
     policy: pull
 
+artifacts:
+  stage: artifacts
+  dependencies:
+    - build
+  script:
+    - cp Procfile dist/
+    - zip -r artifact-osFront.zip dist/
+
 # Job Two for deploy build to S3
 deploy:
   image: python:latest
   stage: deploy
-  before_script:
-    - apt-get update -y && apt-get install -y python3-pip
-    - pip3 install awscli
+  dependencies:
+    - artifacts
   script:
+    - apt-get update && apt-get install -y zip
+    - echo "Installing AWS CLI..."
+    - apt-get install -y awscli
+    - echo "Deploying to Elastic Beanstalk..."
     - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
     - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
     - aws configure set region $AWS_REGION
-    - aws s3 sync dist s3://$S3_BUCKET_NAME
-    - eb deploy Osfrontahmed-env
+    - aws s3 cp artifact-osFront.zip s3://$S3_BUCKET_NAME/artifact-osFront.zip
+    - aws elasticbeanstalk create-application-version --application-name your-application-name --version-label $CI_COMMIT_SHORT_SHA --source-bundle S3Bucket=$S3_BUCKET_NAME,S3Key="artifact-osFront.zip"
+    - aws elasticbeanstalk update-environment --application-name your-application-name --environment-name your-environment-name --version-label $CI_COMMIT_SHORT_SHA
   only: ["main"]
