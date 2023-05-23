@@ -25,7 +25,9 @@
         <div class="skill" *ngFor="let item of data.technologies">
           <img [src]="item.icon" [alt]="item.name" />
           <p>{{ item.name }}</p>
-          <button class="primary" (click)="navigateUrl(item.link)">Open</button>
+          <button class="primary" (click)="navigateUrl(item.link)">
+            {{ "OPEN" | translate }}
+          </button>
         </div>
       </div>
     </section>
@@ -44,7 +46,7 @@
               <span>{{ item.projects[0].postTitle }}</span>
             </div>
             <button class="primary small" (click)="openNotes(item)">
-              Ouvrir
+              {{ "OPEN" | translate }}
             </button>
           </div>
         </div>

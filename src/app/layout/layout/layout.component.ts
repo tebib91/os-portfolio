@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable, of } from 'rxjs';
-import { iconsDock, contextMenu } from '@core/data/data';
+import { iconsDock } from '@core/data/data';
 import { Icons } from '@core/models/icons';
 import { MenuContext } from '@core/models/menu';
 import { WindowComponent } from '@shared/window/window.component';
@@ -14,7 +14,7 @@ import { version } from 'src/version';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LayoutComponent {
-  contextMenu: MenuContext[] = contextMenu;
+  items: MenuContext[] = [{ label: 'Change background' }, { label: 'Print' }];
   currentApplicationVersion = version;
 
   iconsTaskbar$: Observable<Icons[]> = of(iconsDock);
