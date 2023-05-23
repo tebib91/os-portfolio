@@ -1,3 +1,10 @@
+## [1.9.2](https://gitlab.com/tebib91/os-front/compare/v1.9.1...v1.9.2) (2023-05-23)
+
+
+### Bug Fixes
+
+* **pipeline:** stage deploy ([ad6fbcf](https://gitlab.com/tebib91/os-front/commit/ad6fbcfe88cd60021394bf4a32d4e835b1e8d50d))
+
 ## [1.9.1](https://gitlab.com/tebib91/os-front/compare/v1.9.0...v1.9.1) (2023-05-23)
 
 
