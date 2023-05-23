@@ -1,3 +1,10 @@
+## [1.9.1](https://gitlab.com/tebib91/os-front/compare/v1.9.0...v1.9.1) (2023-05-23)
+
+
+### Bug Fixes
+
+* **pipeline:** fixe pipe aws gitlab ([4ac4c7c](https://gitlab.com/tebib91/os-front/commit/4ac4c7c6e085048d32be15292ceae062529aa115))
+
 # [1.9.0](https://gitlab.com/tebib91/os-front/compare/v1.8.0...v1.9.0) (2023-05-23)
 
 
