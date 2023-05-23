@@ -22,8 +22,10 @@
   --mac-grey: rgb(119, 119, 119);
   --button-inactive: rgb(249 250 251 / 55%);
   --light-secondary: rgba(0, 0, 0, 0.5);
+  --control-background: rgba(244, 245, 245, 0.95);
 }
 
+// Dark Theme
 .dark-theme {
   --alternate-content-background: rgba(255, 255, 255, 0.1);
   --alternate-content-background-border: rgba(255, 255, 255, 0.26);
@@ -34,9 +36,10 @@
   --finder-bg-color: rgb(255 255 255 / 31%);
   --button-inactive: #3c3a3a;
   --light-secondary: rgba(255, 255, 255, 0.55);
+  --control-background: rgba(255, 255, 255, 0.1);
 }
 body {
-  color: $white;
+  color: var(--text-color);
   font-size: $font-size-base;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;

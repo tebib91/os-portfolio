@@ -19,7 +19,7 @@ import { MenuContext } from '@core/models/menu';
         [style.left.px]="menuLeft"
         [style.top.px]="menuTop"
       >
-        <li *ngFor="let item of items" (click)="onItemClick(item)">
+        <li *ngFor="let item of contextMenu" (click)="onItemClick(item)">
           {{ item.label }}
         </li>
       </ul>
@@ -34,7 +34,7 @@ import { MenuContext } from '@core/models/menu';
       .context-menu-items {
         position: absolute;
         min-width: 200px;
-        background-color: rgba(244, 245, 245, 0.95);
+        background-color: var(--control-background);
         border: 0.5px solid rgba(0, 0, 0, 0.1);
         box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
         list-style: none;
@@ -56,7 +56,7 @@ import { MenuContext } from '@core/models/menu';
   ],
 })
 export class ContextMenuComponent {
-  @Input() items!: { label: string }[];
+  @Input() contextMenu!: { label: string }[];
   @Output() itemClick = new EventEmitter<{ label: string }>();
   @ViewChild('menu', { static: true }) menu!: ElementRef<HTMLUListElement>;
 

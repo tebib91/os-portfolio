@@ -1,3 +1,4 @@
+import { ThemeService } from '@core/services/theme.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '@env/environment';
@@ -15,10 +16,14 @@ export class AppComponent {
   constructor(
     private script: ScriptInjectorService,
     private router: Router,
-    private seo: SeoService
+    private seo: SeoService,
+    private themeService: ThemeService
   ) {
     const trackingId = environment.GA_TRACKING_ID;
     this.script.inject(trackingId);
     this.seo.updateMetaData(this.router.url);
+    this.themeService.detectDarkMode()
+      ? this.themeService.toggleDarkMode()
+      : null;
   }
 }
