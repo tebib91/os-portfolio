@@ -13,16 +13,15 @@ variables:
   AWS_REGION: eu-west-3
   ENV_NAME: Osfrontahmed-env
 
+cache:
+  key: "$CI_COMMIT_REF_SLUG"
+  paths:
+    - node_modules/
+
 install_dependencies:
   stage: dependencies
   script:
-    - npm install
-  cache:
-    key:
-      files:
-        - package-lock.json
-    paths:
-      - node_modules
+    - npm ci --prefer-offline --no-audit
 
 build:
   stage: build
@@ -31,13 +30,6 @@ build:
   artifacts:
     paths:
       - dist/
-  cache:
-    key:
-      files:
-        - package-lock.json
-    paths:
-      - node_modules
-    policy: pull
 
 test:
   stage: test
@@ -48,33 +40,24 @@ test:
     - export CHROME_BIN=/usr/bin/google-chrome
   script:
     - npm run test -- --no-watch --browsers=ChromeHeadlessCI
-  cache:
-    key:
-      files:
-        - package-lock.json
-    paths:
-      - node_modules
-    policy: pull
 
 release:
   stage: release
   script:
     - npx semantic-release
-  cache:
-    key:
-      files:
-        - package-lock.json
-    paths:
-      - node_modules
-    policy: pull
 
 artifacts:
   stage: artifacts
   dependencies:
     - build
+  before_script:
+    - apt-get update && apt-get install -y zip
   script:
     - cp Procfile dist/
     - zip -r artifact-osFront.zip dist/
+  artifacts:
+    paths:
+      - artifact-osFront.zip
 
 # Job Two for deploy build to S3
 deploy:
