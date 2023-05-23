@@ -1,3 +1,10 @@
+# [1.9.0](https://gitlab.com/tebib91/os-front/compare/v1.8.0...v1.9.0) (2023-05-23)
+
+
+### Features
+
+* **test:** test new cli with fix ([31b4a85](https://gitlab.com/tebib91/os-front/commit/31b4a85102836481c101cfe34670a54394d1b338))
+
 # [1.8.0](https://gitlab.com/tebib91/os-front/compare/v1.7.0...v1.8.0) (2023-05-05)
 
 
