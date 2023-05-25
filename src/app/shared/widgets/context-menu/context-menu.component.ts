@@ -6,6 +6,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
+import { menuContext } from '@app/core/data/data';
 import { MenuContext } from '@core/models/menu';
 
 @Component({
@@ -56,8 +57,10 @@ import { MenuContext } from '@core/models/menu';
   ],
 })
 export class ContextMenuComponent {
-  @Input() items!: { label: string }[];
-  @Output() itemClick = new EventEmitter<{ label: string }>();
+  items: MenuContext[] = menuContext;
+  @Output() actionSelected: EventEmitter<MenuContext> =
+    new EventEmitter<MenuContext>();
+
   @ViewChild('menu', { static: true }) menu!: ElementRef<HTMLUListElement>;
 
   isOpen = false;
@@ -86,6 +89,6 @@ export class ContextMenuComponent {
   }
 
   onItemClick(item: MenuContext) {
-    this.itemClick.emit(item);
+    this.actionSelected.emit(item);
   }
 }

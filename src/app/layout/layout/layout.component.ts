@@ -1,7 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Observable, of } from 'rxjs';
-import { iconsDock } from '@core/data/data';
 import { Icons } from '@core/models/icons';
 import { MenuContext } from '@core/models/menu';
 import { WindowComponent } from '@shared/window/window.component';
@@ -14,25 +12,18 @@ import { version } from 'src/version';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LayoutComponent {
-  items: MenuContext[] = [{ label: 'Change background' }, { label: 'Print' }];
   currentApplicationVersion = version;
-
-  iconsTaskbar$: Observable<Icons[]> = of(iconsDock);
 
   urlImage = '/assets/backgrounds/background-1.webp';
   lastRandomNumber!: number;
+  folders: string[] = [];
+  folderCounter = 0;
   constructor(public dialog: MatDialog) {
     this.openDialog({
       icon: 'finder.png',
       label: 'Finder',
       component: 'FinderComponent',
     });
-  }
-
-  handleMenu(item: MenuContext) {
-    item.label.toLowerCase() === 'change background'
-      ? this.changeBackground()
-      : null;
   }
 
   openDialog(item: Icons): void {
@@ -43,11 +34,21 @@ export class LayoutComponent {
         program: item.component,
       },
       hasBackdrop: false,
+      panelClass: 'dialog-panel',
     });
 
     dialogRef.afterClosed().subscribe((result) => {
       console.info('The dialog was closed', { item, result });
     });
+  }
+
+  handleAction(action: MenuContext) {
+    // Perform the logic based on the selected action
+    if (action.action === 'CF') {
+      this.createFolder();
+    } else if (action.action === 'CBd') {
+      this.changeBackground();
+    }
   }
 
   changeBackground() {
@@ -62,5 +63,12 @@ export class LayoutComponent {
     }
     this.lastRandomNumber = randomNumber;
     return randomNumber;
+  }
+
+  createFolder() {
+    const defaultFolderName = 'New Folder'; // Change this to the desired default name for the folder
+    // Add the new folder name to the folders array
+    this.folders.push(`${defaultFolderName}_${this.folderCounter++}`);
+    console.log(this.folders);
   }
 }

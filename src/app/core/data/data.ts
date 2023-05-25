@@ -1,6 +1,6 @@
 import { Icons } from '@core/models/icons';
 import { CvFinder } from '@core/models/cv';
-import { MenuBar } from '@core/models/menu';
+import { MenuBar, MenuContext } from '@core/models/menu';
 
 export const iconsDock: Icons[] = [
   { icon: 'finder.png', label: 'Finder', component: 'FinderComponent' },
@@ -20,7 +20,16 @@ export const iconsDock: Icons[] = [
   },
   { icon: 'bin.png', label: 'Bin', component: 'FinderComponent' },
 ];
-
+export const menuContext: MenuContext[] = [
+  {
+    label: 'Change Background',
+    action: 'CB',
+  },
+  {
+    label: 'Create File',
+    action: 'CF',
+  },
+];
 export const menusBar: MenuBar[] = [
   {
     icon: 'assets/dock/bin.png',

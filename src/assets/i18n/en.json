@@ -9,5 +9,16 @@
     "WINDOW": "Window",
     "HELP": "Help",
     "SUBITEM": "Subitem"
+  },
+
+  "ICONS": {
+    "FINDER": "Finder",
+    "NOTES": "Notes",
+    "MAPS": "Maps",
+    "CALCULATOR": "Calculator",
+    "MAIL": "Mail",
+    "MUSIC": "Music",
+    "SYSTEM_PREFERENCES": "System Preferences",
+    "BIN": "Bin"
   }
 }

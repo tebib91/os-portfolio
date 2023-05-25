@@ -2,7 +2,6 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BackgroundImageComponent } from './widgets/background-image/background-image.component';
-import { ContextMenuComponent } from './widgets/context-menu/context-menu.component';
 import { WindowComponent } from './window/window.component';
 import { FinderComponent } from './programs/finder/finder.component';
 import { CalculatorComponent } from './programs/calculator/calculator.component';
@@ -13,11 +12,12 @@ import { LoginComponent } from '@features/login/login.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { NotesComponent } from './widgets/notes/notes.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { ContextMenuComponent } from './widgets/context-menu/context-menu.component';
 
 @NgModule({
   declarations: [
     BackgroundImageComponent,
-    ContextMenuComponent,
     WindowComponent,
     FinderComponent,
     CalculatorComponent,
@@ -26,11 +26,13 @@ import { TranslateModule } from '@ngx-translate/core';
     LoginComponent,
     BootComponent,
     NotesComponent,
+    ContextMenuComponent,
   ],
   imports: [
     CommonModule,
     DragDropModule,
     MatProgressBarModule,
+    MatTooltipModule,
     TranslateModule,
   ],
   exports: [
@@ -40,6 +42,8 @@ import { TranslateModule } from '@ngx-translate/core';
     LoginComponent,
     BootComponent,
     TranslateModule,
+    MatTooltipModule,
+    MatProgressBarModule,
   ],
 })
 export class SharedModule {}

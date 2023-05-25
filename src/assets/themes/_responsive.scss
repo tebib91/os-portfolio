@@ -8,6 +8,10 @@
     height: 40px;
     margin: 2px !important;
   }
+  .toggle {
+    width: 32px !important;
+    height: 32px !important;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -17,6 +21,10 @@
     width: 36px !important;
     height: 40px;
     margin: 0 5px !important;
+  }
+  .toggle {
+    width: 36px !important;
+    height: 36px !important;
   }
 }
 

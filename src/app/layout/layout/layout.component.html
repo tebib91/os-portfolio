@@ -1,17 +1,15 @@
-<app-context-menu [items]="items" (itemClick)="handleMenu($event)">
+<app-context-menu (actionSelected)="handleAction($event)">
   <!-- content goes here -->
   <app-background-image
     [imageUrl]="urlImage"
     size="cover"
     position="center"
     repeat="no-repeat"
+    [folders]="folders"
   >
     <!-- content goes here -->
     <app-header></app-header>
-    <app-taskbar
-      [icons]="iconsTaskbar$ | async"
-      (program)="openDialog($event)"
-    ></app-taskbar>
+    <app-taskbar (program)="openDialog($event)"></app-taskbar>
     <!-- content end here -->
     <span class="version">
       {{ currentApplicationVersion }}

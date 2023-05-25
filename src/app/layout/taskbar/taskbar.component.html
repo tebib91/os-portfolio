@@ -5,6 +5,7 @@
       src="/assets/dock/{{ item.icon }}"
       (click)="onClick(item)"
       [alt]="item.label"
+      [matTooltip]="item.label"
     />
   </div>
   <div class="taskbar-item">

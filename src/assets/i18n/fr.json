@@ -10,5 +10,15 @@
     "WINDOW": "Fenêtre",
     "HELP": "Aide",
     "SUBITEM": "Sous-élément"
+  },
+  "ICONS": {
+    "FINDER": "Finder (French)",
+    "NOTES": "Notes (French)",
+    "MAPS": "Cartes",
+    "CALCULATOR": "Calculatrice",
+    "MAIL": "Courrier",
+    "MUSIC": "Musique",
+    "SYSTEM_PREFERENCES": "Préférences Système",
+    "BIN": "Corbeille"
   }
 }

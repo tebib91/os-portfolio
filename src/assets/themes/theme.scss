@@ -75,3 +75,12 @@ ul {
     14px 0 0 0 var(--button-inactive);
   margin: 0 12px;
 }
+
+.dialog-panel {
+  min-width: 40%;
+  min-height: 35%;
+  background: var(--window-background);
+  & .mat-mdc-dialog-container .mdc-dialog__surface {
+    box-shadow: none;
+  }
+}
