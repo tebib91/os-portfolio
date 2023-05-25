@@ -5,7 +5,6 @@
 header {
   width: 100%;
   background-color: var(--quaternary);
-
   & nav {
     display: flex;
     justify-content: space-between;
@@ -24,7 +23,49 @@ header {
           width: 18px; /* adjust as needed */
           height: 18px; /* adjust as needed */
         }
+        & ul {
+          flex-direction: column;
+          display: none;
+          justify-content: center;
+          align-items: flex-start;
+          padding: 4px 10px;
+          gap: 10px;
+
+          position: absolute;
+          left: 0;
+          top: 24px;
+          margin-top: 1px;
+          min-width: 152px;
+          background: var(--background-default);
+          border-radius: 5px;
+          border: 0.5px solid --var(--tertiary-label);
+          box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
+          & li {
+            padding: 3px 2px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+            width: 100%;
+            font: $headline-regular;
+            & div {
+              padding-bottom: 2px;
+              cursor: pointer;
+            }
+            &:last-child {
+              border-bottom: 0;
+              padding-bottom: 0 !important;
+            }
+          }
+          & a {
+            text-decoration: none;
+            color: var(--text);
+          }
+        }
+        &:hover {
+          ul {
+            display: flex;
+          }
+        }
       }
+
       ul {
         display: flex;
         align-items: center;
@@ -35,9 +76,10 @@ header {
           height: 100%;
           width: 100%;
           @include headline-regular();
+          color: var(--alternate-selected-control-text);
           padding: 4px;
           &:hover {
-            background-color: rgba(255, 255, 255, 0.26);
+            background-color: --var(--tertiary-label);
             border-radius: 5px;
             cursor: pointer;
           }
@@ -56,10 +98,11 @@ header {
         > .menu-bar-item {
           display: flex;
           align-items: center;
+          color: var(--alternate-selected-control-text);
 
           @include headline-regular();
           &:hover {
-            background-color: rgba(255, 255, 255, 0.26);
+            background-color: --var(--tertiary-label);
             border-radius: 5px;
             cursor: pointer;
           }
@@ -74,7 +117,7 @@ header {
   background: transparent;
   user-select: none;
   height: 100%;
-  margin-right: 4px;
+  margin: 0px 4px;
   & .battery-container {
     border-radius: 4px;
     border: 1px solid white;

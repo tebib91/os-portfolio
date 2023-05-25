@@ -12,6 +12,19 @@
     width: 32px !important;
     height: 32px !important;
   }
+  .menu-bar-item {
+    span {
+      display: none;
+    }
+
+    img.desktop {
+      display: none;
+    }
+
+    img.mobile {
+      display: block;
+    }
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */

@@ -106,7 +106,7 @@
   gap: 1rem;
 
   .app-card {
-    background: rgba(255, 255, 255, 0.75);
+    background: var(--control-center-background);
     backdrop-filter: blur(40px);
     /* Note: backdrop-filter has minimal browser support */
     width: calc(33.3% - 20px);

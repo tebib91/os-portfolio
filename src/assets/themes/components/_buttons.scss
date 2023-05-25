@@ -10,7 +10,7 @@ button {
   color: $button-color;
   border-radius: $button-border-radius;
   border: $button-border;
-
+  cursor: pointer;
   // Transitions
   transition: background-color 0.3s ease;
 

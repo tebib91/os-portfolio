@@ -34,12 +34,12 @@ export const menusBar: MenuBar[] = [
   {
     icon: 'assets/dock/bin.png',
     label: 'Finder',
-    submenu: ['Subitem 1', 'Subitem 2', 'Subitem 3'],
+    submenu: ['New Finder Window', 'New Folder', 'New Smart Folder'],
   },
   {
     icon: 'assets/dock/finder.png',
     label: 'File',
-    submenu: ['Subitem 1', 'Subitem 2', 'Subitem 3'],
+    submenu: ['New File', 'Open File', 'Propertie File'],
   },
   {
     icon: 'assets/dock/mail.png',

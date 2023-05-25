@@ -3,6 +3,33 @@
     <div class="menu-bar-left">
       <div class="menu-icon">
         <img src="assets/icons-system/apple.svg" alt="Apple logo" />
+        <ul>
+          <li>
+            <div>
+              <a href="https://gitlab.com/tebib91/os-front" target="_blank"
+                >About This Mac</a
+              >
+            </div>
+          </li>
+          <li>
+            <div>System Preferences...</div>
+          </li>
+          <li>
+            <div>Recent Items</div>
+          </li>
+          <li>
+            <div>Force Quit Finder</div>
+          </li>
+          <li>
+            <div>Sleep</div>
+            <div onClick="window.location.reload();">Restart...</div>
+            <div>Shut Down...</div>
+          </li>
+          <li>
+            <div>Lock Screen</div>
+            <div>Log Out</div>
+          </li>
+        </ul>
       </div>
       <ul>
         <li class="menu-bar-item" *ngFor="let item of items">
@@ -13,11 +40,12 @@
     <div class="menu-bar-right">
       <ul>
         <li class="menu-bar-item">
+          <div *ngIf="batteryLevel">{{ batteryLevel + "% " }}</div>
           <div class="battery-icon">
             <div class="battery-container">
               <div
                 class="battery-level"
-                [ngStyle]="{ height: batteryLevel + '%' }"
+                [ngStyle]="{ width: batteryLevel + '%' }"
               ></div>
             </div>
           </div>
@@ -39,5 +67,5 @@
 
 <!-----Widget---->
 <div class="control_center">
-  <!-- <app-control-center [visible]="controlVisible"></app-control-center> -->
+  <app-control-center [visible]="controlVisible"></app-control-center>
 </div>

@@ -29,6 +29,7 @@ global['IDBIndex'] = win.IDBIndex;
 global['document'] = win.document;
 global['navigator'] = win.navigator;
 global['getComputedStyle'] = win.getComputedStyle;
+global['XMLHttpRequest'] = win.XMLHttpRequest;
 
 import { AppServerModule } from './src/main.server';
 
