@@ -3,6 +3,18 @@
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
   /* CSS styles for small screens go here */
+  .wrapper {
+    width: 100% !important;
+    & .content-text {
+      margin-right: 10px;
+    }
+    & .content-img {
+      display: none;
+    }
+    .app-card {
+      width: 100% !important;
+    }
+  }
   .taskbar-item {
     width: 36px !important;
     height: 40px;

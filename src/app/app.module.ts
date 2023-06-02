@@ -13,6 +13,8 @@ import { CoreModule } from '@core/core.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { translateBrowserLoaderFactory } from './core/translate-browser.loader';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { SharedModule } from './shared/shared.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -28,6 +30,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     DragDropModule,
     CoreModule,
     HttpClientModule,
+    GoogleMapsModule,
+    SharedModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

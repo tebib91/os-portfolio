@@ -1,0 +1,43 @@
+.content {
+  margin-bottom: 2rem;
+  & .content-box {
+    margin: 1rem;
+    & .client {
+      display: flex;
+      align-items: center;
+      & img {
+        height: 2rem;
+        width: auto;
+        margin-right: 1rem;
+      }
+    }
+    & .project {
+      & .list-title {
+        display: flex;
+        align-items: center;
+        > img {
+          width: 28px;
+          height: 28px;
+          margin-right: 10px;
+        }
+      }
+      & .technos {
+        & .list {
+          display: flex;
+          & .products {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-right: 1rem;
+            & img {
+              width: 28px;
+              border-radius: 6px;
+              margin-right: 5px;
+              flex-shrink: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

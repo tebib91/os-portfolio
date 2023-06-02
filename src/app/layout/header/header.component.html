@@ -40,7 +40,9 @@
     <div class="menu-bar-right">
       <ul>
         <li class="menu-bar-item">
-          <div *ngIf="batteryLevel">{{ batteryLevel + "% " }}</div>
+          <div *ngIf="batteryLevel">
+            {{ (batteryLevel | number : "1.0-0") + "% " }}
+          </div>
           <div class="battery-icon">
             <div class="battery-container">
               <div

@@ -10,7 +10,7 @@ import { TaskbarComponent } from './taskbar/taskbar.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'desktop',
     component: LayoutComponent,
   },
 ];

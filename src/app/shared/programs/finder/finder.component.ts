@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { RedirectService } from '@core/services/redirect.service';
 import { MatDialog } from '@angular/material/dialog';
 import { NotesComponent } from '@app/shared/widgets/notes/notes.component';
+import { WindowComponent } from '@app/shared/window/window.component';
 
 @Component({
   selector: 'app-finder',
@@ -29,8 +30,13 @@ export class FinderComponent implements OnInit {
     url ? this.redirect.navigate(url) : null;
   }
   openNotes(item: Experience): void {
-    const dialogRef = this.dialog.open(NotesComponent, {
-      data: item,
+    const dialogRef = this.dialog.open(WindowComponent, {
+      data: {
+        title: 'experience',
+        icon: '',
+        program: 'ExperienceComponent',
+        data: item,
+      },
       hasBackdrop: true,
     });
 

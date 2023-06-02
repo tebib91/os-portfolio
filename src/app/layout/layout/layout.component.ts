@@ -69,6 +69,5 @@ export class LayoutComponent {
     const defaultFolderName = 'New Folder'; // Change this to the desired default name for the folder
     // Add the new folder name to the folders array
     this.folders.push(`${defaultFolderName}_${this.folderCounter++}`);
-    console.log(this.folders);
   }
 }

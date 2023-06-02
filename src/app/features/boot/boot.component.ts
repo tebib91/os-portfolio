@@ -51,11 +51,10 @@ export class BootComponent implements OnInit {
       this.progressBarValue =
         this.progressBarValue + Math.floor(Math.random() * 5);
       if (this.progressBarValue >= 100) {
-        console.log(this.progressBarValue);
         this.progressBarValue = 100;
         clearInterval(interval);
 
-        this.router.navigate(['/']);
+        this.router.navigate(['/desktop']);
       }
     }, 50);
   }

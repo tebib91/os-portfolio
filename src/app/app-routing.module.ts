@@ -6,13 +6,17 @@ import { LoginComponent } from '@features/login/login.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'boot', component: BootComponent },
-
+  {
+    path: '',
+    redirectTo: '/boot',
+    pathMatch: 'full',
+  },
   {
     path: '',
     loadChildren: () =>
       import('./layout/layout.module').then((m) => m.LayoutModule),
   },
-  { path: '**', redirectTo: '/boot', pathMatch: 'full' },
+  { path: '**', redirectTo: '/boot' },
 ];
 
 @NgModule({

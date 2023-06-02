@@ -72,7 +72,7 @@ export const me: CvFinder = {
   presentation: {
     name: 'Ahmed Tabib',
     description:
-      " est un développeur fullstack JS Senior ayant à son actif +6 ans d'expérience.\n    C'est quelqu'un qui combine à la fois l'aspect technique et agile.\n    C'est quelqu'un d'ultra sharp au niveau de ses prestations et a toujours l'oreille au top management des équipes/projets IT.\n    Il a fait de belles missions chez SCNF Connect, SFR, Keyrus, KPEIZ & VYND.\n   Son professionnalisme et son savoir faire font de lui un candidat à rencontrer absolument.",
+      'Ahmed Tabib is a Senior fullstack JS developer with over 6 years of experience.\n    He is someone who combines both the technical and agile aspects.\n    He is ultra sharp in his performances and always has an ear for the top management of IT teams/projects.\n    He has had great missions at SCNF Connect, SFR, Keyrus, KPEIZ & VYND.\n   His professionalism and expertise make him a candidate to absolutely meet.',
     avatarUrl: 'assets/owner/me.webp',
   },
   technologies: [
@@ -164,11 +164,11 @@ export const me: CvFinder = {
       projects: [
         {
           name: 'SNCF Connect & Tech',
-          title: 'Application centralization du systeme SNCF de transport ',
-          postTitle: 'Consultant Fullstack JS',
+          title: 'Centralization application of the SNCF transport system',
+          postTitle: 'Fullstack JS Consultant',
           icon: 'assets/owner/sncf.svg',
           description:
-            'la transformation numérique du groupe SNCF pour adresser le client dans l’ensemble de son parcours de mobilité et ses interactions avec SNCFla',
+            'The digital transformation of the SNCF group to address the customer in all its mobility journey and its interactions with SNCF',
           link: '',
           backgroundImg:
             'https://cdn.lesnumeriques.com/news/17/175503/a98ca522-sncf-connect.jpeg',
@@ -197,15 +197,14 @@ export const me: CvFinder = {
       projects: [
         {
           name: 'SFR',
-          title: 'Application web de Streaming RMC, BFM PLAY et SFR TV',
-          postTitle: 'Consultant Fullstack Angular 13/ NodeJS',
+          title: 'RMC, BFM PLAY and SFR TV Streaming web application',
+          postTitle: 'Fullstack Angular 13/ NodeJS Consultant',
           icon: 'https://static.s-sfr.fr/media/hs-logo.svg',
           link: 'https://rmcbfmplay.com',
           backgroundImg:
             'https://alloforfait.fr/wp-content/uploads/2021/06/rmc-bfm-play-300x200.jpg.webp',
-
           description:
-            "Dans le cadre de sa politique de mettre en place une plateforme d'IPTV Streaming Apps, SFR a mis en place pour ses clients plusieurs applications de streaming\ntelsque : RMC, BFM PLAY SFR TV + Projet de Migration du CMS BEAST des\n  contenus TV de SFR et des sites web www.rmcsport.tv, www.bfmrmcplay.com\n  www.tv.sfr.fr.\n  Le projet repose essentiellement sur les rubriques suivantes :\n  *Rubrique des chaines en LIVE\n  *Rubrique des chaines en LIVE REPLAY\n  *Rubrique VOD (films, séries,...)\n*Rubrique GUIDE",
+            'As part of its policy to set up an IPTV Streaming Apps platform, SFR has set up several streaming applications for its customers such as: RMC, BFM PLAY SFR TV + Project to migrate the BEAST CMS of SFR TV content and www.rmcsport.tv, www.bfmrmcplay.com www.tv.sfr.fr websites. The project is mainly based on the following sections:\n  *LIVE channel section\n  *LIVE REPLAY channel section\n  *VOD section (movies, series,...)\n*GUIDE section',
           technos: [
             {
               name: 'Angular',
@@ -241,15 +240,14 @@ export const me: CvFinder = {
       projects: [
         {
           name: 'ORANGE',
-          title: 'Site web de gestion de service client orange',
-          postTitle: 'Consultant Fullstack Angular 10/ NodeJS',
+          title: 'Website for managing Orange customer service',
+          postTitle: 'Fullstack Angular 10/ NodeJS Consultant',
           icon: 'https://c.woopic.com/logo-orange.png',
           link: 'https://www.orange.fr/portail',
           backgroundImg:
             'https://i0.wp.com/www.mobileworldlive.com/wp-content/uploads/2019/10/3-1.jpg?fit=500%2C333&ssl=1',
-
           description:
-            'Conception et développement d’un site web destiné aux clients Orange\n      regroupe les différents services en ligne tel que la gestion des contrats, Suivi de\n      consommation, consultation et paiement des factures, réclamations, assistance,\n      etc.',
+            'Design and development of a website dedicated to Orange customers\n      brings together various online services such as contract management, Consumption tracking, invoice consultation and payment, complaints, assistance,\n      etc.',
           technos: [
             {
               name: 'Angular',
@@ -286,13 +284,13 @@ export const me: CvFinder = {
         {
           name: 'KPEIZ',
           title:
-            'Projet d’application web de gestion et d’analyse des réseaux sociaux',
-          postTitle: 'Consultant Fullstack Angular 8/ NodeJS',
+            'Web application project for managing and analyzing social networks',
+          postTitle: 'Fullstack Angular 8/NodeJS Consultant',
           icon: 'assets/owner/kpeiz.webp',
           link: 'https://kpeiz.digital',
           backgroundImg: 'assets/owner/kpeiz.png',
           description:
-            'Développement d’une application dédiée pour le marketing digital qui permet\n      d’analyser et d’afficher les indicateurs de performance KPIs des Brand Insights\n      (Pages Facebook/Instagram) et des Market Insights (Secteurs d’activités)\n      suivant trois volets :\n      Audience : Nombre total des followers, Variation des fans...\n      Comportement des followers : Réaction, Interaction ...\n      Media : nombre des Interactions / heure, Nombre de postes / jour',
+            'Developing an application dedicated to digital marketing that allows\n      to analyze and display KPIs of Brand Insights\n      (Facebook/Instagram Pages) and Market Insights (Activity Sectors)\n      following three aspects:\n      Audience: Total number of followers, Variation of fans...\n      Followers Behavior: Reaction, Interaction ...\n      Media: number of Interactions / hour, Number of posts / day',
           technos: [
             {
               name: 'Angular',
@@ -327,15 +325,14 @@ export const me: CvFinder = {
       name: 'VYND',
       projects: [
         {
-          name: 'VYND',
-          title: "Application Bourse d'Alcool",
-          postTitle: 'Développeur Front-end Angular',
+          name: 'VYND-Alcohol Exchange',
+          title: 'Alcohol Exchange Application',
+          postTitle: 'Angular Front-end Developer',
           icon: 'assets/owner/vynd-logo.webp',
           link: 'https://vynd.com',
           backgroundImg: 'assets/owner/vyndbackground.jpg',
-
           description:
-            'Développement d’une application web qui permet d’analyser et gérer les\n   réservations, les évènements aussi que le paiement en ligne.',
+            'Developing a web application that allows to analyze and manage\n   reservations, events as well as online payment.',
           technos: [
             {
               name: 'Angular',
@@ -351,13 +348,13 @@ export const me: CvFinder = {
           ],
         },
         {
-          name: 'VYND',
-          title: 'Application Web de Gestion des Services des Restaurants',
-          postTitle: 'Développeur Front-end Angular',
-          icon: 'assets/owner/vynd-logo.png',
+          name: 'VYND-Web Application',
+          title: 'Web Application for Restaurant Services Management',
+          postTitle: 'Angular Front-end Developer',
+          icon: 'assets/owner/vynd-logo.webp',
           link: 'https://vynd.com',
           description:
-            'Développement d’une application web qui permet d’analyser et gérer les\n réservations, les évènements aussi que le paiement en ligne.',
+            'Developing a web application that allows to analyze and manage\n reservations, events as well as online payment.',
           technos: [
             {
               name: 'Angular',
@@ -393,14 +390,13 @@ export const me: CvFinder = {
       projects: [
         {
           name: 'AUNA',
-          title: 'Application de gestion RH',
-          postTitle: 'Développeur Web PHP',
-          icon: 'https://auna.com.tn/wp-content/uploads/2020/06/logo-auna.png',
-          link: 'https://auna.com.tn',
-          backgroundImg:
-            'https://auna.com.tn/wp-content/uploads/2018/08/col-bg-1.jpg',
+          title: 'Mobile and Web application project for digital healthcare',
+          postTitle: 'Fullstack Developer',
+          icon: 'assets/owner/auna_logo.jpg',
+          link: 'https://auna.com',
+          backgroundImg: 'assets/owner/auna.jpeg',
           description:
-            "Développement d’une application web qui permet de gerer l'affectation des classes aussi que la gestion des abscences.",
+            'Developing a digital healthcare platform aimed at providing users\n      with a more convenient, streamlined, and personalized healthcare\n      experience. This includes appointment scheduling, telemedicine,\n      prescription management, and personal health records.',
           technos: [
             {
               name: 'Angular',

@@ -23,7 +23,6 @@ export class ControlCenterComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.unlistener = this.renderer2.listen('document', 'click', (event) => {
-      console.log('click', this.visible);
       if (this.visible && !this.wrapper?.nativeElement.contains(event.target)) {
         // this.visible = false;
       }
@@ -38,7 +37,6 @@ export class ControlCenterComponent implements OnInit, OnDestroy {
 
   soundChange(event: Event) {
     const soundValue = (event.target as HTMLInputElement).value || 100;
-    console.log({ soundValue });
   }
 
   ngOnDestroy() {

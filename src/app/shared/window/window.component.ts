@@ -6,6 +6,7 @@ import { Program } from '@core/models/menu';
 import { CalculatorComponent } from '../programs/calculator/calculator.component';
 
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
+import { ExperienceComponent } from '../programs/experience/experience.component';
 
 @Component({
   selector: 'app-window',
@@ -20,6 +21,7 @@ export class WindowComponent {
     { name: 'finder', component: FinderComponent },
     { name: 'maps', component: MapsComponent },
     { name: 'calculator', component: CalculatorComponent },
+    { name: 'experience', component: ExperienceComponent },
   ];
 
   maximized = false;

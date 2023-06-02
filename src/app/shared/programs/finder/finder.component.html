@@ -7,7 +7,14 @@
         <div class="content-text">
           <h1>{{ data.presentation.name }}</h1>
           <p>{{ data.presentation.description }}</p>
-          <button class="primary">Contacter Moi</button>
+          <button
+            class="primary"
+            (click)="
+              navigateUrl('https://www.linkedin.com/in/ahmed-tabib-13243b15b/')
+            "
+          >
+            Contact Me
+          </button>
         </div>
         <img
           class="content-img"
