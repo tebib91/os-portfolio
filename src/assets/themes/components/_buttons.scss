@@ -21,12 +21,12 @@ button {
 
   &:focus {
     outline: none;
-    box-shadow: $button-focus-box-shadow;
+    box-shadow: none;
   }
 
   :focus-visible {
     outline: none;
-    box-shadow: $button-focus-box-shadow;
+    box-shadow: none;
   }
 
   &:active {

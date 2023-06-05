@@ -1,10 +1,10 @@
-import { CvFinder, Experience } from '@core/models/cv';
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '@core/services/api.service';
 import { Observable } from 'rxjs';
-import { RedirectService } from '@core/services/redirect.service';
+
 import { MatDialog } from '@angular/material/dialog';
-import { NotesComponent } from '@app/shared/widgets/notes/notes.component';
+import { CvFinder, Experience } from '@core/models/cv';
+import { ApiService } from '@core/services/api.service';
+import { RedirectService } from '@core/services/redirect.service';
 import { WindowComponent } from '@app/shared/window/window.component';
 
 @Component({

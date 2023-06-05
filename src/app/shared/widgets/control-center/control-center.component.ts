@@ -37,6 +37,7 @@ export class ControlCenterComponent implements OnInit, OnDestroy {
 
   soundChange(event: Event) {
     const soundValue = (event.target as HTMLInputElement).value || 100;
+    return soundValue;
   }
 
   ngOnDestroy() {

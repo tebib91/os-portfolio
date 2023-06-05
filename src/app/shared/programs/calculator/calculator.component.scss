@@ -60,13 +60,18 @@
       color: $primary-color;
       font-size: 18px;
       cursor: pointer;
+      outline: none;
 
-      /* Use the & operator to select the button when it is hovered over */
+      /* Change the color when a button is clicked or hovered over */
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
       &:hover {
-        background-color: lighten($secondary-color, 10%);
+        background-color: darken($secondary-color, 10%);
       }
       &:active {
-        background-color: #ddd;
+        background-color: darken($secondary-color, 20%);
       }
     }
   }

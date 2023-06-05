@@ -8,33 +8,20 @@ import { Component } from '@angular/core';
 export class CalculatorComponent {
   // Declare the variables for the component
   displayValue = '0';
-  operator!: string;
-  firstOperand!: number;
+  operator = '';
+  firstOperand = 0;
+  secondOperand!: number;
   waitingForSecondOperand = false;
   memory = 0;
   numbers = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0];
+  operations: string[] = [];
 
   clear() {
     this.displayValue = '0';
     this.operator = '';
     this.firstOperand = 0;
     this.waitingForSecondOperand = false;
-  }
-
-  memoryClear() {
-    this.memory = 0;
-  }
-
-  memoryRecall() {
-    this.displayValue = this.memory.toString();
-  }
-
-  memoryAdd() {
-    this.memory += parseFloat(this.displayValue);
-  }
-
-  memorySubtract() {
-    this.memory -= parseFloat(this.displayValue);
+    this.operations = []; // clear the operations
   }
 
   enterNumber(num: number) {
@@ -46,6 +33,9 @@ export class CalculatorComponent {
       this.displayValue === '0'
         ? num.toString()
         : this.displayValue + num.toString();
+    if (this.waitingForSecondOperand) {
+      this.operations.push(this.displayValue);
+    }
   }
 
   enterDecimal() {
@@ -53,43 +43,40 @@ export class CalculatorComponent {
       this.displayValue += '.';
     }
   }
+
   add() {
     this.operator = '+';
     this.waitingForSecondOperand = true;
     this.firstOperand = parseFloat(this.displayValue);
+    this.operations.push(`${this.displayValue} ${this.operator}`);
   }
 
   divide() {
     this.operator = '/';
     this.waitingForSecondOperand = true;
     this.firstOperand = parseFloat(this.displayValue);
+    this.operations.push(`${this.displayValue} ${this.operator}`);
   }
 
   multiply() {
     this.operator = '*';
     this.waitingForSecondOperand = true;
     this.firstOperand = parseFloat(this.displayValue);
+    this.operations.push(`${this.displayValue} ${this.operator}`);
   }
+
   subtract() {
     this.operator = '-';
     this.waitingForSecondOperand = true;
     this.firstOperand = parseFloat(this.displayValue);
+    this.operations.push(`${this.displayValue} ${this.operator}`);
   }
+
   squareRoot() {
     this.displayValue = Math.sqrt(parseFloat(this.displayValue)).toString();
+    this.operations.push(`√${this.firstOperand} = ${this.displayValue}`);
   }
 
-  sin() {
-    this.displayValue = Math.sin(parseFloat(this.displayValue)).toString();
-  }
-
-  tan() {
-    this.displayValue = Math.tan(parseFloat(this.displayValue)).toString();
-  }
-
-  cos() {
-    this.displayValue = Math.cos(parseFloat(this.displayValue)).toString();
-  }
   equals() {
     this.waitingForSecondOperand = true;
     const result = this.performCalculation(
@@ -98,6 +85,7 @@ export class CalculatorComponent {
       this.operator
     );
     this.displayValue = result.toString();
+    this.operations.push(`= ${this.displayValue}`);
   }
 
   performCalculation(
@@ -113,7 +101,12 @@ export class CalculatorComponent {
       case '*':
         return firstOperand * secondOperand;
       case '/':
-        return firstOperand / secondOperand;
+        // Prevent division by zero
+        if (secondOperand !== 0) {
+          return firstOperand / secondOperand;
+        } else {
+          return NaN;
+        }
       default:
         return secondOperand;
     }
