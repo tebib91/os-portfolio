@@ -1,18 +1,26 @@
 <div class="calculator">
-  <div class="display">
-    {{ operations.join(" ") }}
-  </div>
+  <div class="display">{{ equationDisplay }}</div>
   <div class="buttons">
-    <button (click)="clear()">C</button>
-    <button (click)="divide()">/</button>
-    <button (click)="multiply()">*</button>
-    <button (click)="subtract()">-</button>
-    <button (click)="add()">+</button>
-    <button (click)="squareRoot()">x²</button>
-    <button *ngFor="let num of numbers" (click)="enterNumber(num)">
+    <button (click)="buttonClick('C')">C</button>
+    <button (click)="buttonClick('%')">%</button>
+    <button (click)="buttonClick('()')">()</button>
+
+    <button (click)="buttonClick('/')">/</button>
+    <button *ngFor="let num of [7, 8, 9]" (click)="buttonClick(num.toString())">
       {{ num }}
     </button>
-    <button (click)="enterDecimal()">.</button>
-    <button (click)="equals()">=</button>
+    <button (click)="buttonClick('*')">*</button>
+    <button *ngFor="let num of [4, 5, 6]" (click)="buttonClick(num.toString())">
+      {{ num }}
+    </button>
+    <button (click)="buttonClick('-')">-</button>
+    <button *ngFor="let num of [1, 2, 3]" (click)="buttonClick(num.toString())">
+      {{ num }}
+    </button>
+    <button (click)="buttonClick('+')">+</button>
+    <button (click)="buttonClick('+/-')">+/-</button>
+    <button (click)="buttonClick('0')">0</button>
+    <button (click)="buttonClick('.')">.</button>
+    <button (click)="buttonClick('=')">=</button>
   </div>
 </div>

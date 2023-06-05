@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-calculator',
@@ -6,109 +6,126 @@ import { Component } from '@angular/core';
   styleUrls: ['./calculator.component.scss'],
 })
 export class CalculatorComponent {
-  // Declare the variables for the component
-  displayValue = '0';
-  operator = '';
-  firstOperand = 0;
-  secondOperand!: number;
-  waitingForSecondOperand = false;
-  memory = 0;
-  numbers = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0];
-  operations: string[] = [];
+  equationDisplay = '';
+  private currentNumber = '';
+  private previousNumber = '';
+  private operation = '';
 
-  clear() {
-    this.displayValue = '0';
-    this.operator = '';
-    this.firstOperand = 0;
-    this.waitingForSecondOperand = false;
-    this.operations = []; // clear the operations
-  }
+  private keyboardMap: { [key: string]: string } = {
+    '0': '0',
+    '1': '1',
+    '2': '2',
+    '3': '3',
+    '4': '4',
+    '5': '5',
+    '6': '6',
+    '7': '7',
+    '8': '8',
+    '9': '9',
+    '.': '.',
+    '/': '/',
+    '*': '*',
+    '-': '-',
+    '+': '+',
+    Enter: '=',
+    '=': '=',
+    Backspace: 'C',
+    Escape: 'C',
+    c: 'C',
+  };
 
-  enterNumber(num: number) {
-    if (this.waitingForSecondOperand) {
-      this.displayValue = '';
-      this.waitingForSecondOperand = false;
-    }
-    this.displayValue =
-      this.displayValue === '0'
-        ? num.toString()
-        : this.displayValue + num.toString();
-    if (this.waitingForSecondOperand) {
-      this.operations.push(this.displayValue);
-    }
-  }
-
-  enterDecimal() {
-    if (!this.displayValue.includes('.')) {
-      this.displayValue += '.';
+  @HostListener('window:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    const key = event.key;
+    if (this.keyboardMap[key] !== undefined) {
+      this.buttonClick(this.keyboardMap[key]);
     }
   }
 
-  add() {
-    this.operator = '+';
-    this.waitingForSecondOperand = true;
-    this.firstOperand = parseFloat(this.displayValue);
-    this.operations.push(`${this.displayValue} ${this.operator}`);
+  buttonClick(val: string) {
+    if (this.isNumber(val)) {
+      this.numberClick(val);
+    } else {
+      this.operatorClick(val);
+    }
+    this.updateEquationDisplay();
   }
 
-  divide() {
-    this.operator = '/';
-    this.waitingForSecondOperand = true;
-    this.firstOperand = parseFloat(this.displayValue);
-    this.operations.push(`${this.displayValue} ${this.operator}`);
+  private isNumber(val: string): boolean {
+    return !isNaN(Number(val));
   }
 
-  multiply() {
-    this.operator = '*';
-    this.waitingForSecondOperand = true;
-    this.firstOperand = parseFloat(this.displayValue);
-    this.operations.push(`${this.displayValue} ${this.operator}`);
+  private numberClick(val: string): void {
+    if (this.operation === '=') {
+      this.operation = '';
+      this.previousNumber = '';
+      this.equationDisplay = '';
+    }
+    this.currentNumber += val;
   }
 
-  subtract() {
-    this.operator = '-';
-    this.waitingForSecondOperand = true;
-    this.firstOperand = parseFloat(this.displayValue);
-    this.operations.push(`${this.displayValue} ${this.operator}`);
+  private operatorClick(val: string): void {
+    if (val === 'C') {
+      this.clear();
+      return;
+    }
+
+    if (this.currentNumber) {
+      if (this.previousNumber && this.operation && this.operation !== '=') {
+        this.calculate();
+      }
+      this.previousNumber = this.currentNumber;
+      this.currentNumber = '';
+    }
+
+    if (val !== '=') {
+      this.operation = val;
+      this.equationDisplay += ` ${val}`;
+    } else if (this.previousNumber && this.operation) {
+      this.calculate();
+      this.previousNumber = '';
+      this.operation = '';
+    }
   }
 
-  squareRoot() {
-    this.displayValue = Math.sqrt(parseFloat(this.displayValue)).toString();
-    this.operations.push(`√${this.firstOperand} = ${this.displayValue}`);
-  }
+  private calculate(): void {
+    let result: number;
+    const currentNumber = Number(this.currentNumber);
+    const previousNumber = Number(this.previousNumber);
 
-  equals() {
-    this.waitingForSecondOperand = true;
-    const result = this.performCalculation(
-      this.firstOperand,
-      parseFloat(this.displayValue),
-      this.operator
-    );
-    this.displayValue = result.toString();
-    this.operations.push(`= ${this.displayValue}`);
-  }
-
-  performCalculation(
-    firstOperand: number,
-    secondOperand: number,
-    operator: string
-  ): number {
-    switch (operator) {
+    switch (this.operation) {
       case '+':
-        return firstOperand + secondOperand;
+        result = previousNumber + currentNumber;
+        break;
       case '-':
-        return firstOperand - secondOperand;
+        result = previousNumber - currentNumber;
+        break;
       case '*':
-        return firstOperand * secondOperand;
+        result = previousNumber * currentNumber;
+        break;
       case '/':
-        // Prevent division by zero
-        if (secondOperand !== 0) {
-          return firstOperand / secondOperand;
-        } else {
-          return NaN;
-        }
+        result = previousNumber / currentNumber;
+        break;
       default:
-        return secondOperand;
+        return;
     }
+    this.currentNumber = String(result);
+    this.equationDisplay += ` = ${this.currentNumber}`;
+  }
+
+  private updateEquationDisplay(): void {
+    if (this.operation !== '=') {
+      this.equationDisplay = `${this.previousNumber} ${this.operation} ${this.currentNumber}`;
+    } else {
+      this.equationDisplay = this.currentNumber;
+    }
+    console.log(this.currentNumber);
+  }
+
+  private clear(): void {
+    this.currentNumber = '';
+    this.previousNumber = '';
+    this.operation = '';
+    this.equationDisplay = '';
   }
 }

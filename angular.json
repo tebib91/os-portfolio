@@ -30,11 +30,7 @@
               "src/robots.txt",
               "src/sitemap.xml"
             ],
-            "styles": [
-              "src/styles.scss",
-              "src/assets/themes/theme.scss",
-              "node_modules/leaflet/dist/leaflet.css"
-            ],
+            "styles": ["src/styles.scss", "src/assets/themes/theme.scss"],
             "stylePreprocessorOptions": {
               "includePaths": ["src/assets/themes"]
             },
@@ -106,11 +102,7 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
-            "styles": [
-              "src/styles.scss",
-              "src/assets/themes/theme.scss",
-              "node_modules/leaflet/dist/leaflet.css"
-            ],
+            "styles": ["src/styles.scss", "src/assets/themes/theme.scss"],
             "stylePreprocessorOptions": {
               "includePaths": ["src/assets/themes"]
             },

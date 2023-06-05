@@ -1,3 +1,4 @@
+import { GoogleMapsModule } from '@angular/google-maps';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -16,7 +17,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { ContextMenuComponent } from './widgets/context-menu/context-menu.component';
 import { ExperienceComponent } from './programs/experience/experience.component';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
-import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [
