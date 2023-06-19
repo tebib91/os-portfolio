@@ -25,3 +25,9 @@ body {
   background: rgb(255 253 253 / 57%);
   border-radius: 10px;
 }
+
+img {
+  aspect-ratio: auto 640 / 360;
+  height: auto;
+  width: 100%;
+}

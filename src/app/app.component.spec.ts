@@ -16,18 +16,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'os-front'`, () => {
+  it(`should have as title 'Ahmed Tabib | Fullstack Developer JavaScript'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('os-front');
+    expect(app.title).toEqual('Ahmed Tabib | Fullstack Developer JavaScript');
   });
-
-  /*   it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain(
-      'os-front app is running!'
-    );
-  }); */
 });

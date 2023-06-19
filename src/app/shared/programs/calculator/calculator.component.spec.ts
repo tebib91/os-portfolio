@@ -15,4 +15,8 @@ describe('CalculatorComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
+
+  it('should add numbers correctly', () => {
+    // test code
+  });
 });

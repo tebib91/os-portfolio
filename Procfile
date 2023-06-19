@@ -1,1 +1,1 @@
-start: node dist/os-front/server/main.js
+start: node os-front/server/main.js
