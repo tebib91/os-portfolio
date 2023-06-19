@@ -1,6 +1,6 @@
 {
   "name": "os-front",
-  "version": "1.9.2",
+  "version": "1.10.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -17,8 +17,9 @@
     "serve:ssr": "node dist/os-front/server/main.js",
     "build:ssr": "ng build && ng run os-front:server",
     "prerender": "ng run os-front:prerender",
-    "package": "npm run build && npm run zip",
-    "zip": "rimraf --glob dist/*.zip && cd dist && bestzip os-front.zip *"
+    "version": "node -p \"require('./package.json').version\"",
+    "zip": "node zip.ts",
+    "package": "npm run build:ssr && npm run zip"
   },
   "private": true,
   "dependencies": {

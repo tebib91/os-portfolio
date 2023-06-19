@@ -89,17 +89,17 @@ export const me: CvFinder = {
     {
       name: 'NodeJs',
       icon: 'https://img.icons8.com/color/48/000000/nodejs.png',
-      link: '',
+      link: 'https://nodejs.org/en',
     },
     {
       name: 'MongoDb',
       icon: 'https://img.icons8.com/color/48/000000/mongodb.png',
-      link: '',
+      link: 'https://www.mongodb.com/',
     },
     {
       name: 'Express',
       icon: 'https://img.icons8.com/color/48/000000/express.png',
-      link: '',
+      link: 'https://expressjs.com/',
     },
     {
       name: 'Git',
@@ -109,7 +109,7 @@ export const me: CvFinder = {
     {
       name: 'Rxjs',
       icon: 'assets/owner/rxjs.webp',
-      link: 'https://www.atlassian.com/',
+      link: 'https://rxjs.dev/',
     },
     {
       name: 'Docker',
@@ -134,7 +134,7 @@ export const me: CvFinder = {
     {
       name: 'Css3',
       icon: 'https://img.icons8.com/color/48/000000/css3.png',
-      link: 'https://www.atlassian.com/',
+      link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
     },
     {
       name: 'Sass',
@@ -150,11 +150,6 @@ export const me: CvFinder = {
       name: 'Electron JS',
       icon: 'assets/owner/electronjs.webp',
       link: 'https://www.electronjs.org/',
-    },
-    {
-      name: 'Akita',
-      icon: 'https://img.icons8.com/color/48/000000/jira.png',
-      link: 'https://www.atlassian.com/',
     },
   ],
 

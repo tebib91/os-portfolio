@@ -1,7 +1,6 @@
 import { Icons } from '@core/models/icons';
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { ThemeService } from '@core/services/theme.service';
-import { TranslationService } from '@core/services/translation.service';
 import { iconsDock } from '@app/core/data/data';
 
 @Component({
@@ -9,31 +8,17 @@ import { iconsDock } from '@app/core/data/data';
   templateUrl: './taskbar.component.html',
   styleUrls: ['./taskbar.component.scss'],
 })
-export class TaskbarComponent implements OnInit {
+export class TaskbarComponent {
   icons = iconsDock;
   @Output() program = new EventEmitter<Icons>();
 
   scale = 'normal';
 
-  constructor(
-    public themeService: ThemeService,
-    private translationService: TranslationService
-  ) {}
+  constructor(public themeService: ThemeService) {}
 
   onClick(item: Icons) {
     this.scale = 'clicked';
     // handle item click event
     this.program.emit(item);
-  }
-
-  ngOnInit(): void {
-    const labels = this.icons.map((icon) => icon.label);
-    this.translationService
-      .translateLabels(labels, 'ICONS')
-      .then((translatedLabels) => {
-        for (let i = 0; i < this.icons.length; i++) {
-          this.icons[i] = { ...this.icons[i], label: translatedLabels[i] };
-        }
-      });
   }
 }
