@@ -61,10 +61,10 @@ deploy:
   stage: deploy
   script:
     - apt-get -q update && apt-get -q -y install zip python3 python3-pip
-    - zip -r package.zip . -x "*.git*"
+    - zip -r package.zip . -x "node_modules/*" -x "*.git*"
     - pip3 install awsebcli --upgrade --user
     - export PATH=$PATH:~/.local/bin/
-    - eb init os-front -p node.js -r us-west-2 -k $AWS_ACCESS_KEY_ID -s $AWS_SECRET_ACCESS_KEY
-    - eb use Osfrontahmed-env
+    - eb init $ENV_APP -p node.js -r $AWS_REGION -k $AWS_ACCESS_KEY_ID -s $AWS_SECRET_ACCESS_KEY
+    - eb use $ENV_NAME
     - eb deploy --staged
   only: ["main"]
