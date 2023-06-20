@@ -41,33 +41,4 @@ export class LayoutComponent {
       console.info('The dialog was closed', { item, result });
     });
   }
-
-  handleAction(action: MenuContext) {
-    // Perform the logic based on the selected action
-    if (action.action === 'CF') {
-      this.createFolder();
-    } else if (action.action === 'CBd') {
-      this.changeBackground();
-    }
-  }
-
-  changeBackground() {
-    const index = this.getRandomNumber();
-    this.urlImage = `/assets/backgrounds/background-${index}.webp`;
-  }
-
-  getRandomNumber() {
-    let randomNumber = Math.floor(Math.random() * 6) + 1;
-    while (randomNumber === this.lastRandomNumber) {
-      randomNumber = Math.floor(Math.random() * 4) + 1;
-    }
-    this.lastRandomNumber = randomNumber;
-    return randomNumber;
-  }
-
-  createFolder() {
-    const defaultFolderName = 'New Folder'; // Change this to the desired default name for the folder
-    // Add the new folder name to the folders array
-    this.folders.push(`${defaultFolderName}_${this.folderCounter++}`);
-  }
 }

@@ -23,7 +23,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./background-image.component.scss'],
 })
 export class BackgroundImageComponent {
-  @Input() imageUrl!: string;
+  @Input() imageUrl = '/assets/backgrounds/background-1.webp';
   @Input() size!: string;
   @Input() position!: string;
   @Input() repeat!: string;

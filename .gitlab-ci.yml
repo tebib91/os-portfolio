@@ -19,14 +19,10 @@ cache:
   paths:
     - node_modules/
 
-install_dependencies:
-  stage: dependencies
-  script:
-    - npm ci --prefer-offline --no-audit
-
 build:
   stage: build
   script:
+    - npm install
     - npm run build:ssr
   artifacts:
     paths:
@@ -62,19 +58,13 @@ artifacts:
 
 # Job Two for deploy build to S3
 deploy:
-  image: python:latest
   stage: deploy
-  dependencies:
-    - artifacts
   script:
-    - apt-get update && apt-get install -y zip
-    - echo "Installing AWS CLI..."
-    - apt-get install -y awscli
-    - echo "Deploying to Elastic Beanstalk..."
-    - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-    - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
-    - aws configure set region $AWS_REGION
-    - aws s3 cp artifact-osFront.zip s3://$S3_BUCKET_NAME/artifact-osFront.zip
-    - aws elasticbeanstalk create-application-version --application-name $APP_NAME --version-label $CI_COMMIT_SHORT_SHA --source-bundle S3Bucket=$S3_BUCKET_NAME,S3Key="artifact-osFront.zip"
-    - aws elasticbeanstalk update-environment --application-name $APP_NAME --environment-name $ENV_NAME --version-label $CI_COMMIT_SHORT_SHA
+    - apt-get -q update && apt-get -q -y install zip python3 python3-pip
+    - zip -r package.zip . -x "*.git*"
+    - pip3 install awsebcli --upgrade --user
+    - export PATH=$PATH:~/.local/bin/
+    - eb init os-front -p node.js -r us-west-2 -k $AWS_ACCESS_KEY_ID -s $AWS_SECRET_ACCESS_KEY
+    - eb use Osfrontahmed-env
+    - eb deploy --staged
   only: ["main"]
