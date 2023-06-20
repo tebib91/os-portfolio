@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Loader, LoaderOptions } from 'google-maps';
 
 @Component({
   selector: 'app-maps',
