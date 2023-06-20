@@ -15,6 +15,23 @@
 * **pipe:** add pipeline to depol eb ([6c62fa6](https://gitlab.com/tebib91/os-front/commit/6c62fa6c25cbb1c9793e68899e7c726ea45fad9e))
 * **version:** add new version ([e691faf](https://gitlab.com/tebib91/os-front/commit/e691fafc590a73d7a4418cf9aee08bed5417006a))
 
+# [1.10.0](https://gitlab.com/tebib91/os-front/compare/v1.9.2...v1.10.0) (2023-06-20)
+
+
+### Bug Fixes
+
+* **enhace:** enhace ([14a0d0d](https://gitlab.com/tebib91/os-front/commit/14a0d0dc471fb8124f1c211dee4a7575b285a435))
+* **seo:** fix seo error ([bbd2f29](https://gitlab.com/tebib91/os-front/commit/bbd2f29497e516fcb04a950f25a0157a09115c3a))
+* **theme:** adjust some fix ([ca39e29](https://gitlab.com/tebib91/os-front/commit/ca39e29dee038b836c5186940e4fc23d0d5a61c3))
+
+
+### Features
+
+* **i18:** translate ([1b5789a](https://gitlab.com/tebib91/os-front/commit/1b5789a6c05371184501b74f566b4f6d6492f92a))
+* **maps:** add maps ([6c744f3](https://gitlab.com/tebib91/os-front/commit/6c744f35a7e64e17172eb670ca9c37221a356cf8))
+* **pipe:** add pipeline to depol eb ([6c62fa6](https://gitlab.com/tebib91/os-front/commit/6c62fa6c25cbb1c9793e68899e7c726ea45fad9e))
+* **version:** add new version ([e691faf](https://gitlab.com/tebib91/os-front/commit/e691fafc590a73d7a4418cf9aee08bed5417006a))
+
 # [1.10.0](https://gitlab.com/tebib91/os-front/compare/v1.9.2...v1.10.0) (2023-06-19)
 
 
