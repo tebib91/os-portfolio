@@ -41,7 +41,7 @@ export class FinderComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.info('The dialog was closed', { item, result });
+      console.info('The dialog was closed');
     });
   }
 }

@@ -20,7 +20,25 @@ export class SeoService {
     this.meta.updateTag({ name: 'description', content: metaData.description });
     this.meta.updateTag({ name: 'author', content: metaData.author });
     this.meta.updateTag({ name: 'keywords', content: metaData.keywords });
+
+    // Graph (Facebook) meta tags
+    this.meta.updateTag({ property: 'og:title', content: metaData.title });
+    this.meta.updateTag({
+      property: 'og:description',
+      content: metaData.description,
+    });
     this.meta.updateTag({ property: 'og:image', content: metaData.image });
+    this.meta.updateTag({
+      property: 'og:type',
+      content: 'website',
+    });
+
+    // Twitter Card (Twitter)
+    this.meta.updateTag({ name: 'twitter:image', content: metaData.image });
+    this.meta.updateTag({
+      name: 'twitter:description',
+      content: metaData.description,
+    });
     this.meta.updateTag({ name: 'twitter:image', content: metaData.image });
 
     // For canonical url, remove existing canonical tag first.
@@ -48,7 +66,7 @@ export class SeoService {
         author: 'Ahmed Tabib',
         keywords:
           'Ahmed Tabib, full stack developer, JavaScript, Angular, React, Node, Express, Jest, Karma, AWS',
-        image: 'https://www.ahmedtabib.com/me.webp',
+        image: '/assets/owner/me.webp',
         canonical: 'https://www.ahmedtabib.com/desktop',
       },
       '/boot': {
@@ -58,7 +76,7 @@ export class SeoService {
         author: 'Ahmed Tabib',
         keywords:
           'Ahmed Tabib, Full Stack Developer, professional experience, portfolio, SFR, SNCF, Orange',
-        image: 'https://www.ahmedtabib.com/me.webp',
+        image: '/assets/owner/me.webp',
         canonical: 'https://www.ahmedtabib.com/boot',
       },
     };
