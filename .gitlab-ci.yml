@@ -1,5 +1,5 @@
 # Use a custom image with Node.js and Google Chrome pre-installed for testing.
-image: timbru31/node-chrome
+image: node:16.14.2-bullseye
 
 stages:
   - dependencies
@@ -49,8 +49,12 @@ build:
 # Run tests on the build
 test:
   stage: test
+  before_script:
+    - apt-get update
+    - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    - apt install -y ./google-chrome*.deb
+    - export CHROME_BIN=/usr/bin/google-chrome
   script:
-    - echo "Running tests..."
     - npm run test -- --no-watch --browsers=ChromeHeadlessCI
 
 # Release the application
@@ -68,6 +72,8 @@ artifacts:
   stage: artifacts
   dependencies:
     - build
+  before_script:
+    - apt-get update && apt-get install -y zip  
   script:
     - echo "Archiving build artifacts..."
     - cp Procfile dist/
