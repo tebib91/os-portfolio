@@ -18,7 +18,7 @@ variables:
 
 before_script:
   - export CACHE_KEY_DEPENDENCIES=$(sha256sum package-lock.json | awk '{print $1}')
-  - echo "Cache key for dependencies: $CACHE_KEY_DEPENDENCIES"
+  - echo "Cache key for dependencies  $CACHE_KEY_DEPENDENCIES"
 
 # Cache dependencies for quicker builds
 cache:
