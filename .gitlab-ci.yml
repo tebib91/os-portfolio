@@ -1,4 +1,5 @@
-image: node:16.14.2-bullseye
+# Use a custom image with Node.js and Google Chrome pre-installed for testing.
+image: timbru31/node-chrome
 
 stages:
   - dependencies
@@ -8,63 +9,94 @@ stages:
   - artifacts
   - deploy
 
+# Global environment variables for the pipeline
 variables:
   S3_BUCKET_NAME: osfrontahmed
   AWS_REGION: eu-west-3
   ENV_NAME: Osfrontahmed-env
   APP_NAME: osfrontahmed
 
+# Cache dependencies for quicker builds
 cache:
-  key: "$CI_COMMIT_REF_SLUG"
+  key: "${CI_COMMIT_REF_SLUG}-dependencies"
   paths:
     - node_modules/
 
+# Dependency installation stage
+dependencies:
+  stage: dependencies
+  before_script:
+    - export CACHE_KEY_DEPENDENCIES=$(sha256sum package-lock.json | awk '{print $1}')
+  script:
+    - echo "Cache key for dependencies :/ $CACHE_KEY_DEPENDENCIES"
+    - echo "Installing npm dependencies..."
+    - npm install
+  cache:
+    key: "${CI_COMMIT_REF_SLUG}-${CACHE_KEY_DEPENDENCIES}"
+    paths:
+      - node_modules
+
+# Build the application
 build:
   stage: build
   script:
-    - npm install
+    - echo "Building the application..."
     - npm run build:ssr
   artifacts:
     paths:
       - dist/
 
+# Run tests on the build
 test:
   stage: test
-  before_script:
-    - apt-get update
-    - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    - apt install -y ./google-chrome*.deb
-    - export CHROME_BIN=/usr/bin/google-chrome
   script:
+    - echo "Running tests..."
     - npm run test -- --no-watch --browsers=ChromeHeadlessCI
 
+# Release the application
 release:
   stage: release
   script:
+    - echo "Releasing new version..."
     - npx semantic-release
+  only:
+    changes:
+      - "src/**/*"
 
+# Archive artifacts for deployment
 artifacts:
   stage: artifacts
   dependencies:
     - build
-  before_script:
-    - apt-get update && apt-get install -y zip
   script:
+    - echo "Archiving build artifacts..."
     - cp Procfile dist/
     - zip -r artifact-osFront.zip dist/
   artifacts:
     paths:
       - artifact-osFront.zip
 
-# Job Two for deploy build to S3
+# Deploy to AWS Elastic Beanstalk
 deploy:
   stage: deploy
   script:
+    # Install AWS Elastic Beanstalk CLI
+    - echo "Installing AWS Elastic Beanstalk CLI..."
     - apt-get -q update && apt-get -q -y install zip python3 python3-pip
-    - zip -r package.zip . -x "node_modules/*" -x "*.git*"
     - pip3 install awsebcli --upgrade --user
+
+    # Update PATH to include the Elastic Beanstalk CLI
     - export PATH=$PATH:~/.local/bin/
-    - eb init $ENV_APP -p node.js -r $AWS_REGION -k $AWS_ACCESS_KEY_ID -s $AWS_SECRET_ACCESS_KEY
+
+    # Initialize and set up the Elastic Beanstalk environment
+    - echo "Initializing Elastic Beanstalk..."
+    - eb init $APP_NAME -p node.js -r $AWS_REGION -k $AWS_ACCESS_KEY_ID -s $AWS_SECRET_ACCESS_KEY
+    - echo "Using environment $ENV_NAME..."
     - eb use $ENV_NAME
+
+    # Deploy the application
+    - echo "Deploying to Elastic Beanstalk..."
     - eb deploy --staged
+    - echo "Deployment complete."
   only: ["main"]
+# Debug and informational commands can be added wherever necessary to get more details during pipeline execution.
