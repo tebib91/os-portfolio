@@ -16,32 +16,29 @@ variables:
   ENV_NAME: Osfrontahmed-env
   APP_NAME: osfrontahmed
 
+before_script:
+  - export CACHE_KEY_DEPENDENCIES=$(sha256sum package-lock.json | awk '{print $1}')
+  - echo "Cache key for dependencies: $CACHE_KEY_DEPENDENCIES"
+
 # Cache dependencies for quicker builds
 cache:
-  key: "${CI_COMMIT_REF_SLUG}-dependencies"
+  key: "${CI_COMMIT_REF_SLUG}-${CACHE_KEY_DEPENDENCIES}"
   paths:
     - node_modules/
 
 # Dependency installation stage
 dependencies:
   stage: dependencies
-  before_script:
-    - export CACHE_KEY_DEPENDENCIES=$(sha256sum package-lock.json | awk '{print $1}')
   script:
-    - echo "Cache key for dependencies :/ $CACHE_KEY_DEPENDENCIES"
     - echo "Installing npm dependencies..."
     - npm install
-  cache:
-    key: "${CI_COMMIT_REF_SLUG}-${CACHE_KEY_DEPENDENCIES}"
-    paths:
-      - node_modules
 
 # Build the application
 build:
   stage: build
   script:
     - echo "Building the application..."
-    - npx ng build && npx ng run os-front:serve
+    - npm run build:ssr
   artifacts:
     paths:
       - dist/
