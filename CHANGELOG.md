@@ -1,3 +1,12 @@
+## [1.10.1](https://gitlab.com/tebib91/os-front/compare/v1.10.0...v1.10.1) (2023-08-31)
+
+
+### Bug Fixes
+
+* **gitlab:** fix semantic issues ([17ef482](https://gitlab.com/tebib91/os-front/commit/17ef48273bf4f7e5c7e846fdd61b663a123aa30a))
+* **pipe:** Update .gitlab-ci.yml file ([69ae546](https://gitlab.com/tebib91/os-front/commit/69ae546ca516dfeedf73e2b4dda5a551908ebca9))
+* **seo:** fix SEO issues ([d425102](https://gitlab.com/tebib91/os-front/commit/d42510229f97cc194b91fea111374b6791e82584))
+
 # [1.10.0](https://gitlab.com/tebib91/os-front/compare/v1.9.2...v1.10.0) (2023-06-20)
 
 
