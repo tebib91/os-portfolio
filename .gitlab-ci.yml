@@ -41,7 +41,7 @@ build:
   stage: build
   script:
     - echo "Building the application..."
-    - npm run build:ssr
+    - npx ng build && npx ng run os-front:serve
   artifacts:
     paths:
       - dist/
