@@ -5,9 +5,13 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 on:
-  workflow_dispatch:
-  release:
-    types: [published]
+  # workflow_dispatch:
+  # release:
+  #   types: [published]
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 
 jobs:
   build-and-push-image:

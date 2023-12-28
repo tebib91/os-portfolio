@@ -1,5 +1,5 @@
 # Build Stage
-FROM node:20-alpine AS build-stage
+FROM node:18-alpine AS build-stage
 
 WORKDIR /app
 
@@ -16,7 +16,7 @@ COPY . .
 RUN npm run build:ssr
 
 # Serve Stage
-FROM node:20-alpine
+FROM node:18-alpine
 
 WORKDIR /app
 
