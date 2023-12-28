@@ -1,5 +1,5 @@
 # Build Stage
-FROM node:18-alpine AS build-stage
+FROM node:18-bullseye-slim AS build-stage
 
 WORKDIR /app
 
@@ -16,7 +16,7 @@ COPY . .
 RUN npm run build:ssr
 
 # Serve Stage
-FROM node:18-alpine
+FROM node:18-bullseye-slim
 
 WORKDIR /app
 
