@@ -1,0 +1,88 @@
+// Button styles
+button {
+  // Default size
+  padding: $button-padding;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+
+  // Colors and borders
+  background-color: $button-background-color;
+  color: $button-color;
+  border-radius: $button-border-radius;
+  border: $button-border;
+  cursor: pointer;
+  // Transitions
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $button-hover-background-color;
+    color: $button-hover-color;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:active {
+    outline: none;
+    background-color: darken($button-background-color, 10%);
+  }
+
+  // Small size
+  &.small {
+    padding: $button-small-padding;
+    font-size: $button-small-font-size;
+  }
+
+  // Large size
+  &.large {
+    padding: $button-large-padding;
+    font-size: $button-large-font-size;
+  }
+
+  // Primary style
+  &.primary {
+    background-color: $button-background-color;
+    color: $button-color;
+    outline: none;
+    &:hover {
+      background-color: $button-hover-background-color;
+      color: $button-hover-color;
+    }
+
+    &:active {
+      background-color: darken($button-background-color, 10%);
+    }
+  }
+
+  // Round style
+  &.round {
+    width: 28px;
+    height: 28px;
+    background-color: $button-background-color;
+    border-radius: 16px;
+    outline: none;
+    &:hover {
+      background-color: $button-hover-background-color;
+    }
+
+    &:active {
+      background-color: darken($button-background-color, 10%);
+    }
+  }
+  &.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    img {
+      fill: currentColor;
+    }
+  }
+}

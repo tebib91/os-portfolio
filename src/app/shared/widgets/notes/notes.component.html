@@ -1,0 +1,19 @@
+<div class="notes">
+  <div class="notes-header">
+    <img src="assets/icons-system/notes.svg" alt="icon_notes" />
+    <p>Notes</p>
+  </div>
+  <div class="notes-content">
+    <ng-container *ngFor="let item of data.projects; let i = index">
+      <div class="element">
+        <p class="title">
+          {{ item.title }}
+        </p>
+        <span class="description">
+          {{ item.description }}
+        </span>
+      </div>
+      <hr class="divider" [hidden]="i / 2 !== 0" />
+    </ng-container>
+  </div>
+</div>

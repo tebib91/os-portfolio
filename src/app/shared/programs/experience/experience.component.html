@@ -1,0 +1,32 @@
+<div class="content" *ngIf="experience">
+  <div class="content-box" *ngFor="let item of experience.projects">
+    <div class="client">
+      <img [src]="item.icon" alt="" />
+      <h3>{{ item.name }}</h3>
+    </div>
+    <div class="project">
+      <div class="list-title">
+        <img src="https://img.icons8.com/ios/50/000000/web.png" />
+        <p>{{ item.title }}</p>
+      </div>
+      <div class="list-title">
+        <img src="https://img.icons8.com/ios/50/000000/developer--v1.png" />
+        <p>{{ item.postTitle }}</p>
+      </div>
+      <div class="list-title">
+        <img src="https://img.icons8.com/ios-glyphs/50/000000/task.png" />
+        <p>{{ item.description }}</p>
+      </div>
+
+      <div class="technos">
+        <h4><b>Technos</b></h4>
+        <div class="list">
+          <div class="products" *ngFor="let item of item.technos">
+            <img [src]="item.icon" [alt]="item.name" srcset="" />
+            {{ item.name }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+// your-component.scss
+@import "variables";
+@import "mixins";
+
+.container {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  border: 0.5px #f4f5f5 solid;
+  backdrop-filter: blur(96px);
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  display: inline-flex;
+  top: 28px;
+  right: 0;
+  position: absolute;
+  font: $caption-2-regular;
+  .sub-container {
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: inline-flex;
+    .widget-container {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background: rgba(255, 255, 255, 0.75);
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
+      border-radius: 10px;
+      border: 0.5px #f4f5f5 solid;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 2px;
+      display: inline-flex;
+      .widget-content {
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 10px;
+        padding-right: 6px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 10px;
+        display: flex;
+      }
+    }
+  }
+}

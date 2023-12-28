@@ -1,0 +1,35 @@
+// Opacity
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: #{alpha(opacity=$opacity-ie)};
+}
+
+@mixin bg-image($uri, $size, $position) {
+  background-image: url($uri);
+  background-size: $size;
+  background-position: $position;
+}
+
+@mixin flex($dir: row, $ai: stretch, $jc: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $ai;
+  justify-content: $jc;
+  flex-wrap: $wrap;
+}
+
+@mixin boxStyle {
+  border-radius: 10px;
+  background: var(--control-center-background);
+  border: 0.5px solid var(--alternate-content-background);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

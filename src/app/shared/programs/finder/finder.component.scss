@@ -1,0 +1,144 @@
+@import "variables";
+
+.wrapper {
+  box-sizing: border-box;
+  width: 800px;
+  height: 500px;
+  color: var(--text-color);
+  filter: drop-shadow(0px 20px 25px rgba(0, 0, 0, 0.25));
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 0 auto;
+  & .main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.content-banner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png"),
+    linear-gradient(
+      to right top,
+      #cf4af3,
+      #e73bd7,
+      #f631bc,
+      #fd31a2,
+      #ff3a8b,
+      #ff4b78,
+      #ff5e68,
+      #ff705c,
+      #ff8c51,
+      #ffaa49,
+      #ffc848,
+      #ffe652
+    );
+  gap: 16px;
+  border-radius: 7px;
+  padding: 1rem 0;
+  & img {
+    width: 6rem;
+    height: auto;
+  }
+  & .content-text {
+    color: white;
+    text-align: justify;
+  }
+  & .content-img {
+    width: 186px;
+    object-fit: cover;
+    object-position: center;
+    @media screen and (max-width: 570px) {
+      width: 110px;
+    }
+  }
+}
+
+.content-skills {
+  height: 13rem;
+  overflow: auto;
+  gap: 1rem;
+  & .skill {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.1rem;
+    > * {
+      width: calc(
+        (100% - 20px) / 3
+      ); /* Width of each item, with margin included */
+      margin-right: 10px; /* Margin between items */
+
+      &:nth-child(3) {
+        margin-left: auto; /* Move the third item to the end of the line */
+        width: 5.5rem;
+      }
+    }
+    img {
+      width: 1.5rem;
+      border-radius: 6px;
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+    p {
+      font: $title-3-bold;
+    }
+  }
+}
+
+.content-section {
+  h3 {
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.app-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1rem;
+
+  .app-card {
+    background: var(--control-center-background);
+    backdrop-filter: blur(40px);
+    /* Note: backdrop-filter has minimal browser support */
+    width: calc(33.3% - 20px);
+    height: 210px;
+    border-radius: 12px;
+    overflow: hidden;
+
+    & .back {
+      height: 50%;
+      width: 100%;
+      img {
+        height: 100%;
+        width: inherit;
+        object-fit: cover;
+      }
+    }
+
+    & .content {
+      display: flex;
+      margin: 1rem;
+      justify-content: space-between;
+      align-items: center;
+      .text {
+        p {
+          font: $body-bold;
+          margin: 0;
+        }
+        span {
+          font: $caption-1-regular;
+          color: rgba(60, 60, 67, 0.6);
+        }
+      }
+    }
+  }
+}

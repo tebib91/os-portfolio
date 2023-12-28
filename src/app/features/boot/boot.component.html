@@ -1,0 +1,20 @@
+<div class="boot-screen">
+  <img
+    class="boot-screen__logo"
+    src="assets/dock/finder-me.png"
+    alt="apple-logo"
+  />
+
+  <div class="boot-screen__progress-bar">
+    <p>For better experience open full screen mode</p>
+    <button class="full" *ngIf="!isFullScreen" (click)="chkScreenMode()">
+      <span>press here</span>
+    </button>
+    <mat-progress-bar
+      *ngIf="isFullScreen"
+      mode="determinate"
+      [value]="progressBarValue"
+      [style]="{ height: '6px' }"
+    ></mat-progress-bar>
+  </div>
+</div>

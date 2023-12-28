@@ -1,0 +1,11 @@
+// Import base variables
+@import "variables";
+
+$theme-bg-color: rgb(255 255 255 / 31%);
+$theme-color: #3c3a3a;
+// ... other light theme variables ...
+
+body {
+  background-color: $theme-bg-color;
+  color: $theme-color;
+}

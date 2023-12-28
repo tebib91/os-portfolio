@@ -1,0 +1,53 @@
+<header>
+  <nav class="menu-bar">
+    <div class="menu-bar-left">
+      <div class="menu-icon">
+        <img
+          src="assets/icons-system/dashboard.svg"
+          alt="Apple logo"
+          aria-label="Apple Logo"
+        />
+      </div>
+      <!-- <ul role="menu">
+        <li class="menu-bar-item" *ngFor="let item of items" role="menuitem">
+          <span>{{ item.label }}</span>
+        </li>
+      </ul> -->
+    </div>
+    <div class="menu-bar-right">
+      <ul>
+        <li class="menu-bar-item">
+          <div
+            class="battery-icon"
+            role="progressbar"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <div class="battery-container">
+              <div
+                class="battery-level"
+                [ngStyle]="{ width: batteryLevel + '%' }"
+              ></div>
+            </div>
+          </div>
+        </li>
+        <li
+          class="menu-bar-item"
+          role="button"
+          (click)="controlVisible = !controlVisible"
+        >
+          <img src="assets/icons-system/icons-system.svg" alt="Control Icon" />
+          <!-- Widget -->
+          <div class="control_center">
+            <app-control-center [visible]="controlVisible"></app-control-center>
+          </div>
+        </li>
+        <li class="menu-bar-item">
+          <span aria-label="Current Time">{{
+            currentTime | date : "shortTime"
+          }}</span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

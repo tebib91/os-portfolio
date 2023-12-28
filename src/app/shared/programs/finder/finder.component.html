@@ -1,0 +1,64 @@
+<div class="wrapper">
+  <div class="main-container" *ngIf="data$ | async as data; else loading">
+    <section class="content-section">
+      <!---Section banner-->
+      <div class="content-banner">
+        <img [src]="data.presentation.avatarUrl" alt="" />
+        <div class="content-text">
+          <h1>{{ data.presentation.name }}</h1>
+          <p>{{ data.presentation.description }}</p>
+          <button
+            class="primary"
+            (click)="
+              navigateUrl('https://www.linkedin.com/in/ahmed-tabib-13243b15b/')
+            "
+          >
+            Contact Me
+          </button>
+        </div>
+        <img
+          class="content-img"
+          src="assets/owner/technos.webp"
+          alt="technos"
+        />
+      </div>
+    </section>
+
+    <!---Section skills-->
+    <section class="content-section">
+      <h3>Technologies</h3>
+
+      <div class="content-skills">
+        <div class="skill" *ngFor="let item of data.technologies">
+          <img [src]="item.icon" [alt]="item.name" />
+          <p>{{ item.name }}</p>
+          <button class="primary" (click)="navigateUrl(item.link)">
+            {{ "Open" }}
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <!---Section jobs-->
+      <h3>Poste Occupés</h3>
+      <div class="app-cards">
+        <div class="app-card" *ngFor="let item of data.experiences">
+          <div class="back">
+            <img [src]="item.projects[0].backgroundImg" alt="" />
+          </div>
+          <div class="content">
+            <div class="text">
+              <p>{{ item.projects[0].name }}</p>
+              <span>{{ item.projects[0].postTitle }}</span>
+            </div>
+            <button class="primary small" (click)="openNotes(item)">
+              {{ "Open" }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <ng-template #loading></ng-template>
+</div>

@@ -1,0 +1,19 @@
+<app-context-menu (imageUrlChange)="urlImage = $event">
+  <!-- content goes here -->
+  <app-background-image
+    [imageUrl]="urlImage ? urlImage : '/assets/backgrounds/background-4.webp'"
+    size="cover"
+    position="center"
+    repeat="no-repeat"
+    [folders]="folders"
+  >
+    <!-- content goes here -->
+    <app-header></app-header>
+    <app-taskbar (program)="openDialog($event)"></app-taskbar>
+    <!-- content end here -->
+    <span class="version">
+      {{ currentApplicationVersion }}
+    </span>
+  </app-background-image>
+  <!-- content end here -->
+</app-context-menu>

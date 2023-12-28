@@ -1,0 +1,11 @@
+// Import base variables
+@import "variables";
+
+$theme-bg-color: rgba(16 18 27 / 40%);
+$theme-color: #f9fafb;
+// ... other dark theme variables ...
+
+body {
+  background-color: $theme-bg-color;
+  color: $theme-color;
+}

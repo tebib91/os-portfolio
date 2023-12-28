@@ -1,0 +1,82 @@
+// Here is an example of a _responsive.scss file that includes several common media query breakpoints for responsive design:
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  /* CSS styles for small screens go here */
+  .wrapper {
+    width: 100% !important;
+    & .content-text {
+      margin-right: 10px;
+    }
+    & .content-img {
+      display: none;
+    }
+    .app-card {
+      width: 100% !important;
+    }
+  }
+  .taskbar-item {
+    width: 32px !important;
+    height: 36px;
+    margin: 2px !important;
+  }
+  .toggle {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .menu-bar-item {
+    span {
+      display: none;
+    }
+
+    img.desktop {
+      display: none;
+    }
+
+    img.mobile {
+      display: block;
+    }
+  }
+  header > nav > .menu-bar-right > ul {
+    gap: 0.2rem !important;
+  }
+  header > nav {
+    margin: 0 0.5rem !important;
+  }
+  .content-banner {
+    flex-direction: column !important;
+    padding: 1rem 0.5rem !important;
+    .content-text {
+      text-align: start !important;
+    }
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* CSS styles for medium screens go here */
+  .taskbar-item {
+    width: 36px !important;
+    height: 40px;
+    margin: 0 5px !important;
+  }
+  .toggle {
+    width: 36px !important;
+    height: 36px !important;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* CSS styles for large screens go here */
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* CSS styles for extra large screens go here */
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  /* CSS styles for extra extra large screens go here */
+}

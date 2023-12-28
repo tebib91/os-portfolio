@@ -1,0 +1,79 @@
+/* Define the layout and styling for the calculator */
+.calculator {
+  display: flex;
+  flex-direction: column;
+
+  /* Set the width and height of the calculator */
+  width: 380px;
+  height: 500px;
+
+  /* Add some styling to make the calculator look nice */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+
+  /* Use SCSS variables to store the colors for the calculator */
+  $primary-color: #333;
+  $secondary-color: #eee;
+
+  /* Set the background color of the calculator */
+  background-color: $secondary-color;
+
+  /* Define the style for the display area of the calculator */
+  .display {
+    /* Set the width and height of the display area */
+    height: 50px;
+
+    /* Add some styling to the display area */
+    border-bottom: 1px solid #ccc;
+    background-color: $primary-color;
+    color: $secondary-color;
+
+    /* Set the font size and alignment for the display text */
+    font-size: 24px;
+    text-align: right;
+    padding: 10px;
+  }
+
+  /* Define the style for the button area of the calculator */
+  .buttons {
+    /* Set the width and height of the button area */
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+
+    /* Use SCSS to create a grid layout for the buttons */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1px 1px;
+
+    /* Define the style for the buttons */
+    button {
+      /* Set the width and height of the buttons */
+      width: 100%;
+      height: 100%;
+
+      /* Add some styling to the buttons */
+      border: none;
+      border-radius: 5px;
+      background-color: $secondary-color;
+      color: $primary-color;
+      font-size: 18px;
+      cursor: pointer;
+      outline: none;
+
+      /* Change the color when a button is clicked or hovered over */
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      &:hover {
+        background-color: darken($secondary-color, 10%);
+      }
+      &:active {
+        background-color: darken($secondary-color, 20%);
+      }
+    }
+  }
+}

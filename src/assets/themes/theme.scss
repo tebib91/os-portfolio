@@ -1,0 +1,161 @@
+@import "variables";
+@import "mixins";
+
+@import "typography";
+
+@import "responsive";
+@import "light-theme"; // or dark-theme based on preference or logic
+//elements
+
+@import "components/input";
+@import "components/buttons";
+
+:root {
+  --find-highlighting: rgba(255, 255, 0, 1);
+  --grid: rgba(230, 230, 230, 1);
+  --header-text: rgba(0, 0, 0, 0.85);
+  --label: rgba(0, 0, 0, 0.85);
+  --link: rgba(0, 104, 218, 1);
+  --placeholder-text: rgba(0, 0, 0, 0.25);
+  --quaternary: rgba(0, 0, 0, 0.1);
+  --secondary: rgba(0, 0, 0, 0.5);
+  --separator: rgba(0, 0, 0, 0.1);
+  --text: rgba(0, 0, 0, 1);
+  --alternate-selected-control-text: rgba(255, 255, 255, 1);
+  --alternate-content-background: rgba(244, 245, 245, 1);
+  --control-accent: rgba(0, 122, 255, 1);
+  --control-background: rgba(255, 255, 255, 1);
+  --control-center-background: rgba(255, 255, 255, 0.75);
+  --control-regular: rgba(255, 255, 255, 1);
+  --control-text-regular: rgba(0, 0, 0, 0.85);
+  --control-text-disabled: rgba(0, 0, 0, 0.25);
+  --keyboard-focus-indicator: rgba(0, 103, 244, 0.25);
+  --selected-control-text: rgba(0, 0, 0, 0.85);
+  --selected-text-background: rgba(179, 215, 255, 1);
+  --selected-text: rgba(0, 0, 0, 1);
+  --selected-content-background: rgba(0, 99, 225, 1);
+  --selected-content-control: rgba(179, 215, 255, 1);
+  --selected-menu-item-text: rgba(255, 255, 255, 1);
+  --system-blue: rgba(0, 122, 255, 1);
+  --system-brown: rgba(162, 132, 94, 1);
+  --system-gray: rgba(142, 142, 147, 1);
+  --system-green: rgba(52, 199, 89, 1);
+  --system-indigo: rgba(88, 86, 214, 1);
+  --system-orange: rgba(255, 149, 0, 1);
+  --system-pink: rgba(255, 45, 85, 1);
+  --system-purple: rgba(175, 82, 222, 1);
+  --system-red: rgba(255, 59, 48, 1);
+  --system-teal: rgba(85, 190, 240, 1);
+  --system-yellow: rgba(255, 204, 0, 1);
+  --tertiary-label: rgba(0, 0, 0, 0.26);
+  --tertiary-text-background: rgba(255, 255, 255, 1);
+  --under-page-background: rgba(150, 150, 150, 0.9);
+  --unemphasized-selected-text: rgba(0, 0, 0, 1);
+  --unemphasized-selected-content-background: rgba(220, 220, 220, 1);
+  --unemphasized-selected-text-background: rgba(220, 220, 220, 1);
+  --window-background: rgba(236, 236, 236, 1);
+  --window-frame-text: rgba(0, 0, 0, 0.85);
+  --background-default: rgba(244, 245, 245, 0.95);
+}
+
+.dark-theme {
+  --find-highlighting: rgba(255, 255, 0, 1);
+  --grid: rgba(26, 26, 26, 1);
+  --header-text: rgba(255, 255, 255, 1);
+  --label: rgba(255, 255, 255, 0.85);
+  --link: rgba(65, 156, 255, 1);
+  --placeholder-text: rgba(255, 255, 255, 0.25);
+  --quaternary: rgba(255, 255, 255, 0.1);
+  --secondary: rgba(255, 255, 255, 0.55);
+  --separator: rgba(255, 255, 255, 0.1);
+  --text: rgba(255, 255, 255, 1);
+  --alternate-selected-control-text: rgba(255, 255, 255, 1);
+  --alternate-content-background: rgba(255, 255, 255, 0.05);
+  --control-accent: rgba(0, 122, 255, 1);
+  --control-background: rgba(30, 30, 30, 1);
+  --control-regular: rgba(255, 255, 255, 0.25);
+  --control-text-regular: rgba(255, 255, 255, 0.85);
+  --control-text-disabled: rgba(255, 255, 255, 0.25);
+  --control-center-background: rgba(255, 255, 255, 0.1);
+  --keyboard-focus-indicator: rgba(26, 169, 255, 0.3);
+  --selected-control-text: rgba(255, 255, 255, 0.85);
+  --selected-text-background: rgba(63, 99, 139, 1);
+  --selected-text: rgba(255, 255, 255, 1);
+  --selected-content-background: rgba(0, 88, 208, 1);
+  --selected-content-control: rgba(63, 99, 139, 1);
+  --selected-menu-item-text: rgba(255, 255, 255, 1);
+  --system-blue: rgba(10, 132, 255, 1);
+  --system-brown: rgba(172, 142, 104, 1);
+  --system-gray: rgba(152, 152, 157, 1);
+  --system-green: rgba(48, 209, 88, 1);
+  --system-indigo: rgba(94, 92, 230, 1);
+  --system-orange: rgba(255, 159, 10, 1);
+  --system-pink: rgba(255, 55, 95, 1);
+  --system-purple: rgba(191, 90, 242, 1);
+  --system-red: rgba(255, 69, 58, 1);
+  --system-teal: rgba(90, 200, 245, 1);
+  --system-yellow: rgba(255, 214, 10, 1);
+  --tertiary-label: rgba(255, 255, 255, 0.26);
+  --tertiary-text-background: rgba(30, 30, 30, 1);
+  --under-page-background: rgba(40, 40, 40, 1);
+  --unemphasized-selected-text: rgba(255, 255, 255, 1);
+  --unemphasized-selected-content-background: rgba(70, 70, 70, 1);
+  --unemphasized-selected-text-background: rgba(70, 70, 70, 1);
+  --window-background: rgba(50, 50, 50, 1);
+  --window-frame-text: rgba(255, 255, 255, 0.85);
+  --background-default: rgba(50, 50, 50, 0.95);
+}
+
+body {
+  color: var(--text);
+  font-size: $font-size-base;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+// OVERIGHT
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  background-color: unset !important;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.full-width {
+  width: 100vw;
+  max-width: 100vw !important;
+  height: 100vh;
+  transform: translate3d(0px, 0px, 0px) !important;
+
+  & .mat-dialog-container {
+    & .app {
+      max-width: 100%;
+      max-height: 100%;
+      height: 95vh;
+    }
+  }
+}
+
+.menu {
+  width: 5px;
+  height: 5px;
+  background-color: var(--button-inactive);
+  border-radius: 50%;
+  box-shadow:
+    7px 0 0 0 var(--button-inactive),
+    14px 0 0 0 var(--button-inactive);
+  margin: 0 12px;
+}
+
+.dialog-panel {
+  min-height: 35%;
+  background: var(--window-background);
+  border-radius: 10px;
+
+  & .mat-mdc-dialog-container .mdc-dialog__surface {
+    box-shadow: none;
+  }
+}

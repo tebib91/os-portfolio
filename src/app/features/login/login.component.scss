@@ -1,0 +1,57 @@
+@import "mixins";
+
+.login-screen {
+  @include bg-image(
+    $uri: "/assets/background/desktop-background.jpg",
+    $size: cover,
+    $position: center
+  );
+  @include flex($dir: column, $ai: center, $jc: center);
+
+  height: 100vh;
+  color: var(--color-white);
+  position: relative;
+
+  &__logo {
+    width: 120px;
+    margin-bottom: 1rem;
+  }
+
+  &__username {
+    color: rgb(119, 119, 119);
+    text-shadow: 1px 1px black;
+    margin-bottom: 1rem;
+  }
+  &__input {
+    margin-bottom: 1rem;
+    .p-inputtext {
+      background-color: rgba($color: #000000, $alpha: 0.1);
+      outline: none;
+      border: none;
+      border-radius: 25px !important;
+      color: var(--light-0);
+      padding-left: 20px;
+
+      &::placeholder {
+        color: rgb(119, 119, 119);
+      }
+
+      &:hover,
+      &:enabled:focus {
+        box-shadow: none;
+        border: none;
+      }
+    }
+  }
+
+  &__password-hint {
+    font-size: 0.8rem;
+    text-align: center;
+    text-shadow: 1px 1px black;
+  }
+
+  &__machine-controls {
+    position: absolute;
+    bottom: 40px;
+  }
+}
