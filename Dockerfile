@@ -6,6 +6,8 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
+RUN echo "Checking architecture: $(arch)"
+
 # Install dependencies
 RUN npm install --verbose
 
