@@ -1,5 +1,5 @@
 # Use a custom image with Node.js and Google Chrome pre-installed for testing.
-image: node:20
+image: node:18-alpine
 
 stages:
   - build
