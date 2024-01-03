@@ -38,12 +38,12 @@ build:
     - docker push $IMAGE_NAME
 
 # Release the application
-release:
-  stage: release
-  script:
-    - echo "Releasing new version..."
-    - npx semantic-release
-  only:
-    changes:
-      - "src/**/*"
+# release:
+#   stage: release
+#   script:
+#     - echo "Releasing new version..."
+#     - npx semantic-release
+#   only:
+#     changes:
+#       - "src/**/*"
 
