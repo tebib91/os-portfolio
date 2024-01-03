@@ -1,23 +1,16 @@
-# Use a custom image with Node.js and Google Chrome pre-installed for testing.
 image: node:18-alpine
 
 stages:
   - build
-  # - release
-  # - deploy
 
-# Global environment variables for the pipeline
 variables:
-  IMAGE_NAME: docker.io/tebib/osfront:release-$CI_COMMIT_SHORT_SHA
-  DOCKER_TLS_CERTDIR: "/certs"
-# Cache dependencies for quicker builds
+  IMAGE_NAME: docker.io/tebib/osfront:latest
+
 cache:
   key: "${CI_COMMIT_REF_SLUG}-${CACHE_KEY_DEPENDENCIES}"
   paths:
     - node_modules/
 
-
-# Build the application
 build:
   stage: build
   image: docker:24.0.5
@@ -27,6 +20,12 @@ build:
     - docker info
     - echo "$DOCKER_HUB_PASSWORD" | docker login -u $DOCKER_HUB_USERNAME --password-stdin
   script:
+    # Extract the version from package.json
+    - PACKAGE_VERSION=$(node -p "require('./package.json').version")
+
+    # Construct Docker image tag using the specified image name and extracted package version
+    - DOCKER_TAG="${IMAGE_NAME}-${PACKAGE_VERSION}"
+
     # Create and use a Docker context
     - docker context create mycontext
     - docker buildx create --use mycontext
@@ -35,19 +34,14 @@ build:
     - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
     - docker buildx inspect --bootstrap
 
-    # Build and push the multi-platform image
-    - docker buildx build --platform linux/amd64,linux/arm64 -t $IMAGE_NAME .
+    # Build the multi-platform image
+    - docker buildx build --platform linux/amd64 -t $DOCKER_TAG .
 
-    # Push the multi-platform image to Docker Hub
+    # Tag the Docker image with the constructed version-specific tag
+    - docker tag $DOCKER_TAG $IMAGE_NAME
+
+    # Push the version-specific Docker image to the registry
+    - docker push $DOCKER_TAG
+
+    # Push the latest version of the Docker image to the registry
     - docker push $IMAGE_NAME
-
-# Release the application
-# release:
-#   stage: release
-#   script:
-#     - echo "Releasing new version..."
-#     - npx semantic-release
-#   only:
-#     changes:
-#       - "src/**/*"
-
