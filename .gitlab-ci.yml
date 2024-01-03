@@ -21,10 +21,10 @@ build:
     - echo "$DOCKER_HUB_PASSWORD" | docker login -u $DOCKER_HUB_USERNAME --password-stdin
   script:
     # Extract the version from package.json
-    - PACKAGE_VERSION=$(node -p "require('./package.json').version")
+    # - PACKAGE_VERSION=$(node -p "require('./package.json').version")
 
     # Construct Docker image tag using the specified image name and extracted package version
-    - DOCKER_TAG="${IMAGE_NAME}-${PACKAGE_VERSION}"
+    - DOCKER_TAG="${IMAGE_NAME}"
 
     # Create and use a Docker context
     - docker context create mycontext
