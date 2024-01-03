@@ -1,10 +1,13 @@
 import {
   Component,
   ElementRef,
+  EventEmitter,
   HostListener,
+  Output,
   Renderer2,
   ViewChild,
 } from '@angular/core';
+import { log } from 'console';
 
 @Component({
   selector: 'app-context-menu',
@@ -23,13 +26,12 @@ import {
         </li>
         <li>
           <button>Get info</button>
-          <button (click)="changeBackground()">
-            Change Desktop Background
-          </button>
+          <button (click)="changeBackground()">Change Wallpaper</button>
         </li>
         <li>
           <button>Sort By</button>
           <button>Show View Option</button>
+          <button>Clean Up</button>
         </li>
       </ul>
     </div>
@@ -46,6 +48,7 @@ export class ContextMenuComponent {
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   @ViewChild('contextMenu') contextMenu!: ElementRef;
   isOpen = false;
+  @Output() imageUrlChange = new EventEmitter<string>();
 
   constructor(private renderer: Renderer2) {}
 
@@ -74,10 +77,11 @@ export class ContextMenuComponent {
   changeBackground() {
     const index = this.getRandomNumber();
     this.urlImage = `/assets/backgrounds/background-${index}.webp`;
+    this.imageUrlChange.emit(this.urlImage);
   }
 
   getRandomNumber() {
-    let randomNumber = Math.floor(Math.random() * 6) + 1;
+    let randomNumber = Math.floor(Math.random() * 4) + 1;
     while (randomNumber === this.lastRandomNumber) {
       randomNumber = Math.floor(Math.random() * 4) + 1;
     }

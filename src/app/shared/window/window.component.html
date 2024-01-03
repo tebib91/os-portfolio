@@ -1,16 +1,10 @@
-<div
-  cdkDrag
-  cdkDragRootElement=".cdk-overlay-pane"
-  cdkDragHandle
-  class="window"
->
-  <div class="window-header">
-    <div class="window-controls">
-      <div class="close-button" (click)="onCloseClick()"></div>
-      <div class="minimize-button" (click)="onMinimizeClick()"></div>
-      <div class="maximize-button" (click)="onMaximizeClick()"></div>
-    </div>
-  </div>
+<div cdkDrag cdkDragRootElement=".cdk-overlay-pane" class="window">
+  <app-window-header
+    cdkDragHandle
+    (_onClose)="onCloseClick()"
+    (_onMinimize)="onMinimizeClick()"
+    (_onMaximize)="onMaximizeClick()"
+  ></app-window-header>
   <div class="window-body">
     <ng-container [ngComponentOutlet]="outlet"></ng-container>
   </div>

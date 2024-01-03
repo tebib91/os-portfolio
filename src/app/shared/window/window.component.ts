@@ -66,5 +66,6 @@ export class WindowComponent {
 
   onCloseClick(): void {
     this.dialogRef.close();
+    console.log('close');
   }
 }
