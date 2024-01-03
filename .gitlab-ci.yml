@@ -20,12 +20,6 @@ build:
     - docker info
     - echo "$DOCKER_HUB_PASSWORD" | docker login -u $DOCKER_HUB_USERNAME --password-stdin
   script:
-    # Extract the version from package.json
-    # - PACKAGE_VERSION=$(node -p "require('./package.json').version")
-
-    # Construct Docker image tag using the specified image name and extracted package version
-    - DOCKER_TAG="${IMAGE_NAME}"
-
     # Create and use a Docker context
     - docker context create mycontext
     - docker buildx create --use mycontext
@@ -36,12 +30,6 @@ build:
 
     # Build the multi-platform image
     - docker buildx build --platform linux/amd64 -t $DOCKER_TAG .
-
-    # Tag the Docker image with the constructed version-specific tag
-    - docker tag $DOCKER_TAG $IMAGE_NAME
-
-    # Push the version-specific Docker image to the registry
-    - docker push $DOCKER_TAG
 
     # Push the latest version of the Docker image to the registry
     - docker push $IMAGE_NAME
