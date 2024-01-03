@@ -13,9 +13,7 @@ cache:
 
 build:
   stage: build
-  image: docker:24.0.5
-  services:
-    - docker:24.0.5-dind
+  image: docker
   before_script:
     - docker info
     - echo "$DOCKER_HUB_PASSWORD" | docker login -u $DOCKER_HUB_USERNAME --password-stdin
