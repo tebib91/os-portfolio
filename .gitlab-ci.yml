@@ -1,35 +1,29 @@
-image: node:18-alpine
-
 stages:
   - build
 
 variables:
-  PACKAGE_VERSION: $(jq '.os-front' < package.json | tr -d '"')
-  IMAGE_NAME: docker.io/tebib/osfront:$PACKAGE_VERSION
+  # PACKAGE_VERSION: '$(jq ''.os-front'' < package.json | tr -d ''"'')'
+  IMAGE_NAME: docker.io/tebib/osfront:1.10.0
+  DOCKER_HOST: tcp://docker:2375
+  # This instructs Docker not to start over TLS.
+  DOCKER_TLS_CERTDIR: ""
 
-cache:
-  key: "${CI_COMMIT_REF_SLUG}-${CACHE_KEY_DEPENDENCIES}"
-  paths:
-    - node_modules/
-
-build:
-  stage: build
-  image: docker:24.0.5-dind
+default:
+  image: docker:24.0.5
   services:
     - docker:24.0.5-dind
   before_script:
     - docker info
+
+build:
+  stage: build
+  before_script:
     - echo "$DOCKER_HUB_PASSWORD" | docker login -u $DOCKER_HUB_USERNAME --password-stdin
   script:
-    # Create and use a Docker context
-    # - docker build -t $IMAGE_NAME .
-    # - docker push $IMAGE_NAME
-    - docker context create mycontext
-    - docker buildx create --use mycontext
+    # - docker build -t  $IMAGE_NAME .
+    # - docker push  $IMAGE_NAME
 
-    # Set up Buildx with the specified platforms
+    - docker buildx create --use
     - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
     - docker buildx inspect --bootstrap
-
-    # Build and Push the multi-platform image to the registry using the same context
     - docker buildx build --platform linux/amd64,linux/arm64 --push -t $IMAGE_NAME .
