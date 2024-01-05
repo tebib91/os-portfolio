@@ -21,14 +21,14 @@ build:
     - echo "$DOCKER_HUB_PASSWORD" | docker login -u $DOCKER_HUB_USERNAME --password-stdin
   script:
     # Create and use a Docker context
-    - docker build -t $IMAGE_NAME .
-    - docker push $IMAGE_NAME
-    # - docker context create mycontext
-    # - docker buildx create --use mycontext
+    # - docker build -t $IMAGE_NAME .
+    # - docker push $IMAGE_NAME
+    - docker context create mycontext
+    - docker buildx create --use mycontext
 
-    # # Set up Buildx with the specified platforms
-    # - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
-    # - docker buildx inspect --bootstrap
+    # Set up Buildx with the specified platforms
+    - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+    - docker buildx inspect --bootstrap
 
-    # # Build and Push the multi-platform image to the registry using the same context
-    # - docker buildx build --platform linux/amd64,linux/arm64 --push -t $IMAGE_NAME .
+    # Build and Push the multi-platform image to the registry using the same context
+    - docker buildx build --platform linux/amd64,linux/arm64 --push -t $IMAGE_NAME .
