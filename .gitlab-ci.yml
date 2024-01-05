@@ -4,7 +4,8 @@ stages:
   - build
 
 variables:
-  IMAGE_NAME: docker.io/tebib/osfront:release-$CI_COMMIT_SHORT_SHA
+  PACKAGE_VERSION: $(jq '.os-front' < package.json | tr -d '"')
+  IMAGE_NAME: docker.io/tebib/osfront:$PACKAGE_VERSION
 
 cache:
   key: "${CI_COMMIT_REF_SLUG}-${CACHE_KEY_DEPENDENCIES}"

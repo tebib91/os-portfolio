@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci --no-audit
+RUN npm install --verbose
 
 # Copy the rest of the application
 COPY . .
