@@ -9,9 +9,9 @@ variables:
   DOCKER_TLS_CERTDIR: ""
 
 default:
-  image: docker
+  image: docker:24.0.7
   services:
-    - docker:dind
+    - docker:24.0.7-dind
   before_script:
     - docker info
 
