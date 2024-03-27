@@ -39,7 +39,7 @@
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
     "chrome-remote-interface": "^0.31.3",
-    "domino": "^2.1.6",
+    "domino-ext": "^2.1.4",
     "express": "^4.15.2",
     "http-server": "^14.1.1",
     "rxjs": "~7.5.0",

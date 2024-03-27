@@ -12,7 +12,7 @@ import { join } from 'path';
 (global as any).WebSocket = require('ws');
 (global as any).XMLHttpRequest = require('xhr2');
 
-const domino = require('domino');
+const domino = require('domino-ext');
 const fs = require('fs');
 const path = require('path');
 
@@ -27,7 +27,6 @@ global['document'] = win.document;
 global['self'] = win;
 global['IDBIndex'] = win.IDBIndex;
 global['document'] = win.document;
-global['navigator'] = win.navigator;
 global['getComputedStyle'] = win.getComputedStyle;
 global['XMLHttpRequest'] = win.XMLHttpRequest;
 

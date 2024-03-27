@@ -1,4 +1,4 @@
-FROM node:20 AS build-stage
+FROM node:lts AS build-stage
 
 WORKDIR /app
 
@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm i --verbose
+RUN npm i
 
 # Copy the rest of the application
 COPY . .
@@ -15,7 +15,7 @@ COPY . .
 RUN npm run build:ssr
 
 # Serve Stage
-FROM node:20
+FROM node:lts
 
 WORKDIR /app
 
