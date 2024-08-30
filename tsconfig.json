@@ -8,7 +8,12 @@
       "@shared/*": ["src/app/shared/*"],
       "@core/*": ["src/app/core/*"],
       "@features/*": ["src/app/features/*"],
-      "@env/*": ["src/environments/*"]
+      "@env/*": [
+        "src/environments/*"
+      ],
+      "taskbar": [
+        "dist/taskbar"
+      ]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

@@ -25,4 +25,4 @@ const routes: Routes = [
     TaskbarComponent,
   ],
 })
-export class LayoutModule {}
+export class LayoutModule { }

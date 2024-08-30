@@ -21,7 +21,9 @@
               "base": "dist/os-front"
             },
             "index": "src/index.html",
-            "polyfills": ["src/polyfills.ts"],
+            "polyfills": [
+              "src/polyfills.ts"
+            ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -31,9 +33,14 @@
               "src/robots.txt",
               "src/sitemap.xml"
             ],
-            "styles": ["src/styles.scss", "src/assets/themes/theme.scss"],
+            "styles": [
+              "src/styles.scss",
+              "src/assets/themes/theme.scss"
+            ],
             "stylePreprocessorOptions": {
-              "includePaths": ["src/assets/themes"]
+              "includePaths": [
+                "src/assets/themes"
+              ]
             },
             "scripts": [],
             "serviceWorker": "ngsw-config.json",
@@ -106,9 +113,14 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
-            "styles": ["src/styles.scss", "src/assets/themes/theme.scss"],
+            "styles": [
+              "src/styles.scss",
+              "src/assets/themes/theme.scss"
+            ],
             "stylePreprocessorOptions": {
-              "includePaths": ["src/assets/themes"]
+              "includePaths": [
+                "src/assets/themes"
+              ]
             },
             "scripts": []
           }
@@ -116,7 +128,52 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "taskbar": {
+      "projectType": "library",
+      "root": "projects/taskbar",
+      "sourceRoot": "projects/taskbar/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/taskbar/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/taskbar/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/taskbar/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/taskbar/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/taskbar/**/*.ts",
+              "projects/taskbar/**/*.html"
+            ]
           }
         }
       }
@@ -124,6 +181,8 @@
   },
   "cli": {
     "analytics": "2c5d7012-5040-43e5-8cd5-f567152c2d74",
-    "schematicCollections": ["@angular-eslint/schematics"]
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }
