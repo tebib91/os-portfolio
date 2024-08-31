@@ -16,7 +16,11 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ContextMenuComponent } from './widgets/context-menu/context-menu.component';
 import { ExperienceComponent } from './programs/experience/experience.component';
-import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+  withJsonpSupport,
+} from '@angular/common/http';
 import { WindowHeaderComponent } from './window/window-header/window-header.component';
 
 @NgModule({
@@ -34,16 +38,6 @@ import { WindowHeaderComponent } from './window/window-header/window-header.comp
     ExperienceComponent,
     WindowHeaderComponent,
   ],
-  imports: [
-    CommonModule,
-    DragDropModule,
-    MatProgressBarModule,
-    MatTooltipModule,
-    TranslateModule,
-    HttpClientJsonpModule,
-    HttpClientModule,
-    GoogleMapsModule,
-  ],
   exports: [
     BackgroundImageComponent,
     ContextMenuComponent,
@@ -55,5 +49,14 @@ import { WindowHeaderComponent } from './window/window-header/window-header.comp
     MatTooltipModule,
     MatProgressBarModule,
   ],
+  imports: [
+    CommonModule,
+    DragDropModule,
+    MatProgressBarModule,
+    MatTooltipModule,
+    TranslateModule,
+    GoogleMapsModule,
+  ],
+  providers: [provideHttpClient(withInterceptorsFromDi(), withJsonpSupport())],
 })
 export class SharedModule {}

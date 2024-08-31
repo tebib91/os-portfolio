@@ -1,4 +1,7 @@
-import { HttpClientModule } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FinderComponent } from './finder.component';
@@ -15,13 +18,14 @@ describe('FinderComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [FinderComponent],
-      imports: [HttpClientModule, MatDialogModule],
+      imports: [MatDialogModule],
       providers: [
         {
           provide: MatDialogRef,
           useValue: {},
         },
         { provide: MAT_DIALOG_DATA, useValue: {} },
+        provideHttpClient(withInterceptorsFromDi()),
       ],
     }).compileComponents();
 

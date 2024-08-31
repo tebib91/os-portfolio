@@ -1,7 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ExperienceComponent } from './experience.component';
-import { HttpClientModule } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import {
   MatDialogModule,
   MatDialogRef,
@@ -15,13 +18,14 @@ describe('ExperienceComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [ExperienceComponent],
-      imports: [HttpClientModule, MatDialogModule],
+      imports: [MatDialogModule],
       providers: [
         {
           provide: MatDialogRef,
           useValue: {},
         },
         { provide: MAT_DIALOG_DATA, useValue: {} },
+        provideHttpClient(withInterceptorsFromDi()),
       ],
     });
     fixture = TestBed.createComponent(ExperienceComponent);
