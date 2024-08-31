@@ -75,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "os-front:build:production"
+              "buildTarget": "os-front:build:production"
             },
             "development": {
-              "browserTarget": "os-front:build:development"
+              "buildTarget": "os-front:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "os-front:build"
+            "buildTarget": "os-front:build"
           }
         },
         "test": {
@@ -147,7 +147,7 @@
           "defaultConfiguration": "production"
         },
         "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
           "configurations": {
             "development": {
               "browserTarget": "os-front:build:development",
@@ -161,7 +161,7 @@
           "defaultConfiguration": "development"
         },
         "prerender": {
-          "builder": "@nguniversal/builders:prerender",
+          "builder": "@angular-devkit/build-angular:prerender",
           "options": {
             "routes": ["/"]
           },
