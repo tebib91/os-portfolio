@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "os-front": {
+    "os-portfolio": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -18,12 +18,10 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": {
-              "base": "dist/os-front"
+              "base": "dist/os-portfolio"
             },
             "index": "src/index.html",
-            "polyfills": [
-              "src/polyfills.ts"
-            ],
+            "polyfills": ["src/polyfills.ts"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -33,14 +31,9 @@
               "src/robots.txt",
               "src/sitemap.xml"
             ],
-            "styles": [
-              "src/styles.scss",
-              "src/assets/themes/theme.scss"
-            ],
+            "styles": ["src/styles.scss", "src/assets/themes/theme.scss"],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "src/assets/themes"
-              ]
+              "includePaths": ["src/assets/themes"]
             },
             "scripts": [],
             "serviceWorker": "ngsw-config.json",
@@ -86,10 +79,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "os-front:build:production"
+              "buildTarget": "os-portfolio:build:production"
             },
             "development": {
-              "buildTarget": "os-front:build:development"
+              "buildTarget": "os-portfolio:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -97,7 +90,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "os-front:build"
+            "buildTarget": "os-portfolio:build"
           }
         },
         "test": {
@@ -113,14 +106,9 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
-            "styles": [
-              "src/styles.scss",
-              "src/assets/themes/theme.scss"
-            ],
+            "styles": ["src/styles.scss", "src/assets/themes/theme.scss"],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "src/assets/themes"
-              ]
+              "includePaths": ["src/assets/themes"]
             },
             "scripts": []
           }
@@ -128,52 +116,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "taskbar": {
-      "projectType": "library",
-      "root": "projects/taskbar",
-      "sourceRoot": "projects/taskbar/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/taskbar/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/taskbar/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/taskbar/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "tsConfig": "projects/taskbar/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
-          }
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": [
-              "projects/taskbar/**/*.ts",
-              "projects/taskbar/**/*.html"
-            ]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
       }
@@ -181,8 +124,6 @@
   },
   "cli": {
     "analytics": "2c5d7012-5040-43e5-8cd5-f567152c2d74",
-    "schematicCollections": [
-      "@angular-eslint/schematics"
-    ]
+    "schematicCollections": ["@angular-eslint/schematics"]
   }
 }

@@ -7,7 +7,6 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
-import { log } from 'console';
 
 @Component({
   selector: 'app-context-menu',
@@ -41,11 +40,11 @@ import { log } from 'console';
 export class ContextMenuComponent {
   urlImage!: string;
   lastRandomNumber!: number;
-  folders: any;
+  folders: string[] = [];
   folderCounter = 0;
   menuLeft = 0;
   menuTop = 0;
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
+
   @ViewChild('contextMenu') contextMenu!: ElementRef;
   isOpen = false;
   @Output() imageUrlChange = new EventEmitter<string>();
@@ -53,7 +52,7 @@ export class ContextMenuComponent {
   constructor(private renderer: Renderer2) {}
 
   @HostListener('document:click', ['$event'])
-  documentClick(event: MouseEvent) {
+  documentClick() {
     this.hideMenu();
   }
 

@@ -2,7 +2,7 @@ stages:
   - build
 
 variables:
-  # PACKAGE_VERSION: '$(jq ''.os-front'' < package.json | tr -d ''"'')'
+  # PACKAGE_VERSION: '$(jq ''.os-portfolio'' < package.json | tr -d ''"'')'
   IMAGE_NAME: docker.io/tebib/osfront:1.10.1
   DOCKER_HOST: tcp://docker:2375
   # This instructs Docker not to start over TLS.

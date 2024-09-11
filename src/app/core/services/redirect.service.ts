@@ -11,12 +11,11 @@ export interface RedirectionExtras extends NavigationExtras {
 export class RedirectService {
   constructor(
     readonly router: Router,
-    @Inject(DOCUMENT) readonly document: Document
+    @Inject(DOCUMENT) readonly document: Document,
   ) {}
 
   /** The Window object from Document defaultView */
   get window(): Window {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.document.defaultView!;
   }
 

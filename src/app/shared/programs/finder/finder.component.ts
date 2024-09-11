@@ -18,7 +18,7 @@ export class FinderComponent implements OnInit {
   constructor(
     private api: ApiService,
     private redirect: RedirectService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
   ) {}
 
   ngOnInit(): void {
@@ -26,7 +26,9 @@ export class FinderComponent implements OnInit {
   }
 
   navigateUrl(url: string) {
-    url ? this.redirect.navigate(url) : null;
+    if (url) {
+      this.redirect.navigate(url);
+    }
   }
 
   openNotes(item: Experience): void {

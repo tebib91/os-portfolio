@@ -1,4 +1,3 @@
-import { PlatformService } from '@core/services/platform.service';
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -6,6 +5,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { menusBar } from '@core/data/data';
+import { PlatformService } from '@core/services/platform.service';
 
 @Component({
   selector: 'app-header',
@@ -21,14 +21,16 @@ export class HeaderComponent implements OnInit {
   showList = false;
   constructor(
     private platformService: PlatformService,
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
   ) {}
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.platformService.isBrowser ? this.getBatteryLevel() : null;
-    this.cd.detectChanges(); // Add this line
+    if (this.platformService.isBrowser) {
+      this.getBatteryLevel();
+    }
+    this.cd.detectChanges();
   }
 
   async getBatteryLevel() {

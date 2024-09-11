@@ -8,7 +8,7 @@ export class TranslateServerLoader implements TranslateLoader {
   constructor(
     private transferState: TransferState,
     private prefix: string = 'i18n',
-    private suffix: string = '.json'
+    private suffix: string = '.json',
   ) {}
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -17,19 +17,19 @@ export class TranslateServerLoader implements TranslateLoader {
       const assets_folder = join(
         process.cwd(),
         'dist',
-        'os-front', // Your project name here
+        'os-portfolio', // Your project name here
         'browser',
         'assets',
-        this.prefix
+        this.prefix,
       );
 
       const jsonData = JSON.parse(
-        fs.readFileSync(`${assets_folder}/${lang}${this.suffix}`, 'utf8')
+        fs.readFileSync(`${assets_folder}/${lang}${this.suffix}`, 'utf8'),
       );
 
       // Here we save the translations in the transfer-state
       const key: StateKey<number> = makeStateKey<number>(
-        'transfer-translate-' + lang
+        'transfer-translate-' + lang,
       );
       this.transferState.set(key, jsonData);
 

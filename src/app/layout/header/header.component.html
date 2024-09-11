@@ -6,7 +6,7 @@
         <ul>
           <li>
             <div>
-              <a href="https://gitlab.com/tebib91/os-front" target="_blank"
+              <a href="https://gitlab.com/tebib91/os-portfolio" target="_blank"
                 >About This Mac</a
               >
             </div>
@@ -41,7 +41,7 @@
       <ul>
         <li class="menu-bar-item">
           <div *ngIf="batteryLevel">
-            {{ (batteryLevel | number : "1.0-0") + "% " }}
+            {{ (batteryLevel | number: "1.0-0") + "% " }}
           </div>
           <div class="battery-icon">
             <div class="battery-container">
@@ -61,7 +61,7 @@
         <li class="menu-bar-item" (click)="controlVisible = !controlVisible">
           <img src="assets/icons-system/icons-system.svg" alt="icon system" />
         </li>
-        <li class="menu-bar-item">{{ currentTime | date : "shortTime" }}</li>
+        <li class="menu-bar-item">{{ currentTime | date: "shortTime" }}</li>
       </ul>
     </div>
   </nav>

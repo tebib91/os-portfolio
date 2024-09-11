@@ -27,7 +27,7 @@ export class BootComponent implements OnInit {
     private router: Router,
     @Inject(DOCUMENT) private document: Document,
     private renderer2: Renderer2,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: object,
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }

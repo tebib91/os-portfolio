@@ -1,9 +1,8 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { environment } from '@env/environment';
 import { ScriptInjectorService } from '@core/services/script-injector.service';
 import { SeoService } from '@core/services/seo.service';
-import { TranslateService } from '@ngx-translate/core';
+import { environment } from '@env/environment';
 import { Subject, filter, takeUntil } from 'rxjs';
 
 @Component({
@@ -18,16 +17,19 @@ export class AppComponent implements OnDestroy {
   constructor(
     private script: ScriptInjectorService,
     private router: Router,
-    private seo: SeoService
+    private seo: SeoService,
   ) {
     const trackingId = environment.GA_TRACKING_ID;
     this.script.inject(trackingId);
     this.router.events
       .pipe(
-        filter((event) => event instanceof NavigationEnd),
-        takeUntil(this.destroy$)
+        filter(
+          (event): event is NavigationEnd => event instanceof NavigationEnd,
+        ), // Type guard
+        takeUntil(this.destroy$),
       )
-      .subscribe((event: any) => {
+      .subscribe((event: NavigationEnd) => {
+        // Explicit type for the event
         this.seo.updateMetaData(event.urlAfterRedirects);
       });
   }

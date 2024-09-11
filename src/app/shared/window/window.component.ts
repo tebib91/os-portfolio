@@ -32,11 +32,11 @@ export class WindowComponent {
   constructor(
     public dialogRef: MatDialogRef<WindowComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Program,
-    private _overlay: Overlay
+    private _overlay: Overlay,
   ) {
     console.log({ data });
     this.outlet = this.components.find(
-      (el) => el.name === data?.title?.toLocaleLowerCase()
+      (el) => el.name === data?.title?.toLocaleLowerCase(),
     )?.component;
   }
 
@@ -47,7 +47,11 @@ export class WindowComponent {
   onMaximizeClick(): void {
     // Maximize the window
     this.maximized = !this.maximized;
-    this.maximized ? this.fullscreen() : this.exitFullscreen();
+    if (this.maximized) {
+      this.fullscreen();
+    } else {
+      this.exitFullscreen();
+    }
   }
 
   fullscreen() {
