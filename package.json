@@ -16,7 +16,10 @@
     "version": "node -p \"require('./package.json').version\"",
     "zip": "node zip.ts",
     "package": "npm run build:ssr && npm run zip",
-    "serve:ssr:os-front": "node dist/os-front/server/server.mjs"
+    "serve:ssr:os-front": "node dist/os-front/server/server.mjs",
+    "dev:ssr": "ng run os-front:serve-ssr",
+    "serve:ssr": "node dist/os-front/server/main.js",
+    "build:ssr": "ng build && ng run os-front:server"
   },
   "private": true,
   "dependencies": {
