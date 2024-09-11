@@ -1,8 +1,8 @@
-import { MapsComponent } from '@shared/programs/maps/maps.component';
-import { FinderComponent } from '@shared/programs/finder/finder.component';
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Program } from '@core/models/menu';
+import { FinderComponent } from '@shared/programs/finder/finder.component';
+import { MapsComponent } from '@shared/programs/maps/maps.component';
 import { CalculatorComponent } from '../programs/calculator/calculator.component';
 
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
@@ -34,6 +34,7 @@ export class WindowComponent {
     @Inject(MAT_DIALOG_DATA) public data: Program,
     private _overlay: Overlay
   ) {
+    console.log({ data });
     this.outlet = this.components.find(
       (el) => el.name === data?.title?.toLocaleLowerCase()
     )?.component;

@@ -10,11 +10,43 @@ button {
   color: #fff;
 }
 
-.version {
+.version-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   bottom: 0;
   right: 0;
   color: white;
-  margin: 5px;
-  font-size: 12px;
+
+  .version {
+    margin: 0 10px;
+    /* Space between version text and icons */
+    color: white;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 10px;
+    /* Space between icons */
+    cursor: pointer;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.2);
+        /* Scale icons on hover */
+      }
+
+      img {
+        width: 24px;
+        /* Icon size */
+        height: 24px;
+      }
+    }
+  }
 }

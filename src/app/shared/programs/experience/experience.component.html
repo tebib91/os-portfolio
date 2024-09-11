@@ -1,29 +1,80 @@
 <div class="content" *ngIf="experience">
-  <div class="content-box" *ngFor="let item of experience.projects">
+  <div class="content-box" *ngFor="let project of experience.projects">
+    <!-- Client Section -->
     <div class="client">
-      <img [src]="item.icon" alt="" />
-      <h3>{{ item.name }}</h3>
+      <div class="client-logo">
+        <img
+          [src]="project.icon"
+          [alt]="project.name + ' logo'"
+          (error)="onImageError($event)"
+        />
+      </div>
+      <div class="client-name">
+        <h3>{{ project.name }}</h3>
+      </div>
     </div>
+
+    <!-- Project Section -->
     <div class="project">
-      <div class="list-title">
-        <img src="https://img.icons8.com/ios/50/000000/web.png" />
-        <p>{{ item.title }}</p>
-      </div>
-      <div class="list-title">
-        <img src="https://img.icons8.com/ios/50/000000/developer--v1.png" />
-        <p>{{ item.postTitle }}</p>
-      </div>
-      <div class="list-title">
-        <img src="https://img.icons8.com/ios-glyphs/50/000000/task.png" />
-        <p>{{ item.description }}</p>
+      <!-- Project Title -->
+      <div class="list-title project-title">
+        <div class="icon-wrapper">
+          <img
+            src="https://img.icons8.com/?size=100&id=84678&format=png&color=000000"
+            alt="Project icon"
+          />
+        </div>
+        <p>{{ project.title }}</p>
       </div>
 
+      <!-- Post Title -->
+      <div class="list-title post-title">
+        <div class="icon-wrapper">
+          <img
+            src="https://img.icons8.com/?size=100&id=xOnyQ7TLR4PU&format=png&color=000000"
+            alt="Post icon"
+          />
+        </div>
+        <p>{{ project.postTitle }}</p>
+      </div>
+
+      <!-- Project Description -->
+      <div class="list-title description">
+        <div class="icon-wrapper">
+          <img
+            src="https://img.icons8.com/?size=100&id=50646&format=png&color=000000"
+            alt="Description icon"
+          />
+        </div>
+        <p>{{ project.description }}</p>
+      </div>
+
+      <!-- Tasks Section -->
+      <div class="tasks">
+        <h4><b>Key Responsibilities</b></h4>
+        <ul>
+          <li *ngFor="let task of project.tasks">{{ task }}</li>
+        </ul>
+      </div>
+
+      <!-- Technologies Section -->
       <div class="technos">
-        <h4><b>Technos</b></h4>
-        <div class="list">
-          <div class="products" *ngFor="let item of item.technos">
-            <img [src]="item.icon" [alt]="item.name" srcset="" />
-            {{ item.name }}
+        <h4><b>Technologies Used</b></h4>
+        <div class="tech-list">
+          <div class="tech-block" *ngFor="let techno of project.technos">
+            <div class="tech-avatar">
+              <img
+                [src]="techno.icon"
+                [alt]="techno.name + ' logo'"
+                (error)="onImageError($event)"
+              />
+            </div>
+            <div class="tech-info">
+              <p class="tech-name">{{ techno.name }}</p>
+              <p class="tech-link">
+                <a [href]="techno.link" target="_blank">Learn more</a>
+              </p>
+            </div>
           </div>
         </div>
       </div>

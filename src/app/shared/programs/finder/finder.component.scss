@@ -9,6 +9,7 @@
   border-radius: 10px;
   padding: 1rem;
   margin: 0 auto;
+
   & .main-container {
     display: flex;
     flex-direction: column;
@@ -40,18 +41,22 @@
   gap: 16px;
   border-radius: 7px;
   padding: 1rem 0;
+
   & img {
     width: 6rem;
     height: auto;
   }
+
   & .content-text {
     color: white;
     text-align: justify;
   }
+
   & .content-img {
     width: 186px;
     object-fit: cover;
     object-position: center;
+
     @media screen and (max-width: 570px) {
       width: 110px;
     }
@@ -62,30 +67,36 @@
   height: 13rem;
   overflow: auto;
   gap: 1rem;
+
   & .skill {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.1rem;
+
     > * {
-      width: calc(
-        (100% - 20px) / 3
-      ); /* Width of each item, with margin included */
-      margin-right: 10px; /* Margin between items */
+      width: calc((100% - 20px) / 3);
+      /* Width of each item, with margin included */
+      margin-right: 10px;
+      /* Margin between items */
 
       &:nth-child(3) {
-        margin-right: 0; /* Remove margin between third item and edge of container */
-        margin-left: auto; /* Move the third item to the end of the line */
+        margin-right: 0;
+        /* Remove margin between third item and edge of container */
+        margin-left: auto;
+        /* Move the third item to the end of the line */
         width: 5.5rem;
       }
     }
+
     img {
       width: 1.5rem;
       border-radius: 6px;
       margin-right: 1rem;
       flex-shrink: 0;
     }
+
     p {
       font: $title-3-bold;
     }
@@ -116,25 +127,42 @@
     overflow: hidden;
 
     & .back {
-      height: 50%;
+      height: 70%;
       width: 100%;
+
+      overflow: hidden;
+      /* Ensures the image stays within the bounds of the container when scaling */
+
       img {
         height: 100%;
-        width: inherit;
+        width: 100%;
         object-fit: cover;
+        transition: transform 0.3s ease-in-out;
+        /* Smooth transition for scaling */
+
+        &:hover {
+          transform: scale(1.1);
+          /* Scales the image by 10% */
+        }
       }
     }
 
     & .content {
-      display: flex;
-      margin: 1rem;
-      justify-content: space-between;
+      margin: 0.5rem;
+      justify-content: center;
       align-items: center;
+      cursor: pointer;
+      display: flex;
+      flex-wrap: nowrap;
+
       .text {
+        text-align: center;
+
         p {
           font: $body-bold;
-          margin: 0;
+          margin: 0.25rem;
         }
+
         span {
           font: $caption-1-regular;
           color: rgba(60, 60, 67, 0.6);

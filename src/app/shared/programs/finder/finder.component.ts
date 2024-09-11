@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-
 import { MatDialog } from '@angular/material/dialog';
+import { WindowComponent } from '@app/shared/window/window.component';
 import { CvFinder, Experience } from '@core/models/cv';
 import { ApiService } from '@core/services/api.service';
 import { RedirectService } from '@core/services/redirect.service';
-import { WindowComponent } from '@app/shared/window/window.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-finder',
@@ -14,26 +13,27 @@ import { WindowComponent } from '@app/shared/window/window.component';
 })
 export class FinderComponent implements OnInit {
   data$: Observable<CvFinder> | undefined;
+  showTooltip = false;
 
   constructor(
     private api: ApiService,
     private redirect: RedirectService,
     public dialog: MatDialog
   ) {}
+
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
     this.data$ = this.api.getData();
   }
 
   navigateUrl(url: string) {
     url ? this.redirect.navigate(url) : null;
   }
+
   openNotes(item: Experience): void {
     const dialogRef = this.dialog.open(WindowComponent, {
       data: {
-        title: 'experience',
-        icon: '',
+        title: 'Experience',
+        icon: item.projects[0].icon,
         program: 'ExperienceComponent',
         data: item,
       },
