@@ -1,14 +1,19 @@
 <div class="wrapper">
   <div class="main-container" *ngIf="data$ | async as data; else loading">
-    <section class="content-section">
-      <!---Section banner-->
-      <div class="content-banner">
-        <img [src]="data.presentation.avatarUrl" alt="" />
+    <!-- Presentation Section -->
+    <section class="content-section" aria-labelledby="profile-heading">
+      <header class="content-banner">
+        <img
+          [src]="data.presentation.avatarUrl"
+          alt="Profile picture of {{ data.presentation.name }}"
+          class="profile-avatar"
+        />
         <div class="content-text">
-          <h1>{{ data.presentation.name }}</h1>
+          <h1 id="profile-heading">{{ data.presentation.name }}</h1>
           <p>{{ data.presentation.description }}</p>
           <button
             class="primary"
+            aria-label="Contact me"
             (click)="
               navigateUrl('https://www.linkedin.com/in/ahmed-tabib-13243b15b/')
             "
@@ -19,46 +24,58 @@
         <img
           class="content-img"
           src="assets/owner/technos.webp"
-          alt="technos"
+          alt="Technologies logo"
         />
-      </div>
+      </header>
     </section>
 
-    <!---Section skills-->
-    <section class="content-section">
-      <h3>Technologies</h3>
-
-      <div class="content-skills">
-        <div class="skill" *ngFor="let item of data.technologies">
+    <!-- Skills Section -->
+    <section class="content-section" aria-labelledby="skills-heading">
+      <h3 id="skills-heading">Technologies</h3>
+      <div class="content-skills" role="list">
+        <div
+          class="skill"
+          role="listitem"
+          *ngFor="let item of data.technologies"
+          tabindex="0"
+        >
           <img [src]="item.icon" [alt]="item.name" />
           <p>{{ item.name }}</p>
-          <button class="primary" (click)="navigateUrl(item.link)">
-            {{ "Open" }}
-          </button>
+          <button class="primary" (click)="navigateUrl(item.link)">Open</button>
         </div>
       </div>
     </section>
 
-    <section class="content-section">
-      <!---Section jobs-->
-      <h3>Poste Occupés</h3>
-      <div class="app-cards">
-        <div class="app-card" *ngFor="let item of data.experiences">
+    <!-- Experiences Section -->
+    <section class="content-section" aria-labelledby="experience-heading">
+      <h3 id="experience-heading">Poste Occupés</h3>
+      <div class="app-cards" role="list">
+        <div
+          class="app-card"
+          *ngFor="let item of data.experiences"
+          role="listitem"
+          tabindex="0"
+        >
           <div class="back">
-            <img [src]="item.projects[0].backgroundImg" alt="" />
+            <img
+              [src]="item.projects[0].backgroundImg"
+              alt="Project background image"
+            />
           </div>
-          <div class="content">
+          <div
+            class="content"
+            (click)="openNotes(item)"
+            matTooltip="Open for more details"
+          >
             <div class="text">
-              <p>{{ item.projects[0].name }}</p>
+              <p>{{ item.name }}</p>
               <span>{{ item.projects[0].postTitle }}</span>
             </div>
-            <button class="primary small" (click)="openNotes(item)">
-              {{ "Open" }}
-            </button>
           </div>
         </div>
       </div>
     </section>
   </div>
-  <ng-template #loading></ng-template>
+
+  <ng-template #loading>Loading data...</ng-template>
 </div>

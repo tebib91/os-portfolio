@@ -9,11 +9,40 @@
   >
     <!-- content goes here -->
     <app-header></app-header>
-    <app-taskbar (program)="openDialog($event)"></app-taskbar>
-    <!-- content end here -->
-    <span class="version">
-      {{ currentApplicationVersion }}
-    </span>
+    <lib-taskbar
+      [icons]="iconsDock"
+      [backgroundColor]="'#ffffff'"
+      [darkThemeBackgroundColor]="'#333333'"
+      [showThemeToggle]="true"
+      (program)="handleProgram($event)"
+      (themeToggled)="handleThemeToggle($event)"
+    ></lib-taskbar>
+    <div class="version-container">
+      <!-- Social Icons -->
+      <div class="social-icons">
+        <a
+          href="https://github.com/tebib91"
+          target="_blank"
+          aria-label="GitHub"
+        >
+          <img
+            src="https://img.icons8.com/?size=100&id=80462&format=png&color=000000"
+            alt="GitHub"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/ahmed-tabib-js"
+          target="_blank"
+          aria-label="LinkedIn"
+        >
+          <img
+            src="https://img.icons8.com/?size=100&id=108812&format=png&color=000000"
+            alt="LinkedIn"
+          />
+        </a>
+      </div>
+      <span class="version">{{ currentApplicationVersion }}</span>
+    </div>
   </app-background-image>
   <!-- content end here -->
 </app-context-menu>

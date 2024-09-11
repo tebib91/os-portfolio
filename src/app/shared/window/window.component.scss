@@ -3,8 +3,10 @@
 // }
 
 .window {
-  min-width: 100%;
-  min-height: 100%;
+  min-width: 400px; // Set the minimum width of the window
+  min-height: 300px; // Set the minimum height of the window
+  width: 100%; // Full width initially
+  height: 100%; // Full height initially
   overflow: hidden;
   background-color: var(--window-background);
   border: 0.5px solid var(--alternate-content-background-border);
@@ -31,30 +33,6 @@
       font-size: 16px;
       font-weight: 500;
       margin: 0;
-    }
-
-    .window-controls {
-      display: flex;
-      align-items: center;
-      .minimize-button,
-      .maximize-button,
-      .close-button {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.05);
-        margin: 0px 4px;
-      }
-      .minimize-button {
-        background: #ffd60a;
-      }
-      .maximize-button {
-        background: #30d158;
-      }
-      .close-button {
-        background: #ff453a;
-        margin: 0px 8px;
-      }
     }
   }
 

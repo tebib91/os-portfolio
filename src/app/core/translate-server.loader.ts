@@ -1,12 +1,8 @@
+import { makeStateKey, StateKey, TransferState } from '@angular/core';
+import { TranslateLoader } from '@ngx-translate/core';
+import * as fs from 'fs';
 import { join } from 'path';
 import { Observable } from 'rxjs';
-import { TranslateLoader } from '@ngx-translate/core';
-import {
-  makeStateKey,
-  StateKey,
-  TransferState,
-} from '@angular/platform-browser';
-import * as fs from 'fs';
 
 export class TranslateServerLoader implements TranslateLoader {
   constructor(

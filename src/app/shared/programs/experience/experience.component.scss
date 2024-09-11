@@ -1,42 +1,268 @@
 .content {
-  margin-bottom: 2rem;
-  & .content-box {
+  .content-box {
     margin: 1rem;
-    & .client {
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+
+    .client {
       display: flex;
       align-items: center;
-      & img {
-        height: 2rem;
-        width: auto;
-        margin-right: 1rem;
-      }
-    }
-    & .project {
-      & .list-title {
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      text-align: left;
+      padding: 1rem;
+      background-color: #f9f9f9;
+      border-radius: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+      .client-logo {
+        flex: 0 0 5rem;
         display: flex;
         align-items: center;
-        > img {
-          width: 28px;
-          height: 28px;
-          margin-right: 10px;
+        justify-content: center;
+
+        img {
+          height: 4rem;
+          width: auto;
+          max-width: 5rem;
+          border-radius: 0.5rem;
         }
       }
-      & .technos {
-        & .list {
+
+      .client-name {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h3 {
+          font-size: 1.5rem;
+          margin: 0;
+        }
+      }
+    }
+
+    .project {
+      .list-title {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 1rem;
+        border-radius: 0.75rem;
+        margin-bottom: 0.5rem;
+        background-color: #f4f4f4;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #000;
+        text-align: center;
+
+        .icon-wrapper {
           display: flex;
-          & .products {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            margin-right: 1rem;
-            & img {
-              width: 28px;
-              border-radius: 6px;
-              margin-right: 5px;
-              flex-shrink: 0;
+          align-items: center;
+          /* Vertically center the icon */
+          justify-content: center;
+          width: 2rem;
+          /* Fixed width for the icon */
+          height: 2rem;
+          /* Fixed height for the icon */
+          margin-right: 1rem;
+          /* Space between icon and text */
+          background-color: rgba(255, 255, 255, 0.15);
+          /* Optional background for the icon */
+          border-radius: 50%;
+          /* Make the icon container circular */
+
+          img {
+            width: 1.5rem;
+            /* Icon size */
+            height: 1.5rem;
+          }
+        }
+
+        p {
+          margin: 0;
+          flex-grow: 1;
+          font-size: 1.1rem;
+        }
+      }
+
+      /* Specific styles for each type of list title */
+      .project-title {
+        background-color: #f4f4f4;
+        /* Creative, bold background */
+      }
+
+      .post-title {
+        background-color: #f4f4f4;
+        /* A cool blue background */
+      }
+
+      .description {
+        background-color: #f4f4f4;
+        padding: 1rem;
+        border-radius: 0.75rem;
+        text-align: left;
+        margin-bottom: 1rem;
+
+        p {
+          margin: 0;
+          font-size: 1rem;
+          word-break: break-word;
+          white-space: normal;
+          overflow-wrap: break-word;
+          line-height: 1.5;
+          max-width: 100%;
+        }
+      }
+
+      .tasks {
+        margin-top: 0.5rem;
+        background-color: #f4f4f4;
+        padding: 1rem;
+        border-radius: 0.75rem;
+
+        h4 {
+          font-size: 1.25rem;
+          margin: 0.5rem;
+          color: #005bb5;
+          font-weight: 700;
+          /* Make the title bold */
+        }
+
+        ul {
+          padding-left: 1.25rem;
+          list-style-type: none;
+          list-style-position: outside;
+          margin: 0;
+
+          li {
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            color: #444;
+            position: relative;
+            padding-left: 1.5rem;
+
+            &:before {
+              content: "•";
+              /* Creative bullet point */
+              color: #005bb5;
+              /* Bullet color */
+              position: absolute;
+              left: 0;
+              top: 0;
+              font-size: 1.25rem;
+              line-height: 1rem;
             }
           }
         }
+      }
+
+      .technos {
+        margin-top: 1.5rem;
+
+        h4 {
+          margin-bottom: 1rem;
+        }
+
+        .tech-list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1.5rem;
+
+          .tech-block {
+            width: 5rem;
+            /* Fixed width */
+            height: 5rem;
+            /* Fixed height */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            transition: box-shadow 0.3s ease;
+
+            &:hover {
+              box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            }
+
+            .tech-avatar {
+              img {
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                object-fit: cover;
+              }
+            }
+
+            .tech-info {
+              .tech-name {
+                font-size: 0.7rem;
+                font-weight: 600;
+                margin: 0.2rem;
+              }
+
+              .tech-link {
+                font-size: 0.65rem;
+                margin: 0;
+
+                a {
+                  color: #0073e6;
+                  text-decoration: none;
+                  transition: color 0.3s;
+
+                  &:hover {
+                    color: #005bb5;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content-box {
+      padding: 1rem;
+
+      .client {
+        flex-direction: column;
+        text-align: center;
+
+        .client-logo {
+          margin-bottom: 1rem;
+        }
+      }
+
+      .technos .tech-block {
+        width: 3.5rem;
+        height: 3.5rem;
+        /* Maintain fully rounded and smaller on tablets */
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .content-box {
+      padding: 0.75rem;
+
+      .client h3 {
+        font-size: 1.25rem;
+      }
+
+      .technos .tech-block {
+        width: 3rem;
+        height: 3rem;
+        /* Maintain fully rounded and smaller on mobile */
       }
     }
   }

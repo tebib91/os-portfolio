@@ -22,8 +22,8 @@ export interface Project {
   postTitle: string;
   icon: string;
   description: string;
+  tasks: string[]; // Added to include detailed tasks for each project
   technos: Techno[];
-  link: string;
   backgroundImg?: string;
 }
 

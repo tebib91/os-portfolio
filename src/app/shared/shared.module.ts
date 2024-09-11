@@ -1,21 +1,22 @@
-import { GoogleMapsModule } from '@angular/google-maps';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BackgroundImageComponent } from './widgets/background-image/background-image.component';
-import { WindowComponent } from './window/window.component';
-import { FinderComponent } from './programs/finder/finder.component';
-import { CalculatorComponent } from './programs/calculator/calculator.component';
-import { MapsComponent } from './programs/maps/maps.component';
-import { ControlCenterComponent } from './widgets/control-center/control-center.component';
+import { NgModule } from '@angular/core';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { BootComponent } from '@features/boot/boot.component';
 import { LoginComponent } from '@features/login/login.component';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { NotesComponent } from './widgets/notes/notes.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { ContextMenuComponent } from './widgets/context-menu/context-menu.component';
+import { CalculatorComponent } from './programs/calculator/calculator.component';
 import { ExperienceComponent } from './programs/experience/experience.component';
+import { FinderComponent } from './programs/finder/finder.component';
+import { MapsComponent } from './programs/maps/maps.component';
+import { BackgroundImageComponent } from './widgets/background-image/background-image.component';
+import { ContextMenuComponent } from './widgets/context-menu/context-menu.component';
+import { ControlCenterComponent } from './widgets/control-center/control-center.component';
+import { NotesComponent } from './widgets/notes/notes.component';
+import { WindowComponent } from './window/window.component';
+
 import {
   provideHttpClient,
   withInterceptorsFromDi,
@@ -56,6 +57,7 @@ import { WindowHeaderComponent } from './window/window-header/window-header.comp
     MatTooltipModule,
     TranslateModule,
     GoogleMapsModule,
+    MatTooltipModule,
   ],
   providers: [provideHttpClient(withInterceptorsFromDi(), withJsonpSupport())],
 })
