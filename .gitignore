@@ -52,3 +52,8 @@ Thumbs.db
 
 # Library
 projects
+
+
+.nx/cache
+.nx/workspace-data
+.angular
