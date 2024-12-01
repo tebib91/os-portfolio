@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
   selector: 'app-finder',
   templateUrl: './finder.component.html',
   styleUrls: ['./finder.component.scss'],
+  standalone: false,
 })
 export class FinderComponent implements OnInit {
   data$: Observable<CvFinder> | undefined;

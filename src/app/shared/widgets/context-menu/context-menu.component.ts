@@ -36,6 +36,7 @@ import {
     </div>
   `,
   styleUrls: ['./context-menu.component.scss'],
+  standalone: false,
 })
 export class ContextMenuComponent {
   urlImage!: string;

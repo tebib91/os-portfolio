@@ -6,10 +6,11 @@ import { Experience } from '@app/core/models/cv';
   selector: 'app-notes',
   templateUrl: './notes.component.html',
   styleUrls: ['./notes.component.scss'],
+  standalone: false,
 })
 export class NotesComponent {
   constructor(
     public dialogRef: MatDialogRef<NotesComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Experience
+    @Inject(MAT_DIALOG_DATA) public data: Experience,
   ) {}
 }

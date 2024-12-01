@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
   selector: 'app-boot',
   templateUrl: './boot.component.html',
   styleUrls: ['./boot.component.scss'],
+  standalone: false,
 })
 export class BootComponent implements OnInit {
   progressBarValue = 0;

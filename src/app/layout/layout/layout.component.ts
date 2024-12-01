@@ -15,6 +15,7 @@ export interface TaskbarIcon {
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class LayoutComponent {
   currentApplicationVersion = version;
@@ -24,7 +25,10 @@ export class LayoutComponent {
   folders: string[] = [];
   folderCounter = 0;
   iconsDock: Icons[];
-  constructor(public dialog: MatDialog, public themeService: ThemeService) {
+  constructor(
+    public dialog: MatDialog,
+    public themeService: ThemeService,
+  ) {
     this.handleProgram({
       icon: 'finder.png',
       label: 'Finder',

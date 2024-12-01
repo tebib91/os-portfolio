@@ -12,6 +12,7 @@ import { ExperienceComponent } from '../programs/experience/experience.component
   selector: 'app-window',
   templateUrl: './window.component.html',
   styleUrls: ['./window.component.scss'],
+  standalone: false,
 })
 export class WindowComponent {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
