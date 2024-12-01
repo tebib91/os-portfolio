@@ -12,7 +12,7 @@
     "lint": "npx eslint src --fix",
     "version": "node -p \"require('./package.json').version\"",
     "package": "npm run build:ssr && npm run zip",
-    "serve:ssr:os-portfolio": "node dist/os-portfolio/server/server.mjs"
+    "serve:ssr:os-portfolio": "node dist/osPortfolio/server/server.mjs"
   },
   "private": true,
   "dependencies": {
