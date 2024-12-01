@@ -12,6 +12,7 @@ import {
   selector: 'app-control-center',
   templateUrl: './control-center.component.html',
   styleUrls: ['./control-center.component.scss'],
+  standalone: false,
 })
 export class ControlCenterComponent implements OnInit, OnDestroy {
   @Input() visible!: boolean;

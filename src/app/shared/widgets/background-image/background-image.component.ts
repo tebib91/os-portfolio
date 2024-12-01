@@ -21,6 +21,7 @@ import { Component, Input } from '@angular/core';
     </div>
   `,
   styleUrls: ['./background-image.component.scss'],
+  standalone: false,
 })
 export class BackgroundImageComponent {
   @Input() imageUrl = '/assets/backgrounds/background-1.webp';

@@ -8,6 +8,7 @@ import { Program } from '@app/core/models/menu';
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ExperienceComponent {
   experience: Experience | undefined;

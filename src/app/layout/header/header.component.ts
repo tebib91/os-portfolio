@@ -12,6 +12,7 @@ import { PlatformService } from '@core/services/platform.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class HeaderComponent implements OnInit {
   items = menusBar;
