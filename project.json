@@ -13,9 +13,7 @@
     "build": {
       "executor": "@angular-devkit/build-angular:application",
       "options": {
-        "outputPath": {
-          "base": "dist/os-portfolio"
-        },
+        "outputPath": "dist/osPortfolio",
         "index": "src/index.html",
         "polyfills": ["src/polyfills.ts"],
         "tsConfig": "tsconfig.app.json",

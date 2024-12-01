@@ -26,4 +26,4 @@ COPY --from=build-stage /app/dist ./dist
 EXPOSE 4000
 
 # Start the Angular Universal server
-CMD ["node" ,"dist/os-portfolio/server/server.mjs"]
+CMD ["node" ,"dist/osPortfolio/server/server.mjs"]
