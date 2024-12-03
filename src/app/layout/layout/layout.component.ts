@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { iconsDock } from '@app/core/data/data';
 import { Icons } from '@core/models/icons';
@@ -21,6 +21,9 @@ export interface TaskbarIcon {
   imports: [ContextMenuComponent, BackgroundImageComponent, HeaderComponent],
 })
 export class LayoutComponent {
+  dialog = inject(MatDialog);
+  themeService = inject(ThemeService);
+
   currentApplicationVersion = version;
 
   urlImage = '/assets/backgrounds/background-1.webp';
@@ -28,10 +31,10 @@ export class LayoutComponent {
   folders: string[] = [];
   folderCounter = 0;
   iconsDock: Icons[];
-  constructor(
-    public dialog: MatDialog,
-    public themeService: ThemeService,
-  ) {
+
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+  constructor() {
     this.handleProgram({
       icon: 'finder.png',
       label: 'Finder',
@@ -41,7 +44,6 @@ export class LayoutComponent {
   }
 
   handleProgram(icon: Icons) {
-    console.log('Program clicked:', icon);
     const dialogRef = this.dialog.open(WindowComponent, {
       data: {
         title: icon.label,
@@ -52,9 +54,7 @@ export class LayoutComponent {
       panelClass: 'dialog-panel',
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.info('The dialog was closed', { icon, result });
-    });
+    dialogRef.afterClosed();
   }
 
   handleThemeToggle(isDarkTheme: boolean) {

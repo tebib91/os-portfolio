@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Program } from '@core/models/menu';
 import { FinderComponent } from '@shared/programs/finder/finder.component';
@@ -18,6 +18,10 @@ import { NgComponentOutlet } from '@angular/common';
   imports: [CdkDrag, WindowHeaderComponent, CdkDragHandle, NgComponentOutlet],
 })
 export class WindowComponent {
+  dialogRef = inject<MatDialogRef<WindowComponent>>(MatDialogRef);
+  data = inject<Program>(MAT_DIALOG_DATA);
+  private _overlay = inject(Overlay);
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   outlet: any | undefined;
   dragPosition = { x: 0, y: 0 };
@@ -33,11 +37,12 @@ export class WindowComponent {
   initialHeight?: string;
   private _overlayRef!: OverlayRef;
 
-  constructor(
-    public dialogRef: MatDialogRef<WindowComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Program,
-    private _overlay: Overlay,
-  ) {
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+
+  constructor() {
+    const data = this.data;
+
     console.log({ data });
     this.outlet = this.components.find(
       (el) => el.name === data?.title?.toLocaleLowerCase(),

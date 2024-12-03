@@ -1,4 +1,4 @@
-import { Inject, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
+import { Injectable, Renderer2, RendererFactory2, inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DOCUMENT } from '@angular/common';
 
@@ -6,16 +6,20 @@ import { DOCUMENT } from '@angular/common';
   providedIn: 'root',
 })
 export class ThemeService {
+  private snackBar = inject(MatSnackBar);
+  private document = inject<Document>(DOCUMENT);
+
   isDarkMode = false;
   darkClass = 'macos-dark-theme';
   lightClass = 'macos-light-theme';
 
   private renderer: Renderer2;
-  constructor(
-    private snackBar: MatSnackBar,
-    @Inject(DOCUMENT) private document: Document,
-    rendererFactory: RendererFactory2
-  ) {
+
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+  constructor() {
+    const rendererFactory = inject(RendererFactory2);
+
     // Get an instance of Renderer2
     this.renderer = rendererFactory.createRenderer(null, null);
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { WindowComponent } from '@app/shared/window/window.component';
 import { CvFinder, Experience } from '@core/models/cv';
@@ -15,14 +15,17 @@ import { MatTooltip } from '@angular/material/tooltip';
   imports: [NgIf, NgFor, MatTooltip, AsyncPipe],
 })
 export class FinderComponent implements OnInit {
+  private api = inject(ApiService);
+  private redirect = inject(RedirectService);
+  dialog = inject(MatDialog);
+
   data$: Observable<CvFinder> | undefined;
   showTooltip = false;
 
-  constructor(
-    private api: ApiService,
-    private redirect: RedirectService,
-    public dialog: MatDialog,
-  ) {}
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+
+  constructor() {}
 
   ngOnInit(): void {
     this.data$ = this.api.getData();

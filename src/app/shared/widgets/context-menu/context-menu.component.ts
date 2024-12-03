@@ -1,11 +1,11 @@
 import {
   Component,
   ElementRef,
-  EventEmitter,
   HostListener,
-  Output,
   Renderer2,
-  ViewChild,
+  viewChild,
+  inject,
+  output,
 } from '@angular/core';
 import { NgIf } from '@angular/common';
 
@@ -40,6 +40,8 @@ import { NgIf } from '@angular/common';
   imports: [NgIf],
 })
 export class ContextMenuComponent {
+  private renderer = inject(Renderer2);
+
   urlImage!: string;
   lastRandomNumber!: number;
   folders: string[] = [];
@@ -47,11 +49,14 @@ export class ContextMenuComponent {
   menuLeft = 0;
   menuTop = 0;
 
-  @ViewChild('contextMenu') contextMenu!: ElementRef;
+  readonly contextMenu = viewChild.required<ElementRef>('contextMenu');
   isOpen = false;
-  @Output() imageUrlChange = new EventEmitter<string>();
+  readonly imageUrlChange = output<string>();
 
-  constructor(private renderer: Renderer2) {}
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+
+  constructor() {}
 
   @HostListener('document:click', ['$event'])
   documentClick() {

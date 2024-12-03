@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 export interface RedirectionExtras extends NavigationExtras {
   target?: string;
@@ -9,10 +9,13 @@ export interface RedirectionExtras extends NavigationExtras {
   providedIn: 'root',
 })
 export class RedirectService {
-  constructor(
-    readonly router: Router,
-    @Inject(DOCUMENT) readonly document: Document,
-  ) {}
+  readonly router = inject(Router);
+  readonly document = inject<Document>(DOCUMENT);
+
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+
+  constructor() {}
 
   /** The Window object from Document defaultView */
   get window(): Window {

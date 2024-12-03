@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgIf } from '@angular/common';
 
@@ -9,7 +9,12 @@ import { NgIf } from '@angular/common';
   imports: [NgIf],
 })
 export class LoginComponent {
-  constructor(private router: Router) {}
+  private router = inject(Router);
+
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+
+  constructor() {}
 
   openDesktop() {
     this.router.navigate(['/']);

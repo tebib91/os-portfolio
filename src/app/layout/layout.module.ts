@@ -11,7 +11,8 @@ import { LayoutComponent } from './layout/layout.component';
 const routes: Routes = [
   {
     path: 'desktop',
-    component: LayoutComponent,
+    loadComponent: () =>
+      import('./layout/layout.component').then((m) => m.LayoutComponent),
   },
 ];
 

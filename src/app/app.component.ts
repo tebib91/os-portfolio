@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, inject as inject_1 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { ScriptInjectorService } from '@core/services/script-injector.service';
 import { SeoService } from '@core/services/seo.service';
@@ -12,14 +12,17 @@ import { Subject, filter, takeUntil } from 'rxjs';
   standalone: false,
 })
 export class AppComponent implements OnDestroy {
+  private script = inject_1(ScriptInjectorService);
+  private router = inject_1(Router);
+  private seo = inject_1(SeoService);
+
   title = 'Ahmed Tabib | Fullstack Developer JavaScript';
   private destroy$ = new Subject();
 
-  constructor(
-    private script: ScriptInjectorService,
-    private router: Router,
-    private seo: SeoService,
-  ) {
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+
+  constructor() {
     const trackingId = environment.GA_TRACKING_ID;
     this.script.inject(trackingId);
     this.router.events

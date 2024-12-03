@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Experience } from '@app/core/models/cv';
 import { NgFor } from '@angular/common';
@@ -10,8 +10,11 @@ import { NgFor } from '@angular/common';
   imports: [NgFor],
 })
 export class NotesComponent {
-  constructor(
-    public dialogRef: MatDialogRef<NotesComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Experience,
-  ) {}
+  dialogRef = inject<MatDialogRef<NotesComponent>>(MatDialogRef);
+  data = inject<Experience>(MAT_DIALOG_DATA);
+
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+
+  constructor() {}
 }
