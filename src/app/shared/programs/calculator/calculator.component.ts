@@ -1,10 +1,11 @@
 import { Component, HostListener } from '@angular/core';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
   styleUrls: ['./calculator.component.scss'],
-  standalone: false,
+  imports: [NgFor],
 })
 export class CalculatorComponent {
   equationDisplay = '';

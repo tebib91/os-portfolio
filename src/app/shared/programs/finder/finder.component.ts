@@ -5,12 +5,14 @@ import { CvFinder, Experience } from '@core/models/cv';
 import { ApiService } from '@core/services/api.service';
 import { RedirectService } from '@core/services/redirect.service';
 import { Observable } from 'rxjs';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { MatTooltip } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-finder',
   templateUrl: './finder.component.html',
   styleUrls: ['./finder.component.scss'],
-  standalone: false,
+  imports: [NgIf, NgFor, MatTooltip, AsyncPipe],
 })
 export class FinderComponent implements OnInit {
   data$: Observable<CvFinder> | undefined;

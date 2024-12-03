@@ -7,6 +7,7 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-context-menu',
@@ -36,7 +37,7 @@ import {
     </div>
   `,
   styleUrls: ['./context-menu.component.scss'],
-  standalone: false,
+  imports: [NgIf],
 })
 export class ContextMenuComponent {
   urlImage!: string;

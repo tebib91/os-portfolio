@@ -10,7 +10,6 @@ import {
   templateUrl: './window-header.component.html',
   styleUrls: ['./window-header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
 })
 export class WindowHeaderComponent {
   @Output() _onClose = new EventEmitter<void>();

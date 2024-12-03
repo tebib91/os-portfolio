@@ -7,12 +7,13 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-control-center',
   templateUrl: './control-center.component.html',
   styleUrls: ['./control-center.component.scss'],
-  standalone: false,
+  imports: [NgIf],
 })
 export class ControlCenterComponent implements OnInit, OnDestroy {
   @Input() visible!: boolean;

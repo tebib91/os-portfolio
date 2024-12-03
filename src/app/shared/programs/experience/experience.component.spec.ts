@@ -17,8 +17,7 @@ describe('ExperienceComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ExperienceComponent],
-      imports: [MatDialogModule],
+      imports: [MatDialogModule, ExperienceComponent],
       providers: [
         {
           provide: MatDialogRef,

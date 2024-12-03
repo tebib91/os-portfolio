@@ -16,13 +16,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [HeaderComponent, LayoutComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     SharedModule,
     MatDialogModule,
-    // TaskbarComponent,
+    HeaderComponent,
+    LayoutComponent,
   ],
 })
 export class LayoutModule {}

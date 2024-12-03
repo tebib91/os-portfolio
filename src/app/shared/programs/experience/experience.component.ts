@@ -2,13 +2,14 @@ import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Experience } from '@app/core/models/cv';
 import { Program } from '@app/core/models/menu';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-experience',
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, NgFor],
 })
 export class ExperienceComponent {
   experience: Experience | undefined;

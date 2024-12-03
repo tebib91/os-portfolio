@@ -1,4 +1,4 @@
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { DOCUMENT, isPlatformBrowser, NgIf } from '@angular/common';
 import {
   Component,
   Inject,
@@ -7,12 +7,13 @@ import {
   Renderer2,
 } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatProgressBar } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-boot',
   templateUrl: './boot.component.html',
   styleUrls: ['./boot.component.scss'],
-  standalone: false,
+  imports: [NgIf, MatProgressBar],
 })
 export class BootComponent implements OnInit {
   progressBarValue = 0;

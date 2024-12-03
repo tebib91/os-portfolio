@@ -7,12 +7,15 @@ import { CalculatorComponent } from '../programs/calculator/calculator.component
 
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ExperienceComponent } from '../programs/experience/experience.component';
+import { CdkDrag, CdkDragHandle } from '@angular/cdk/drag-drop';
+import { WindowHeaderComponent } from './window-header/window-header.component';
+import { NgComponentOutlet } from '@angular/common';
 
 @Component({
   selector: 'app-window',
   templateUrl: './window.component.html',
   styleUrls: ['./window.component.scss'],
-  standalone: false,
+  imports: [CdkDrag, WindowHeaderComponent, CdkDragHandle, NgComponentOutlet],
 })
 export class WindowComponent {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -8,7 +8,7 @@ describe('ControlCenterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ControlCenterComponent],
+      imports: [ControlCenterComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ControlCenterComponent);

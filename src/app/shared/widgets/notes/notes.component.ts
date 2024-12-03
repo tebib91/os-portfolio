@@ -1,12 +1,13 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Experience } from '@app/core/models/cv';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-notes',
   templateUrl: './notes.component.html',
   styleUrls: ['./notes.component.scss'],
-  standalone: false,
+  imports: [NgFor],
 })
 export class NotesComponent {
   constructor(

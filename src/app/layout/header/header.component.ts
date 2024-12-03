@@ -6,13 +6,22 @@ import {
 } from '@angular/core';
 import { menusBar } from '@core/data/data';
 import { PlatformService } from '@core/services/platform.service';
+import { NgFor, NgIf, NgStyle, DecimalPipe, DatePipe } from '@angular/common';
+import { ControlCenterComponent } from '../../shared/widgets/control-center/control-center.component';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgFor,
+    NgIf,
+    NgStyle,
+    ControlCenterComponent,
+    DecimalPipe,
+    DatePipe,
+  ],
 })
 export class HeaderComponent implements OnInit {
   items = menusBar;

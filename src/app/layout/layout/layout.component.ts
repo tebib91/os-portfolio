@@ -5,6 +5,9 @@ import { Icons } from '@core/models/icons';
 import { WindowComponent } from '@shared/window/window.component';
 import { version } from 'src/version';
 import { ThemeService } from '../../core/services/theme.service';
+import { ContextMenuComponent } from '../../shared/widgets/context-menu/context-menu.component';
+import { BackgroundImageComponent } from '../../shared/widgets/background-image/background-image.component';
+import { HeaderComponent } from '../header/header.component';
 export interface TaskbarIcon {
   icon: string;
   label: string;
@@ -15,7 +18,7 @@ export interface TaskbarIcon {
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [ContextMenuComponent, BackgroundImageComponent, HeaderComponent],
 })
 export class LayoutComponent {
   currentApplicationVersion = version;

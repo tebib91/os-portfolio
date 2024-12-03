@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-background-image',
@@ -21,7 +22,7 @@ import { Component, Input } from '@angular/core';
     </div>
   `,
   styleUrls: ['./background-image.component.scss'],
-  standalone: false,
+  imports: [NgFor],
 })
 export class BackgroundImageComponent {
   @Input() imageUrl = '/assets/backgrounds/background-1.webp';
