@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BootComponent } from '@features/boot/boot.component';
 
 const routes: Routes = [
   // { path: 'login', component: LoginComponent },
-  { path: 'boot', component: BootComponent },
+  {
+    path: 'boot',
+    loadComponent: () =>
+      import('@features/boot/boot.component').then((m) => m.BootComponent),
+  },
   {
     path: '',
     redirectTo: '/boot',

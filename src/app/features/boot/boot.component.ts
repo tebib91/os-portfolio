@@ -1,20 +1,26 @@
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { DOCUMENT, isPlatformBrowser, NgIf } from '@angular/common';
 import {
   Component,
-  Inject,
   OnInit,
   PLATFORM_ID,
   Renderer2,
+  inject,
 } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatProgressBar } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-boot',
   templateUrl: './boot.component.html',
   styleUrls: ['./boot.component.scss'],
-  standalone: false,
+  imports: [NgIf, MatProgressBar],
 })
 export class BootComponent implements OnInit {
+  private router = inject(Router);
+  private document = inject<Document>(DOCUMENT);
+  private renderer2 = inject(Renderer2);
+  private platformId = inject(PLATFORM_ID);
+
   progressBarValue = 0;
   isFullScreen = false;
   elem!: HTMLElement & {
@@ -24,12 +30,10 @@ export class BootComponent implements OnInit {
   };
   isBrowser: boolean;
 
-  constructor(
-    private router: Router,
-    @Inject(DOCUMENT) private document: Document,
-    private renderer2: Renderer2,
-    @Inject(PLATFORM_ID) private platformId: object,
-  ) {
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+
+  constructor() {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 

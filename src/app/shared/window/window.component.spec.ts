@@ -13,8 +13,7 @@ describe('WindowComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [WindowComponent],
-      imports: [MatDialogModule],
+      imports: [MatDialogModule, WindowComponent],
       providers: [
         {
           provide: MatDialogRef,

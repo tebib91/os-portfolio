@@ -1,30 +1,40 @@
 import {
   Component,
   ElementRef,
-  Input,
   OnDestroy,
   OnInit,
   Renderer2,
-  ViewChild,
+  input,
+  viewChild,
+  inject,
 } from '@angular/core';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-control-center',
   templateUrl: './control-center.component.html',
   styleUrls: ['./control-center.component.scss'],
-  standalone: false,
+  imports: [NgIf],
 })
 export class ControlCenterComponent implements OnInit, OnDestroy {
-  @Input() visible!: boolean;
+  private renderer2 = inject(Renderer2);
 
-  @ViewChild('wrapper', { static: false }) wrapper!: ElementRef;
+  readonly visible = input.required<boolean>();
+
+  readonly wrapper = viewChild.required<ElementRef>('wrapper');
   private unlistener!: () => void;
 
-  constructor(private renderer2: Renderer2) {}
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+
+  constructor() {}
 
   ngOnInit(): void {
     this.unlistener = this.renderer2.listen('document', 'click', (event) => {
-      if (this.visible && !this.wrapper?.nativeElement.contains(event.target)) {
+      if (
+        this.visible() &&
+        !this.wrapper()?.nativeElement.contains(event.target)
+      ) {
         // this.visible = false;
       }
     });

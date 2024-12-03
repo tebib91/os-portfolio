@@ -13,8 +13,7 @@ describe('NotesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NotesComponent],
-      imports: [MatDialogModule],
+      imports: [MatDialogModule, NotesComponent],
       providers: [
         {
           provide: MatDialogRef,

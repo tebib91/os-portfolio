@@ -1,4 +1,4 @@
-@import "variables";
+@use 'variables';
 
 .notes {
   width: 348px;
@@ -23,11 +23,11 @@
     overflow-y: auto;
     & .element {
       & .title {
-        font: $body-bold;
+        font: variables.$body-bold;
         margin: 0.1 0rem;
       }
       & .description {
-        font: $body-regular;
+        font: variables.$body-regular;
         color: rgba(0, 0, 0, 0.5);
       }
     }

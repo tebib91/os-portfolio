@@ -17,8 +17,7 @@ describe('FinderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [FinderComponent],
-      imports: [MatDialogModule],
+      imports: [MatDialogModule, FinderComponent],
       providers: [
         {
           provide: MatDialogRef,

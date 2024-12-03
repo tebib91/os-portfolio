@@ -1,22 +1,25 @@
+@use 'sass:color';
+@use '../variables';
+
 // Button styles
 button {
   // Default size
-  padding: $button-padding;
-  font-size: $button-font-size;
-  font-weight: $button-font-weight;
+  padding: variables.$button-padding;
+  font-size: variables.$button-font-size;
+  font-weight: variables.$button-font-weight;
 
   // Colors and borders
-  background-color: $button-background-color;
-  color: $button-color;
-  border-radius: $button-border-radius;
-  border: $button-border;
+  background-color: variables.$button-background-color;
+  color: variables.$button-color;
+  border-radius: variables.$button-border-radius;
+  border: variables.$button-border;
   cursor: pointer;
   // Transitions
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: $button-hover-background-color;
-    color: $button-hover-color;
+    background-color: variables.$button-hover-background-color;
+    color: variables.$button-hover-color;
   }
 
   &:focus {
@@ -31,33 +34,39 @@ button {
 
   &:active {
     outline: none;
-    background-color: darken($button-background-color, 10%);
+    background-color: color.adjust(
+      variables.$button-background-color,
+      $lightness: -10%
+    );
   }
 
   // Small size
   &.small {
-    padding: $button-small-padding;
-    font-size: $button-small-font-size;
+    padding: variables.$button-small-padding;
+    font-size: variables.$button-small-font-size;
   }
 
   // Large size
   &.large {
-    padding: $button-large-padding;
-    font-size: $button-large-font-size;
+    padding: variables.$button-large-padding;
+    font-size: variables.$button-large-font-size;
   }
 
   // Primary style
   &.primary {
-    background-color: $button-background-color;
-    color: $button-color;
+    background-color: variables.$button-background-color;
+    color: variables.$button-color;
     outline: none;
     &:hover {
-      background-color: $button-hover-background-color;
-      color: $button-hover-color;
+      background-color: variables.$button-hover-background-color;
+      color: variables.$button-hover-color;
     }
 
     &:active {
-      background-color: darken($button-background-color, 10%);
+      background-color: color.adjust(
+        variables.$button-background-color,
+        $lightness: -10%
+      );
     }
   }
 
@@ -65,15 +74,18 @@ button {
   &.round {
     width: 28px;
     height: 28px;
-    background-color: $button-background-color;
+    background-color: variables.$button-background-color;
     border-radius: 16px;
     outline: none;
     &:hover {
-      background-color: $button-hover-background-color;
+      background-color: variables.$button-hover-background-color;
     }
 
     &:active {
-      background-color: darken($button-background-color, 10%);
+      background-color: color.adjust(
+        variables.$button-background-color,
+        $lightness: -10%
+      );
     }
   }
   &.icon {

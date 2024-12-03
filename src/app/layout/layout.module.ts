@@ -11,18 +11,19 @@ import { LayoutComponent } from './layout/layout.component';
 const routes: Routes = [
   {
     path: 'desktop',
-    component: LayoutComponent,
+    loadComponent: () =>
+      import('./layout/layout.component').then((m) => m.LayoutComponent),
   },
 ];
 
 @NgModule({
-  declarations: [HeaderComponent, LayoutComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     SharedModule,
     MatDialogModule,
-    // TaskbarComponent,
+    HeaderComponent,
+    LayoutComponent,
   ],
 })
 export class LayoutModule {}

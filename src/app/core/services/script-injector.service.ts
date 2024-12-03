@@ -1,11 +1,16 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable, inject as inject_1 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ScriptInjectorService {
-constructor(@Inject(DOCUMENT) private document: Document) {}
+  private document = inject_1<Document>(DOCUMENT);
+
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+
+  constructor() {}
 
   inject(trackingId: string) {
     // Create the first script element for gtag.js

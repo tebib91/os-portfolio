@@ -1,14 +1,14 @@
-@import "variables";
-@import "mixins";
+@use 'variables';
+@use 'mixins';
 
-@import "typography";
+@use 'typography';
 
-@import "responsive";
+@use 'responsive';
 
 //elements
 
-@import "components/input";
-@import "components/buttons";
+@use 'components/input';
+@use 'components/buttons';
 
 :root {
   --find-highlighting: rgba(255, 255, 0, 1);
@@ -107,7 +107,7 @@
 }
 body {
   color: var(--text);
-  font-size: $font-size-base;
+  font-size: variables.$font-size-base;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -141,7 +141,8 @@ ul {
   height: 5px;
   background-color: var(--button-inactive);
   border-radius: 50%;
-  box-shadow: 7px 0 0 0 var(--button-inactive),
+  box-shadow:
+    7px 0 0 0 var(--button-inactive),
     14px 0 0 0 var(--button-inactive);
   margin: 0 12px;
 }

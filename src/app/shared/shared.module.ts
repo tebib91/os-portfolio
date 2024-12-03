@@ -25,20 +25,6 @@ import {
 import { WindowHeaderComponent } from './window/window-header/window-header.component';
 
 @NgModule({
-  declarations: [
-    BackgroundImageComponent,
-    WindowComponent,
-    FinderComponent,
-    CalculatorComponent,
-    MapsComponent,
-    ControlCenterComponent,
-    LoginComponent,
-    BootComponent,
-    NotesComponent,
-    ContextMenuComponent,
-    ExperienceComponent,
-    WindowHeaderComponent,
-  ],
   exports: [
     BackgroundImageComponent,
     ContextMenuComponent,
@@ -58,6 +44,18 @@ import { WindowHeaderComponent } from './window/window-header/window-header.comp
     TranslateModule,
     GoogleMapsModule,
     MatTooltipModule,
+    BackgroundImageComponent,
+    WindowComponent,
+    FinderComponent,
+    CalculatorComponent,
+    MapsComponent,
+    ControlCenterComponent,
+    LoginComponent,
+    BootComponent,
+    NotesComponent,
+    ContextMenuComponent,
+    ExperienceComponent,
+    WindowHeaderComponent,
   ],
   providers: [provideHttpClient(withInterceptorsFromDi(), withJsonpSupport())],
 })

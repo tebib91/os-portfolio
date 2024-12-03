@@ -1,4 +1,4 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { MetaData, MetaDataMapping } from '../models/seo';
 import { DOCUMENT } from '@angular/common';
@@ -7,11 +7,14 @@ import { DOCUMENT } from '@angular/common';
   providedIn: 'root',
 })
 export class SeoService {
-  constructor(
-    @Inject(DOCUMENT) private document: Document,
-    private title: Title,
-    private meta: Meta
-  ) {}
+  private document = inject<Document>(DOCUMENT);
+  private title = inject(Title);
+  private meta = inject(Meta);
+
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+
+  constructor() {}
 
   updateMetaData(url: string) {
     // Get the meta data for the current URL
@@ -25,7 +28,7 @@ export class SeoService {
 
     // For canonical url, remove existing canonical tag first.
     const existingCanonical = this.document.querySelector(
-      'link[rel="canonical"]'
+      'link[rel="canonical"]',
     );
     if (existingCanonical) {
       this.document.head.removeChild(existingCanonical);
