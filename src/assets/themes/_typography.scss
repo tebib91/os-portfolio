@@ -1,4 +1,4 @@
-@import "variables";
+@use 'variables';
 
 @mixin headline-regular() {
   font-style: normal;
@@ -10,9 +10,9 @@
 }
 
 h1 {
-  font: $large-title-bold;
+  font: variables.$large-title-bold;
 }
 
 p {
-  font: $body-regular;
+  font: variables.$body-regular;
 }

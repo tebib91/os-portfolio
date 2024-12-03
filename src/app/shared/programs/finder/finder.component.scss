@@ -1,4 +1,4 @@
-@import "variables";
+@use 'variables';
 
 .wrapper {
   box-sizing: border-box;
@@ -22,7 +22,7 @@
   align-items: center;
   width: 100%;
   justify-content: space-between;
-  background-image: url("https://www.transparenttextures.com/patterns/cubes.png"),
+  background-image: url('https://www.transparenttextures.com/patterns/cubes.png'),
     linear-gradient(
       to right top,
       #cf4af3,
@@ -98,7 +98,7 @@
     }
 
     p {
-      font: $title-3-bold;
+      font: variables.$title-3-bold;
     }
   }
 }
@@ -159,12 +159,12 @@
         text-align: center;
 
         p {
-          font: $body-bold;
+          font: variables.$body-bold;
           margin: 0.25rem;
         }
 
         span {
-          font: $caption-1-regular;
+          font: variables.$caption-1-regular;
           color: rgba(60, 60, 67, 0.6);
         }
       }

@@ -1,3 +1,4 @@
+@use 'sass:color';
 /* Define the layout and styling for the calculator */
 .calculator {
   display: flex;
@@ -69,10 +70,10 @@
         box-shadow: none;
       }
       &:hover {
-        background-color: darken($secondary-color, 10%);
+        background-color: color.adjust($secondary-color, $lightness: -10%);
       }
       &:active {
-        background-color: darken($secondary-color, 20%);
+        background-color: color.adjust($secondary-color, $lightness: -20%);
       }
     }
   }

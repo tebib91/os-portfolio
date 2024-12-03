@@ -1,12 +1,12 @@
-@import "mixins";
+@use 'mixins';
 
 .login-screen {
-  @include bg-image(
-    $uri: "/assets/background/desktop-background.jpg",
+  @include mixins.bg-image(
+    $uri: '/assets/background/desktop-background.jpg',
     $size: cover,
     $position: center
   );
-  @include flex($dir: column, $ai: center, $jc: center);
+  @include mixins.flex($dir: column, $ai: center, $jc: center);
 
   height: 100vh;
   color: var(--color-white);
