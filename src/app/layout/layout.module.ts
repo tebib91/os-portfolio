@@ -4,9 +4,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '@app/shared/shared.module';
 
-// import { TaskbarComponent } from 'taskbar-angular'; // Import the standalone component
 import { HeaderComponent } from './header/header.component';
 import { LayoutComponent } from './layout/layout.component';
+import { TaskbarComponent } from './taskbar/taskbar.component';
 
 const routes: Routes = [
   {
@@ -24,6 +24,7 @@ const routes: Routes = [
     MatDialogModule,
     HeaderComponent,
     LayoutComponent,
+    TaskbarComponent,
   ],
 })
 export class LayoutModule {}

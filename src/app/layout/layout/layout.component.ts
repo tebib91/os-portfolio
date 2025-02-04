@@ -5,9 +5,10 @@ import { Icons } from '@core/models/icons';
 import { WindowComponent } from '@shared/window/window.component';
 import { version } from 'src/version';
 import { ThemeService } from '../../core/services/theme.service';
-import { ContextMenuComponent } from '../../shared/widgets/context-menu/context-menu.component';
 import { BackgroundImageComponent } from '../../shared/widgets/background-image/background-image.component';
+import { ContextMenuComponent } from '../../shared/widgets/context-menu/context-menu.component';
 import { HeaderComponent } from '../header/header.component';
+import { TaskbarComponent } from '../taskbar/taskbar.component';
 export interface TaskbarIcon {
   icon: string;
   label: string;
@@ -18,7 +19,12 @@ export interface TaskbarIcon {
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ContextMenuComponent, BackgroundImageComponent, HeaderComponent],
+  imports: [
+    ContextMenuComponent,
+    BackgroundImageComponent,
+    HeaderComponent,
+    TaskbarComponent,
+  ],
 })
 export class LayoutComponent {
   dialog = inject(MatDialog);
@@ -43,7 +49,7 @@ export class LayoutComponent {
     this.iconsDock = iconsDock;
   }
 
-  handleProgram(icon: Icons) {
+  handleProgram(icon: Icons): void {
     const dialogRef = this.dialog.open(WindowComponent, {
       data: {
         title: icon.label,

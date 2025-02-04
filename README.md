@@ -1,51 +1,137 @@
-# OsFront
+# OS Portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
+A modern, responsive portfolio website built with Angular 19 and Material Design. This project showcases a professional portfolio with server-side rendering (SSR) capabilities, PWA support, and internationalization features.
 
-## Development server
+[![Angular](https://img.shields.io/badge/Angular-19.0.1-red)](https://angular.io/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.5.4-blue)](https://www.typescriptlang.org/)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Features
 
-## Code scaffolding
+- **Server-Side Rendering (SSR)**: Enhanced performance and SEO optimization
+- **Progressive Web App (PWA)**: Installable on mobile devices with offline capabilities
+- **Internationalization**: Multi-language support using ngx-translate
+- **Material Design**: Modern and responsive UI components
+- **Google Maps Integration**: Location visualization
+- **Docker Support**: Easy deployment with containerization
+- **Conventional Commits**: Standardized commit messages with semantic-release
+- **CI/CD Pipeline**: Automated testing and deployment
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🛠️ Prerequisites
 
-## Build
+- Node.js (LTS version recommended)
+- npm or yarn package manager
+- Angular CLI
+- Docker (optional, for containerization)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🔧 Installation
 
-## Running unit tests
+1. Clone the repository:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   ```bash
+   git clone https://github.com/yourusername/os-portfolio.git
+   cd os-portfolio
+   ```
 
-## Running end-to-end tests
+2. Install dependencies:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ```bash
+   npm install
+   ```
 
-## Further help
+3. Start the development server:
+   ```bash
+   npm start
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The application will be available at `http://localhost:4200/`.
 
-## semantic-release
+## 🏗️ Build
 
-Here is the list of commit types that conform to the conventional commits specification and can be used with semantic-release:
+- **Development build**:
 
-`feat`: A new feature
-`fix`: A bug fix
-`docs`: Documentation changes
-`style`: Changes that do not affect the meaning of the code (white-space, formatting, missing `semi-colons, etc)
-`refactor`: A code change that neither fixes a bug nor adds a feature
-`perf`: A code change that improves performance
-`test`: Adding missing tests or correcting existing tests
-`build`: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
-`ci`: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
-`chore`: Other changes that don't modify src or test files
-These commit types are widely used and are the default types used by semantic-release if you're using the default commit-analyzer plugin.
+  ```bash
+  npm run build
+  ```
 
-For more detail and examples, you can check the following documentation and websites:
+- **Production build**:
 
-[The official documentation of semantic-release](https://semantic-release.gitbook.io/)
-[The website of Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+  ```bash
+  npm run build:production
+  ```
 
-This should give you all the information you need to format your commits correctly and use semantic-release effectively.
-here is an example "docs(README): Add more details to the API doc"
+- **SSR build and serve**:
+  ```bash
+  npm run serve:ssr:os-portfolio
+  ```
+
+## 🐳 Docker Deployment
+
+1. Build the Docker image:
+
+   ```bash
+   docker build -t os-portfolio .
+   ```
+
+2. Run the container:
+   ```bash
+   docker run -p 4200:4200 os-portfolio
+   ```
+
+## 🧪 Testing
+
+- **Unit Tests**:
+
+  ```bash
+  npm test
+  ```
+
+- **Linting**:
+  ```bash
+  npm run lint
+  ```
+
+## 📝 Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes using conventional commits
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Commit Convention
+
+We use conventional commits for semantic versioning. Here are the main types:
+
+- `feat`: New feature
+- `fix`: Bug fix
+- `docs`: Documentation changes
+- `style`: Code style changes
+- `refactor`: Code refactoring
+- `perf`: Performance improvements
+- `test`: Test updates
+- `build`: Build system changes
+- `ci`: CI configuration changes
+- `chore`: Other changes
+
+Example: `feat(auth): add OAuth2 authentication`
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Support
+
+For support, please open an issue in the GitHub repository or contact the maintainers.
+
+## 🙏 Acknowledgments
+
+- Angular Team for the amazing framework
+- Material Design Team for the UI components
+- All contributors who have helped this project grow
+
+---
+
+Built with ❤️ using Angular
