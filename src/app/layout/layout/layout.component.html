@@ -1,4 +1,4 @@
-<app-context-menu>
+<app-context-menu (imageUrlChange)="urlImage = $event">
   <!-- content goes here -->
   <app-background-image
     [imageUrl]="urlImage"
@@ -9,9 +9,8 @@
   >
     <!-- content goes here -->
     <app-header></app-header>
-    <!-- <lib-taskbar [icons]="iconsDock" [backgroundColor]="'#ffffff'" [darkThemeBackgroundColor]="'#333333'"
-      [showThemeToggle]="true" (program)="handleProgram($event)"
-      (themeToggled)="handleThemeToggle($event)"></lib-taskbar> -->
+    <app-taskbar (program)="handleProgram($event)"></app-taskbar>
+    <!-- content end here -->
     <div class="version-container">
       <!-- Social Icons -->
       <div class="social-icons">

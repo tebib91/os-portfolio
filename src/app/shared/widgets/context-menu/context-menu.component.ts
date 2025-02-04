@@ -1,13 +1,13 @@
+import { NgIf } from '@angular/common';
 import {
   Component,
   ElementRef,
   HostListener,
-  Renderer2,
-  viewChild,
   inject,
   output,
+  Renderer2,
+  viewChild,
 } from '@angular/core';
-import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-context-menu',
@@ -83,13 +83,15 @@ export class ContextMenuComponent {
   changeBackground() {
     const index = this.getRandomNumber();
     this.urlImage = `/assets/backgrounds/background-${index}.webp`;
+    console.log(this.urlImage);
+
     this.imageUrlChange.emit(this.urlImage);
   }
 
   getRandomNumber() {
-    let randomNumber = Math.floor(Math.random() * 4) + 1;
+    let randomNumber = Math.floor(Math.random() * 3) + 1;
     while (randomNumber === this.lastRandomNumber) {
-      randomNumber = Math.floor(Math.random() * 4) + 1;
+      randomNumber = Math.floor(Math.random() * 3) + 1;
     }
     this.lastRandomNumber = randomNumber;
     return randomNumber;
