@@ -1,6 +1,6 @@
 {
   "name": "os-portfolio",
-  "version": "1.10.1",
+  "version": "1.11.2",
   "scripts": {
     "start": "npx nx run os-portfolio:serve:development",
     "build": "npx nx run os-portfolio:build:production",
