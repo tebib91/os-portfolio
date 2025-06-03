@@ -32,22 +32,26 @@
         </ul>
       </div>
       <ul>
-        <li class="menu-bar-item" *ngFor="let item of items">
-          <span>{{ item.label }}</span>
-        </li>
+        @for (item of items; track item.label) {
+          <li class="menu-bar-item">
+            <span>{{ item.label }}</span>
+          </li>
+        }
       </ul>
     </div>
     <div class="menu-bar-right">
       <ul>
         <li class="menu-bar-item">
-          <div *ngIf="batteryLevel">
-            {{ (batteryLevel | number: "1.0-0") + "% " }}
-          </div>
+          @if (batteryLevel()) {
+            <div>
+              {{ (batteryLevel() | number: '1.0-0') + '% ' }}
+            </div>
+          }
           <div class="battery-icon">
             <div class="battery-container">
               <div
                 class="battery-level"
-                [ngStyle]="{ width: batteryLevel + '%' }"
+                [ngStyle]="{ width: batteryLevel() + '%' }"
               ></div>
             </div>
           </div>
@@ -61,7 +65,7 @@
         <li class="menu-bar-item" (click)="controlVisible = !controlVisible">
           <img src="assets/icons-system/icons-system.svg" alt="icon system" />
         </li>
-        <li class="menu-bar-item">{{ currentTime | date: "shortTime" }}</li>
+        <li class="menu-bar-item">{{ currentTime | date: 'shortTime' }}</li>
       </ul>
     </div>
   </nav>

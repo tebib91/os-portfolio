@@ -12,9 +12,6 @@ export class ApiService {
   private httpClient = inject(HttpClient);
   private languageService = inject(LanguageService);
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
   constructor() {}
 
   getData(): Observable<CvFinder> {

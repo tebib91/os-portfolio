@@ -12,9 +12,6 @@ export class RedirectService {
   readonly router = inject(Router);
   readonly document = inject<Document>(DOCUMENT);
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
   constructor() {}
 
   /** The Window object from Document defaultView */

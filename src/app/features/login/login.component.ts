@@ -11,9 +11,6 @@ import { NgIf } from '@angular/common';
 export class LoginComponent {
   private router = inject(Router);
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
   constructor() {}
 
   openDesktop() {

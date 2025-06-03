@@ -22,9 +22,6 @@ export class FinderComponent implements OnInit {
   data$: Observable<CvFinder> | undefined;
   showTooltip = false;
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
   constructor() {}
 
   ngOnInit(): void {

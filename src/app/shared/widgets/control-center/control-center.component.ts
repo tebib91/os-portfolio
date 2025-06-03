@@ -24,9 +24,6 @@ export class ControlCenterComponent implements OnInit, OnDestroy {
   readonly wrapper = viewChild.required<ElementRef>('wrapper');
   private unlistener!: () => void;
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
   constructor() {}
 
   ngOnInit(): void {

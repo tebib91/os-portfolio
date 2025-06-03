@@ -53,9 +53,6 @@ export class ContextMenuComponent {
   isOpen = false;
   readonly imageUrlChange = output<string>();
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
   constructor() {}
 
   @HostListener('document:click', ['$event'])

@@ -11,9 +11,6 @@ export class SeoService {
   private title = inject(Title);
   private meta = inject(Meta);
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
   constructor() {}
 
   updateMetaData(url: string) {

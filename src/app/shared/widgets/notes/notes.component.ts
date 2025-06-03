@@ -13,8 +13,5 @@ export class NotesComponent {
   dialogRef = inject<MatDialogRef<NotesComponent>>(MatDialogRef);
   data = inject<Experience>(MAT_DIALOG_DATA);
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
   constructor() {}
 }
