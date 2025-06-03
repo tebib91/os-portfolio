@@ -48,16 +48,18 @@ The application will be available at `http://localhost:4200/`.
 
 ## 🏗️ Build
 
-- **Development build**:
+- **Production build** (default):
 
   ```bash
   npm run build
   ```
 
-- **Production build**:
+  This command performs the production build by default.
+
+- **Development build**:
 
   ```bash
-  npm run build:production
+  npx nx run os-portfolio:build:development
   ```
 
 - **SSR build and serve**:
