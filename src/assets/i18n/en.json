@@ -20,5 +20,9 @@
     "MUSIC": "Music",
     "SYSTEM_PREFERENCES": "System Preferences",
     "BIN": "Bin"
+  },
+  "BOOT": {
+    "MESSAGE": "For better experience open full screen mode",
+    "BUTTON": "press here"
   }
 }

@@ -5,19 +5,26 @@
     alt="apple-logo"
   />
 
+  <div class="boot-screen__lang-toggle">
+    <mat-button-toggle-group
+      [value]="languageService.currentLang"
+      (change)="changeLanguage($event.value)"
+    >
+      <mat-button-toggle value="en">EN</mat-button-toggle>
+      <mat-button-toggle value="fr">FR</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
   <div class="boot-screen__progress-bar">
-    <p>For better experience open full screen mode</p>
-    @if (!isFullScreen) {
-      <button class="full" (click)="chkScreenMode()">
-        <span>press here</span>
-      </button>
-    }
-    @if (isFullScreen) {
-      <mat-progress-bar
-        mode="determinate"
-        [value]="progressBarValue()"
-        [style]="{ height: '6px' }"
-      ></mat-progress-bar>
-    }
+    <p>{{ 'BOOT.MESSAGE' | translate }}</p>
+    <button class="full" *ngIf="!isFullScreen" (click)="chkScreenMode()">
+      <span>{{ 'BOOT.BUTTON' | translate }}</span>
+    </button>
+    <mat-progress-bar
+      *ngIf="isFullScreen"
+      mode="determinate"
+      [value]="progressBarValue"
+      [style]="{ height: '6px' }"
+    ></mat-progress-bar>
   </div>
 </div>
