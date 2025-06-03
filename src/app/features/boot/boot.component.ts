@@ -59,10 +59,12 @@ export class BootComponent implements OnInit {
     if (this.isBrowser) {
       const methodToBeInvoked =
         this.elem.requestFullscreen ||
-        this.elem.webkitRequestFullscreen() ||
-        this.elem.mozRequestFullScreen() ||
-        this.elem.msRequestFullscreen();
-      if (methodToBeInvoked) methodToBeInvoked.call(this.elem);
+        this.elem.webkitRequestFullscreen ||
+        this.elem.mozRequestFullScreen ||
+        this.elem.msRequestFullscreen;
+      if (methodToBeInvoked) {
+        methodToBeInvoked.call(this.elem);
+      }
     }
   }
 
