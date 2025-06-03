@@ -20,5 +20,9 @@
     "MUSIC": "Musique",
     "SYSTEM_PREFERENCES": "Préférences Système",
     "BIN": "Corbeille"
+  },
+  "BOOT": {
+    "MESSAGE": "Pour une meilleure expérience, passez en plein écran",
+    "BUTTON": "appuyez ici"
   }
 }

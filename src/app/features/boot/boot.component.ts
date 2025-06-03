@@ -8,18 +8,21 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatProgressBar } from '@angular/material/progress-bar';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { LanguageService } from '@core/services/language.service';
 
 @Component({
   selector: 'app-boot',
   templateUrl: './boot.component.html',
   styleUrls: ['./boot.component.scss'],
-  imports: [NgIf, MatProgressBar],
+  imports: [NgIf, MatProgressBar, MatButtonToggleModule],
 })
 export class BootComponent implements OnInit {
   private router = inject(Router);
   private document = inject<Document>(DOCUMENT);
   private renderer2 = inject(Renderer2);
   private platformId = inject(PLATFORM_ID);
+  private languageService = inject(LanguageService);
 
   progressBarValue = 0;
   isFullScreen = false;
@@ -79,5 +82,9 @@ export class BootComponent implements OnInit {
         }
       }, 50);
     }
+  }
+
+  changeLanguage(lang: string) {
+    this.languageService.use(lang);
   }
 }

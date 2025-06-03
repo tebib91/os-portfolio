@@ -5,10 +5,20 @@
     alt="apple-logo"
   />
 
+  <div class="boot-screen__lang-toggle">
+    <mat-button-toggle-group
+      [value]="languageService.currentLang"
+      (change)="changeLanguage($event.value)"
+    >
+      <mat-button-toggle value="en">EN</mat-button-toggle>
+      <mat-button-toggle value="fr">FR</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
   <div class="boot-screen__progress-bar">
-    <p>For better experience open full screen mode</p>
+    <p>{{ 'BOOT.MESSAGE' | translate }}</p>
     <button class="full" *ngIf="!isFullScreen" (click)="chkScreenMode()">
-      <span>press here</span>
+      <span>{{ 'BOOT.BUTTON' | translate }}</span>
     </button>
     <mat-progress-bar
       *ngIf="isFullScreen"

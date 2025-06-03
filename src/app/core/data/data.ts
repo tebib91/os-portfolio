@@ -477,3 +477,12 @@ export const me: CvFinder = {
     },
   ],
 };
+
+export const meFr: CvFinder = {
+  ...me,
+  presentation: {
+    ...me.presentation,
+    description:
+      "Ahmed Tabib est un développeur Fullstack JS senior avec plus de 7 ans d'expérience, spécialisé en React, NodeJS et services AWS.",
+  },
+};
