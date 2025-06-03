@@ -18,9 +18,6 @@ export class ExperienceComponent {
   fallbackImageUrl =
     'https://img.icons8.com/?size=100&id=zGSj13jiurKj&format=png&color=000000';
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
   constructor() {
     const data = this.data;
 

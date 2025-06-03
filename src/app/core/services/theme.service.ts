@@ -15,8 +15,6 @@ export class ThemeService {
 
   private renderer: Renderer2;
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
   constructor() {
     const rendererFactory = inject(RendererFactory2);
 

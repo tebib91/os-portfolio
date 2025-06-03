@@ -1,11 +1,5 @@
-import { DOCUMENT, isPlatformBrowser, NgIf } from '@angular/common';
-import {
-  Component,
-  OnInit,
-  PLATFORM_ID,
-  Renderer2,
-  inject,
-} from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { Component, OnInit, PLATFORM_ID, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatProgressBar } from '@angular/material/progress-bar';
 
@@ -13,15 +7,14 @@ import { MatProgressBar } from '@angular/material/progress-bar';
   selector: 'app-boot',
   templateUrl: './boot.component.html',
   styleUrls: ['./boot.component.scss'],
-  imports: [NgIf, MatProgressBar],
+  imports: [MatProgressBar],
 })
 export class BootComponent implements OnInit {
   private router = inject(Router);
   private document = inject<Document>(DOCUMENT);
-  private renderer2 = inject(Renderer2);
   private platformId = inject(PLATFORM_ID);
 
-  progressBarValue = 0;
+  progressBarValue = signal(0);
   isFullScreen = false;
   elem!: HTMLElement & {
     mozRequestFullScreen(): Promise<void>;
@@ -29,9 +22,6 @@ export class BootComponent implements OnInit {
     msRequestFullscreen(): Promise<void>;
   };
   isBrowser: boolean;
-
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
 
   constructor() {
     this.isBrowser = isPlatformBrowser(this.platformId);
@@ -69,10 +59,9 @@ export class BootComponent implements OnInit {
   navigateToHome() {
     if (this.isBrowser) {
       const interval = setInterval(() => {
-        this.progressBarValue =
-          this.progressBarValue + Math.floor(Math.random() * 5);
-        if (this.progressBarValue >= 100) {
-          this.progressBarValue = 100;
+        this.progressBarValue.update((v) => v + Math.floor(Math.random() * 5));
+        if (this.progressBarValue() >= 100) {
+          this.progressBarValue.set(100);
           clearInterval(interval);
 
           this.router.navigate(['/desktop']);

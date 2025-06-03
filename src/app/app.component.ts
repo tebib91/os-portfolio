@@ -1,9 +1,10 @@
-import { Component, OnDestroy, inject as inject_1 } from '@angular/core';
+import { Component, inject, DestroyRef } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { ScriptInjectorService } from '@core/services/script-injector.service';
 import { SeoService } from '@core/services/seo.service';
 import { environment } from '@env/environment';
-import { Subject, filter, takeUntil } from 'rxjs';
+import { filter } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-root',
@@ -11,17 +12,13 @@ import { Subject, filter, takeUntil } from 'rxjs';
   styleUrls: ['./app.component.scss'],
   standalone: false,
 })
-export class AppComponent implements OnDestroy {
-  private script = inject_1(ScriptInjectorService);
-  private router = inject_1(Router);
-  private seo = inject_1(SeoService);
+export class AppComponent {
+  private script = inject(ScriptInjectorService);
+  private router = inject(Router);
+  private seo = inject(SeoService);
+  private destroyRef = inject(DestroyRef);
 
   title = 'Ahmed Tabib | Fullstack Developer JavaScript';
-  private destroy$ = new Subject();
-
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
   constructor() {
     const trackingId = environment.GA_TRACKING_ID;
     this.script.inject(trackingId);
@@ -29,17 +26,12 @@ export class AppComponent implements OnDestroy {
       .pipe(
         filter(
           (event): event is NavigationEnd => event instanceof NavigationEnd,
-        ), // Type guard
-        takeUntil(this.destroy$),
+        ),
+        takeUntilDestroyed(this.destroyRef),
       )
       .subscribe((event: NavigationEnd) => {
         // Explicit type for the event
         this.seo.updateMetaData(event.urlAfterRedirects);
       });
-  }
-
-  ngOnDestroy() {
-    this.destroy$.next('');
-    this.destroy$.complete();
   }
 }

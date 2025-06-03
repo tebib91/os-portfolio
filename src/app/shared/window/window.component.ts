@@ -37,9 +37,6 @@ export class WindowComponent {
   initialHeight?: string;
   private _overlayRef!: OverlayRef;
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
   constructor() {
     const data = this.data;
 

@@ -1,4 +1,3 @@
-import { NgFor } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { iconsDock } from '@app/core/data/data';
 import { Icons } from '@core/models/icons';
@@ -8,7 +7,6 @@ import { ThemeService } from '@core/services/theme.service';
   selector: 'app-taskbar',
   templateUrl: './taskbar.component.html',
   styleUrls: ['./taskbar.component.scss'],
-  imports: [NgFor],
 })
 export class TaskbarComponent {
   icons = iconsDock;
