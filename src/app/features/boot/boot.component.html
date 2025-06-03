@@ -7,14 +7,17 @@
 
   <div class="boot-screen__progress-bar">
     <p>For better experience open full screen mode</p>
-    <button class="full" *ngIf="!isFullScreen" (click)="chkScreenMode()">
-      <span>press here</span>
-    </button>
-    <mat-progress-bar
-      *ngIf="isFullScreen"
-      mode="determinate"
-      [value]="progressBarValue"
-      [style]="{ height: '6px' }"
-    ></mat-progress-bar>
+    @if (!isFullScreen) {
+      <button class="full" (click)="chkScreenMode()">
+        <span>press here</span>
+      </button>
+    }
+    @if (isFullScreen) {
+      <mat-progress-bar
+        mode="determinate"
+        [value]="progressBarValue()"
+        [style]="{ height: '6px' }"
+      ></mat-progress-bar>
+    }
   </div>
 </div>

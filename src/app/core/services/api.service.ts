@@ -10,9 +10,6 @@ import { HttpClient } from '@angular/common/http';
 export class ApiService {
   private httpClient = inject(HttpClient);
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
   constructor() {}
 
   getData(): Observable<CvFinder> {

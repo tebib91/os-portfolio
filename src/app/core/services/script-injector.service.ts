@@ -1,14 +1,11 @@
-import { Injectable, inject as inject_1 } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ScriptInjectorService {
-  private document = inject_1<Document>(DOCUMENT);
-
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
+  private document = inject<Document>(DOCUMENT);
 
   constructor() {}
 

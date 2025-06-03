@@ -7,9 +7,6 @@ import { TranslateService } from '@ngx-translate/core';
 export class TranslationService {
   private translate = inject(TranslateService);
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
   constructor() {}
 
   translateLabels(labels: string[], prefix: string): Promise<string[]> {

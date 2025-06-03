@@ -38,8 +38,6 @@ export class LayoutComponent {
   folderCounter = 0;
   iconsDock: Icons[];
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
   constructor() {
     this.handleProgram({
       icon: 'finder.png',
