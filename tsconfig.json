@@ -3,11 +3,11 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@app/*": ["src/app/*"],
-      "@core/*": ["src/app/core/*"],
-      "@env/*": ["src/environments/*"],
-      "@features/*": ["src/app/features/*"],
-      "@shared/*": ["src/app/shared/*"],
+      "@app/*": ["apps/frontend/src/app/*"],
+      "@core/*": ["apps/frontend/src/app/core/*"],
+      "@env/*": ["apps/frontend/src/environments/*"],
+      "@features/*": ["apps/frontend/src/app/features/*"],
+      "@shared/*": ["apps/frontend/src/app/shared/*"],
       "taskbar": ["dist/taskbar"]
     },
     "outDir": "./dist/out-tsc",

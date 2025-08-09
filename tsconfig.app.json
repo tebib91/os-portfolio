@@ -6,12 +6,10 @@
     "types": ["@angular/localize", "node"]
   },
   "files": [
-    "src/main.ts",
-    "src/polyfills.ts",
-    "src/main.server.ts",
-    "server.ts",
-    "server.ts",
+    "apps/frontend/src/main.ts",
+    "apps/frontend/src/polyfills.ts",
+    "apps/frontend/src/main.server.ts",
     "server.ts"
   ],
-  "include": ["src/**/*.d.ts"]
+  "include": ["apps/frontend/src/**/*.d.ts"]
 }

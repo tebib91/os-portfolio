@@ -7,32 +7,35 @@
       "style": "scss"
     }
   },
-  "sourceRoot": "src",
+  "sourceRoot": "apps/frontend/src",
   "prefix": "app",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
       "options": {
         "outputPath": "dist/osPortfolio",
-        "index": "src/index.html",
-        "polyfills": ["src/polyfills.ts"],
+        "index": "apps/frontend/src/index.html",
+        "polyfills": ["apps/frontend/src/polyfills.ts"],
         "tsConfig": "tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          "src/favicon.ico",
-          "src/assets",
-          "src/manifest.webmanifest",
-          "src/robots.txt",
-          "src/sitemap.xml"
+          "apps/frontend/src/favicon.ico",
+          "apps/frontend/src/assets",
+          "apps/frontend/src/manifest.webmanifest",
+          "apps/frontend/src/robots.txt",
+          "apps/frontend/src/sitemap.xml"
         ],
-        "styles": ["src/styles.scss", "src/assets/themes/theme.scss"],
+        "styles": [
+          "apps/frontend/src/styles.scss",
+          "apps/frontend/src/assets/themes/theme.scss"
+        ],
         "stylePreprocessorOptions": {
-          "includePaths": ["src/assets/themes"]
+          "includePaths": ["apps/frontend/src/assets/themes"]
         },
         "scripts": [],
         "serviceWorker": "ngsw-config.json",
-        "browser": "src/main.ts",
-        "server": "src/main.server.ts",
+        "browser": "apps/frontend/src/main.ts",
+        "server": "apps/frontend/src/main.server.ts",
         "prerender": true,
         "ssr": {
           "entry": "server.ts"
@@ -54,8 +57,8 @@
           ],
           "fileReplacements": [
             {
-              "replace": "src/environments/environment.ts",
-              "with": "src/environments/environment.prod.ts"
+              "replace": "apps/frontend/src/environments/environment.ts",
+              "with": "apps/frontend/src/environments/environment.prod.ts"
             }
           ],
           "outputHashing": "all"
@@ -90,15 +93,22 @@
     "test": {
       "executor": "@angular-devkit/build-angular:karma",
       "options": {
-        "main": "src/test.ts",
-        "polyfills": "src/polyfills.ts",
+        "main": "apps/frontend/src/test.ts",
+        "polyfills": "apps/frontend/src/polyfills.ts",
         "tsConfig": "tsconfig.spec.json",
         "karmaConfig": "karma.conf.js",
         "inlineStyleLanguage": "scss",
-        "assets": ["src/favicon.ico", "src/assets", "src/manifest.webmanifest"],
-        "styles": ["src/styles.scss", "src/assets/themes/theme.scss"],
+        "assets": [
+          "apps/frontend/src/favicon.ico",
+          "apps/frontend/src/assets",
+          "apps/frontend/src/manifest.webmanifest"
+        ],
+        "styles": [
+          "apps/frontend/src/styles.scss",
+          "apps/frontend/src/assets/themes/theme.scss"
+        ],
         "stylePreprocessorOptions": {
-          "includePaths": ["src/assets/themes"]
+          "includePaths": ["apps/frontend/src/assets/themes"]
         },
         "scripts": []
       }
@@ -106,7 +116,10 @@
     "lint": {
       "executor": "@angular-eslint/builder:lint",
       "options": {
-        "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+        "lintFilePatterns": [
+          "apps/frontend/src/**/*.ts",
+          "apps/frontend/src/**/*.html"
+        ]
       },
       "outputs": ["{options.outputFile}"]
     }

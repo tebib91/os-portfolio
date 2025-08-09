@@ -5,6 +5,6 @@
     "outDir": "./out-tsc/spec",
     "types": ["jasmine", "@angular/localize"]
   },
-  "files": ["src/test.ts", "src/polyfills.ts"],
-  "include": ["src/**/*.spec.ts", "src/**/*.d.ts"]
+  "files": ["apps/frontend/src/test.ts", "apps/frontend/src/polyfills.ts"],
+  "include": ["apps/frontend/src/**/*.spec.ts", "apps/frontend/src/**/*.d.ts"]
 }
