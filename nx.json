@@ -11,7 +11,22 @@
       "cache": true,
       "inputs": ["default", "^production", "{workspaceRoot}/karma.conf.js"]
     },
-    "lint": { "cache": true, "inputs": ["default"] }
+    "lint": {
+      "cache": true,
+      "inputs": ["default"]
+    },
+    "start": {
+      "cache": true
+    },
+    "release": {
+      "cache": true
+    },
+    "version": {
+      "cache": true
+    },
+    "serve:ssr:os-portfolio": {
+      "cache": true
+    }
   },
   "defaultBase": "main",
   "namedInputs": {
@@ -24,5 +39,5 @@
       "!{projectRoot}/karma.conf.js"
     ]
   },
-  "nxCloudId": "6896952e84d583099e09e7c3"
+  "nxCloudId": "6896962d63d7eb1b0e22fea1"
 }

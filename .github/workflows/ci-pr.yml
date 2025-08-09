@@ -31,6 +31,9 @@ jobs:
       - name: Run Lint
         run: npx nx lint
 
+      - run: npx nx-cloud fix-ci
+        if: always()
+
       # Run Tests
       # - name: Run Tests
       #   run: npx nx test

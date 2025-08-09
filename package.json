@@ -54,7 +54,7 @@
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.10.0",
     "@fullhuman/postcss-purgecss": "^6.0.0",
-    "@nx/workspace": "20.1.4",
+    "@nx/workspace": "21.3.11",
     "@schematics/angular": "~19.0.2",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.0",
@@ -81,13 +81,13 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "lint-staged": "^15.2.10",
     "ng-packagr": "^19.0.1",
-    "nx": "20.1.4",
+    "nx": "21.3.11",
     "prettier": "3.4.1",
     "rimraf": "^6.0.1",
     "semantic-release": "^24.1.1",
     "semantic-release-commitlint": "^1.2.2",
     "standard-version": "^9.5.0",
-    "typescript": "5.5.4",
+    "typescript": "5.7.2",
     "typescript-eslint": "^8.5.0",
     "utf-8-validate": "^6.0.4",
     "ws": "^8.18.0",
@@ -95,5 +95,6 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
-  }
+  },
+  "nx": {}
 }
