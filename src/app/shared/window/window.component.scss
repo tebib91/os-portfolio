@@ -38,5 +38,9 @@
 
   & .window-body {
     overflow-x: hidden;
+    height: calc(100% - 40px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
   }
 }

@@ -10,7 +10,6 @@
     "HELP": "Help",
     "SUBITEM": "Subitem"
   },
-
   "ICONS": {
     "FINDER": "Finder",
     "NOTES": "Notes",
@@ -24,5 +23,8 @@
   "BOOT": {
     "MESSAGE": "For better experience open full screen mode",
     "BUTTON": "press here"
+  },
+  "CONTROL_CENTER": {
+    "LANGUAGE": "Language"
   }
 }

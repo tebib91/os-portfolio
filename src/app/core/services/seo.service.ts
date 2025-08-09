@@ -39,6 +39,24 @@ export class SeoService {
   }
 
   getMetaData(url: string): MetaData {
+    // Check if URL is an experience page
+    if (url.includes('/desktop/experience/')) {
+      const experienceName = url.split('/').pop() || '';
+      const formattedName = experienceName
+        .split('-')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+
+      return {
+        title: `${formattedName} | Ahmed Tabib Portfolio`,
+        description: `View details about ${formattedName} experience - Ahmed Tabib's portfolio showcasing skills and projects as a Fullstack JavaScript Developer.`,
+        author: 'Ahmed Tabib',
+        keywords: `Ahmed Tabib, ${formattedName}, portfolio, experience, JavaScript, Angular, React, Node`,
+        image: 'https://www.ahmedtabib.com/me.webp',
+        canonical: `https://www.ahmedtabib.com${url}`,
+      };
+    }
+
     // Example mapping of URLs to meta data
     const metaDataMapping: MetaDataMapping = {
       '/desktop': {
@@ -54,10 +72,10 @@ export class SeoService {
       '/boot': {
         title: 'Ahmed Tabib | Fullstack Developer JavaScript',
         description:
-          'Ahmed Tabib - Full Stack Developer with extensive professional experience, having worked with major companies like SFR, SNCF, and Orange.',
+          'Ahmed Tabib - A skilled Fullstack JavaScript Developer, experienced with Angular, React, Node, Express, Jest, Karma, AWS, and more.',
         author: 'Ahmed Tabib',
         keywords:
-          'Ahmed Tabib, Full Stack Developer, professional experience, portfolio, SFR, SNCF, Orange',
+          'Ahmed Tabib, full stack developer, JavaScript, Angular, React, Node, Express, Jest, Karma, AWS',
         image: 'https://www.ahmedtabib.com/me.webp',
         canonical: 'https://www.ahmedtabib.com/boot',
       },

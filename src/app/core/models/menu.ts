@@ -1,8 +1,9 @@
 import { Experience } from './cv';
 
 export interface MenuBar {
-  icon: string;
+  icon?: string;
   label: string;
+  route: string;
   submenu: string[];
 }
 

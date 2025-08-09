@@ -34,36 +34,43 @@ export const menusBar: MenuBar[] = [
   {
     icon: 'assets/dock/bin.png',
     label: 'Finder',
+    route: '/finder',
     submenu: ['New Finder Window', 'New Folder', 'New Smart Folder'],
   },
   {
     icon: 'assets/dock/finder.png',
     label: 'File',
+    route: '/file',
     submenu: ['New File', 'Open File', 'Propertie File'],
   },
   {
     icon: 'assets/dock/mail.png',
     label: 'Edit',
+    route: '/edit',
     submenu: ['Subitem 1', 'Subitem 2', 'Subitem 3'],
   },
   {
     icon: 'assets/dock/mail.png',
     label: 'View',
+    route: '/view',
     submenu: ['Subitem 1', 'Subitem 2', 'Subitem 3'],
   },
   {
     icon: 'assets/dock/mail.png',
     label: 'Go',
+    route: '/go',
     submenu: ['Subitem 1', 'Subitem 2', 'Subitem 3'],
   },
   {
     icon: 'assets/dock/mail.png',
     label: 'Window',
+    route: '/window',
     submenu: ['Subitem 1', 'Subitem 2', 'Subitem 3'],
   },
   {
     icon: 'assets/dock/mail.png',
     label: 'Help',
+    route: '/help',
     submenu: ['Subitem 1', 'Subitem 2', 'Subitem 3'],
   },
 ];
@@ -153,6 +160,92 @@ export const me: CvFinder = {
     },
   ],
   experiences: [
+    {
+      name: 'SNCF Voyageur',
+      projects: [
+        {
+          name: 'Fullstack Development',
+          title: 'Fullstack Developer for SNCF Voyageur',
+          postTitle: 'Fullstack Developer',
+          description:
+            'Contributed to the development of critical applications for SNCF Voyageur, enhancing user experience and operational efficiency.',
+          icon: 'assets/owner/sncf.svg',
+          tasks: [
+            'Developed and maintained web applications using modern TypeScript frameworks',
+            'Implemented backend services to support high-traffic applications on AWS Cloud',
+            'Ensured code quality and application performance through testing and optimization',
+            'Participated in agile development cycles, including sprint planning and code reviews',
+            'Collaborated with cross-functional teams to define, design, and ship new features',
+          ],
+          technos: [
+            {
+              name: 'React',
+              icon: 'https://img.icons8.com/officel/48/000000/react.png',
+              link: 'https://reactjs.org/',
+            },
+            {
+              name: 'NodeJs',
+              icon: 'https://img.icons8.com/color/48/000000/nodejs.png',
+              link: 'https://nodejs.org/',
+            },
+            {
+              name: 'TypeScript',
+              icon: 'https://img.icons8.com/color/48/000000/typescript.png',
+              link: 'https://www.typescriptlang.org/',
+            },
+            {
+              name: 'PostgreSQL',
+              icon: 'https://img.icons8.com/color/48/000000/postgresql.png',
+              link: 'https://www.postgresql.org/',
+            },
+          ],
+          backgroundImg: 'assets/owner/sncf_connect.svg',
+        },
+      ],
+    },
+    {
+      name: 'ASN',
+      projects: [
+        {
+          name: 'Fullstack Development',
+          title: 'Fullstack Developer for ASN',
+          postTitle: 'Fullstack Developer',
+          description:
+            'Developed and maintained fullstack applications for ASN, focusing on robust backend solutions and responsive frontend interfaces.',
+          icon: 'assets/owner/auna_logo.jpg',
+          tasks: [
+            'Designed and implemented RESTful APIs using Node.js and Express',
+            'Developed interactive user interfaces with Angular',
+            'Managed database interactions and ensured data integrity',
+            'Collaborated with cross-functional teams to define, design, and ship new features',
+          ],
+          technos: [
+            {
+              name: 'Angular',
+              icon: 'https://img.icons8.com/color/48/000000/angularjs.png',
+              link: 'https://angular.io/',
+            },
+            {
+              name: 'NodeJs',
+              icon: 'https://img.icons8.com/color/48/000000/nodejs.png',
+              link: 'https://nodejs.org/',
+            },
+            {
+              name: 'Express',
+              icon: 'https://img.icons8.com/color/48/000000/express.png',
+              link: 'https://expressjs.com/',
+            },
+            {
+              name: 'MongoDB',
+              icon: 'https://img.icons8.com/color/48/000000/mongodb.png',
+              link: 'https://www.mongodb.com/',
+            },
+          ],
+          backgroundImg: 'assets/owner/auna.jpeg',
+        },
+      ],
+    },
+
     {
       name: 'SNCF Connect',
       projects: [

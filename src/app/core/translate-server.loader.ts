@@ -14,14 +14,7 @@ export class TranslateServerLoader implements TranslateLoader {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public getTranslation(lang: string): Observable<any> {
     return new Observable((observer) => {
-      const assets_folder = join(
-        process.cwd(),
-        'dist',
-        'os-portfolio', // Your project name here
-        'browser',
-        'assets',
-        this.prefix,
-      );
+      const assets_folder = join(process.cwd(), 'src', 'assets', this.prefix);
 
       const jsonData = JSON.parse(
         fs.readFileSync(`${assets_folder}/${lang}${this.suffix}`, 'utf8'),

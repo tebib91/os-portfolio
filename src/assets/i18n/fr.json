@@ -24,5 +24,8 @@
   "BOOT": {
     "MESSAGE": "Pour une meilleure expérience, passez en plein écran",
     "BUTTON": "appuyez ici"
+  },
+  "CONTROL_CENTER": {
+    "LANGUAGE": "Langue"
   }
 }

@@ -1,7 +1,7 @@
-import { Injectable, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { PLATFORM_ID } from '@angular/core';
+import { Injectable, PLATFORM_ID, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +11,9 @@ export class LanguageService {
   private platformId = inject(PLATFORM_ID);
 
   currentLang = 'en';
+  private _languageChange = new Subject<string>();
+  languageChange$ = this._languageChange.asObservable();
+
   constructor() {
     this.translate.addLangs(['en', 'fr']);
     this.translate.setDefaultLang('en');
@@ -21,6 +24,7 @@ export class LanguageService {
   use(lang: string) {
     this.currentLang = lang;
     this.translate.use(lang);
+    this._languageChange.next(lang);
     this.storeLang(lang);
   }
 

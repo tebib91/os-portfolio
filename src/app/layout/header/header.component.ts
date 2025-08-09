@@ -31,11 +31,17 @@ export class HeaderComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
     if (this.platformService.isBrowser) {
       this.getBatteryLevel();
+      this.updateTime();
+      // Update time every minute
+      setInterval(() => this.updateTime(), 60000);
     }
+    this.cd.detectChanges();
+  }
+
+  updateTime(): void {
+    this.currentTime = Date.now();
     this.cd.detectChanges();
   }
 

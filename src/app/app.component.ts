@@ -1,11 +1,10 @@
-import { Component, inject, DestroyRef } from '@angular/core';
+import { Component, inject, OnDestroy } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { LanguageService } from '@core/services/language.service';
 import { ScriptInjectorService } from '@core/services/script-injector.service';
 import { SeoService } from '@core/services/seo.service';
-import { LanguageService } from '@core/services/language.service';
 import { environment } from '@env/environment';
-import { filter } from 'rxjs';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { filter, Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,13 +12,12 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   styleUrls: ['./app.component.scss'],
   standalone: false,
 })
-
 export class AppComponent implements OnDestroy {
-  private script = inject_1(ScriptInjectorService);
-  private router = inject_1(Router);
-  private seo = inject_1(SeoService);
-  private language = inject_1(LanguageService);
-
+  private script = inject(ScriptInjectorService);
+  private router = inject(Router);
+  private seo = inject(SeoService);
+  private language = inject(LanguageService);
+  private destroy$ = new Subject();
 
   title = 'Ahmed Tabib | Fullstack Developer JavaScript';
   constructor() {
@@ -30,11 +28,14 @@ export class AppComponent implements OnDestroy {
         filter(
           (event): event is NavigationEnd => event instanceof NavigationEnd,
         ),
-        takeUntilDestroyed(this.destroyRef),
+        takeUntil(this.destroy$),
       )
       .subscribe((event: NavigationEnd) => {
         // Explicit type for the event
         this.seo.updateMetaData(event.urlAfterRedirects);
       });
+  }
+  ngOnDestroy() {
+    this.destroy$.next('');
   }
 }

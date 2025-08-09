@@ -1,21 +1,19 @@
 import { CvFinder } from './../models/cv';
-import { me, meFr } from './../data/data';
 import { Injectable, inject } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { LanguageService } from './language.service';
+import { CvService } from './cv.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
   private httpClient = inject(HttpClient);
-  private languageService = inject(LanguageService);
+  private cvService = inject(CvService);
 
   constructor() {}
 
   getData(): Observable<CvFinder> {
-    const lang = this.languageService.currentLang;
-    return of(lang === 'fr' ? meFr : me);
+    return this.cvService.currentCv$;
   }
 }

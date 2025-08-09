@@ -1,12 +1,12 @@
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatTooltip } from '@angular/material/tooltip';
 import { WindowComponent } from '@app/shared/window/window.component';
 import { CvFinder, Experience } from '@core/models/cv';
 import { ApiService } from '@core/services/api.service';
 import { RedirectService } from '@core/services/redirect.service';
 import { Observable } from 'rxjs';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
-import { MatTooltip } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-finder',
@@ -28,6 +28,10 @@ export class FinderComponent implements OnInit {
     this.data$ = this.api.getData();
   }
 
+  private formatExperienceTitle(title: string): string {
+    return title.toLowerCase().replace(/\s+/g, '-');
+  }
+
   navigateUrl(url: string) {
     if (url) {
       this.redirect.navigate(url);
@@ -35,6 +39,12 @@ export class FinderComponent implements OnInit {
   }
 
   openNotes(item: Experience): void {
+    // Format experience name for URL
+    const experienceName = this.formatExperienceTitle(item.name);
+
+    // Update URL with experience name for SEO
+    window.history.pushState({}, '', `/desktop/experience/${experienceName}`);
+
     const dialogRef = this.dialog.open(WindowComponent, {
       data: {
         title: 'Experience',
@@ -43,10 +53,15 @@ export class FinderComponent implements OnInit {
         data: item,
       },
       hasBackdrop: true,
+      panelClass: 'dialog-panel',
+      maxHeight: '90vh',
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.info('The dialog was closed', { item, result });
+      // Revert URL to desktop when dialog is closed
+      window.history.pushState({}, '', '/desktop');
+
+      console.log(`Dialog result: ${result}`);
     });
   }
 }

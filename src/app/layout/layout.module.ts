@@ -14,6 +14,11 @@ const routes: Routes = [
     loadComponent: () =>
       import('./layout/layout.component').then((m) => m.LayoutComponent),
   },
+  {
+    path: 'desktop/experience/:experienceName',
+    loadComponent: () =>
+      import('./layout/layout.component').then((m) => m.LayoutComponent),
+  },
 ];
 
 @NgModule({

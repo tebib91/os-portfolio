@@ -1,5 +1,10 @@
-<div class="content" *ngIf="experience">
-  <div class="content-box" *ngFor="let project of experience.projects">
+<div class="content" *ngIf="experience" [@fadeIn]>
+  <div
+    class="content-box"
+    *ngFor="let project of experience.projects; let i = index"
+    [attr.data-index]="i"
+    [@fadeIn]
+  >
     <!-- Client Section -->
     <div class="client">
       <div class="client-logo">
@@ -7,72 +12,60 @@
           [src]="project.icon"
           [alt]="project.name + ' logo'"
           (error)="onImageError($event)"
+          loading="lazy"
         />
       </div>
       <div class="client-name">
         <h3>{{ project.name }}</h3>
       </div>
     </div>
-
-    <!-- Project Section -->
-    <div class="project">
-      <!-- Project Title -->
-      <div class="list-title project-title">
-        <div class="icon-wrapper">
-          <img
-            src="https://img.icons8.com/?size=100&id=84678&format=png&color=000000"
-            alt="Project icon"
-          />
+    <div class="wrapper">
+      <!-- Project Section -->
+      <div class="project">
+        <!-- Project Title -->
+        <div class="project-title list-title">
+          <h4>Project</h4>
+          <p>{{ project.title }}</p>
         </div>
-        <p>{{ project.title }}</p>
-      </div>
 
-      <!-- Post Title -->
-      <div class="list-title post-title">
-        <div class="icon-wrapper">
-          <img
-            src="https://img.icons8.com/?size=100&id=xOnyQ7TLR4PU&format=png&color=000000"
-            alt="Post icon"
-          />
+        <!-- Post Title -->
+        <div class="post-title list-title">
+          <h4>Post</h4>
+          <p>{{ project.postTitle }}</p>
         </div>
-        <p>{{ project.postTitle }}</p>
-      </div>
 
-      <!-- Project Description -->
-      <div class="list-title description">
-        <div class="icon-wrapper">
-          <img
-            src="https://img.icons8.com/?size=100&id=50646&format=png&color=000000"
-            alt="Description icon"
-          />
+        <!-- Project Description -->
+        <div class="description">
+          <h4>Description</h4>
+          <p>{{ project.description }}</p>
         </div>
-        <p>{{ project.description }}</p>
+
+        <!-- Tasks -->
+        <div class="tasks">
+          <h4>Key Responsibilities</h4>
+          <ul [@staggerList]="project.tasks.length">
+            <li *ngFor="let task of project.tasks">{{ task }}</li>
+          </ul>
+        </div>
       </div>
 
-      <!-- Tasks Section -->
-      <div class="tasks">
-        <h4><b>Key Responsibilities</b></h4>
-        <ul>
-          <li *ngFor="let task of project.tasks">{{ task }}</li>
-        </ul>
-      </div>
-
-      <!-- Technologies Section -->
+      <!-- Technologies -->
       <div class="technos">
-        <h4><b>Technologies Used</b></h4>
-        <div class="tech-list">
-          <div class="tech-block" *ngFor="let techno of project.technos">
+        <h4 style="text-align: center">Technologies</h4>
+        <div class="tech-list" [@staggerList]="project.technos.length">
+          <div class="tech-block" *ngFor="let tech of project.technos">
             <div class="tech-avatar">
               <img
-                [src]="techno.icon"
-                [alt]="techno.name + ' logo'"
+                [src]="tech.icon"
+                [alt]="tech.name + ' icon'"
                 (error)="onImageError($event)"
+                loading="lazy"
               />
             </div>
             <div class="tech-info">
-              <p class="tech-name">{{ techno.name }}</p>
-              <p class="tech-link">
-                <a [href]="techno.link" target="_blank">Learn more</a>
+              <p class="tech-name">{{ tech.name }}</p>
+              <p class="tech-link" *ngIf="tech.link">
+                <a [href]="tech.link" target="_blank" rel="noopener">View</a>
               </p>
             </div>
           </div>

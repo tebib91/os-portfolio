@@ -41,9 +41,27 @@ export class WindowComponent {
     const data = this.data;
 
     console.log({ data });
-    this.outlet = this.components.find(
-      (el) => el.name === data?.title?.toLocaleLowerCase(),
-    )?.component;
+    // Check if it's an experience component based on program property
+    if (data?.program === 'ExperienceComponent') {
+      console.log('Loading ExperienceComponent with data:', data);
+      this.outlet = ExperienceComponent;
+
+      // Force the component to be visible
+      setTimeout(() => {
+        const windowBody = document.querySelector('.window-body');
+        if (windowBody) {
+          windowBody.classList.add('experience-window-body');
+          console.log('Added experience-window-body class');
+        }
+      }, 100);
+    } else {
+      // For other components, find by title
+      this.outlet = this.components.find(
+        (el) => el.name === data?.title?.toLocaleLowerCase(),
+      )?.component;
+    }
+
+    console.log('Selected component:', this.outlet?.name);
   }
 
   onMinimizeClick(): void {
